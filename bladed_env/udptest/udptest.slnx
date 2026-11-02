@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="udptest/udptest.vcxproj" Id="22ebcff9-8307-4224-bb1d-2df42de4ba68" />
+</Solution>

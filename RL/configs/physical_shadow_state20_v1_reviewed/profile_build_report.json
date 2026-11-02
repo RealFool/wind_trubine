@@ -1,0 +1,116 @@
+{
+  "schema_version": "physical_load_shadow_profile_build_v1",
+  "bc_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+  "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+  "strict_loader_roundtrip": "PASS",
+  "dynamic_model_sha256": "c8286005ce23afc13490906461d80b87245d6bca72a10d2f7f71b53d41baad36",
+  "profiles": {
+    "4wind_4round_180s_integration": {
+      "config_path": "RL/configs/physical_shadow_state20_v1_reviewed/state20_physical_4wind_4round_180s_integration.json",
+      "config_sha256": "b9ec6ef655c78629fd002b5bf18fe1050a9582b3d733db508b0a2fd077b0ca58",
+      "manifest_path": "RL/configs/physical_shadow_state20_v1_reviewed/state20_physical_4wind_4round_180s_integration_manifest.json",
+      "slots": 16,
+      "runtime_identity": {
+        "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+        "shadow_settings_sha256": "3678773d4c7ae42a2c267af867703f5f54241d852a68fa60069ed5f9a288e604",
+        "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+        "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+        "bc_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "queue_manifest_sha256": "8cd8ec9c104d093ff77df668ebb774adead1f39d1879fb4ed35313f839b17214",
+        "effective_runtime_config_sha256": "87caf6397777d3dd6d555fa419140624b9a00c20345d389edee121064dbdcb15",
+        "execution_entry": "training",
+        "actor_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "baseline_only": false,
+        "runtime_code_sha256": {
+          "RL/utils/physical_load_shadow_artifact.py": "0efeba2a092c7649c5f31ba8f9f1c4c4caf7b418031a099d49cdaac6f0fb3643",
+          "RL/utils/physical_load_shadow.py": "41620625edcfa30589dd6ef4467d4dd22532a2a30918e3921b16d1d39d292e77",
+          "RL/utils/physical_load_shadow_launch.py": "c96b00697ae259341b33bedf573d01c8a85d80046b19532b1d6a71cdbd300aaa",
+          "RL/utils/physical_load_margin.py": "7457174eba00bb3d358b31749c2ed33a8f420db6daa3f265c3b34327264e9898",
+          "RL/utils/physical_load_margin_dynamic.py": "4c423023edccfd0d3923c439bbd88e458c9c8100c7407032aef04b22d799ce0f",
+          "RL/train_rl.py": "08733d2e7d5f766656b4c08a9cdbf074d3771ed5ced0b6f9f5d546016f57996b",
+          "RL/infer/run_bladed_inference.py": "1cb193e3d1a66eaf7e3e624bdf2bbbf1a2a4dda8c6ad902b1f17ac4801dff1a8",
+          "RL/envs/wind_turbine_env.py": "62b906139fe78f4c80d4b13b93ebb8b66b36686980b3b50d6729a8171aeefad0",
+          "RL/utils/operating_state.py": "7d23072c19b7348174c1ac7cffc1c4eb317a5a78323367d87809d9ef3e7e9ee3",
+          "RL/utils/safe_residual_control.py": "066e063b4c460f1512cdfbc3c530995f71b7ec19befd936ad75050ccdecae544",
+          "RL/utils/paired_pid_reference.py": "bf7d180af95e6d156a897ca6a0264ac75f83ee891f75c153429173e7935bfb61",
+          "RL/utils/queue_case_identity.py": "6adeef38f2d55382529d75f4d99e636e64252c0a4d7c1bf3777bbe1ef6064c81",
+          "RL/utils/control_contract.py": "d18e7ab97c275a37b3e8ead11fd6fea5d1c14554f7bde73367c4ebe20f833cf2",
+          "RL/utils/constants.py": "2e196686d91bd43adb51a19364e1f8e918f3fe5ddb7c7347bd3ab071eb196b8b"
+        }
+      },
+      "bladed_launch_authorized": false
+    },
+    "4wind_1round_600s_frozen_diagnostic": {
+      "config_path": "RL/configs/physical_shadow_state20_v1_reviewed/state20_physical_4wind_1round_600s_frozen_diagnostic.json",
+      "config_sha256": "f668cd8001ed79e5d29e688e459590a82ebf90f34b78baed880d81afd461a22f",
+      "manifest_path": "RL/configs/physical_shadow_state20_v1_reviewed/state20_physical_4wind_1round_600s_frozen_diagnostic_manifest.json",
+      "slots": 4,
+      "runtime_identity": {
+        "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+        "shadow_settings_sha256": "5a572a58ae7e96778c866a353fe8b13dc79c4deb8fea8d5377c677f6f15df4f4",
+        "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+        "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+        "bc_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "queue_manifest_sha256": "4f1cad95f75863125880762cf9157da5bb7093d45be410a33740bbcb9bfbf00c",
+        "effective_runtime_config_sha256": "f125a518e858a4bab11486667a45feb5248eb8221c09a2378af00d0ca561f59a",
+        "execution_entry": "training",
+        "actor_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "baseline_only": false,
+        "runtime_code_sha256": {
+          "RL/utils/physical_load_shadow_artifact.py": "0efeba2a092c7649c5f31ba8f9f1c4c4caf7b418031a099d49cdaac6f0fb3643",
+          "RL/utils/physical_load_shadow.py": "41620625edcfa30589dd6ef4467d4dd22532a2a30918e3921b16d1d39d292e77",
+          "RL/utils/physical_load_shadow_launch.py": "c96b00697ae259341b33bedf573d01c8a85d80046b19532b1d6a71cdbd300aaa",
+          "RL/utils/physical_load_margin.py": "7457174eba00bb3d358b31749c2ed33a8f420db6daa3f265c3b34327264e9898",
+          "RL/utils/physical_load_margin_dynamic.py": "4c423023edccfd0d3923c439bbd88e458c9c8100c7407032aef04b22d799ce0f",
+          "RL/train_rl.py": "08733d2e7d5f766656b4c08a9cdbf074d3771ed5ced0b6f9f5d546016f57996b",
+          "RL/infer/run_bladed_inference.py": "1cb193e3d1a66eaf7e3e624bdf2bbbf1a2a4dda8c6ad902b1f17ac4801dff1a8",
+          "RL/envs/wind_turbine_env.py": "62b906139fe78f4c80d4b13b93ebb8b66b36686980b3b50d6729a8171aeefad0",
+          "RL/utils/operating_state.py": "7d23072c19b7348174c1ac7cffc1c4eb317a5a78323367d87809d9ef3e7e9ee3",
+          "RL/utils/safe_residual_control.py": "066e063b4c460f1512cdfbc3c530995f71b7ec19befd936ad75050ccdecae544",
+          "RL/utils/paired_pid_reference.py": "bf7d180af95e6d156a897ca6a0264ac75f83ee891f75c153429173e7935bfb61",
+          "RL/utils/queue_case_identity.py": "6adeef38f2d55382529d75f4d99e636e64252c0a4d7c1bf3777bbe1ef6064c81",
+          "RL/utils/control_contract.py": "d18e7ab97c275a37b3e8ead11fd6fea5d1c14554f7bde73367c4ebe20f833cf2",
+          "RL/utils/constants.py": "2e196686d91bd43adb51a19364e1f8e918f3fe5ddb7c7347bd3ab071eb196b8b"
+        }
+      },
+      "bladed_launch_authorized": false
+    },
+    "4wind_4round_600s_training": {
+      "config_path": "RL/configs/physical_shadow_state20_v1_reviewed/state20_physical_4wind_4round_600s_training.json",
+      "config_sha256": "89022576d9e3daa9adbb3dfd99a0586e9b7693e973d4a4d429e3b401617d7d85",
+      "manifest_path": "RL/configs/physical_shadow_state20_v1_reviewed/state20_physical_4wind_4round_600s_training_manifest.json",
+      "slots": 16,
+      "runtime_identity": {
+        "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+        "shadow_settings_sha256": "5a572a58ae7e96778c866a353fe8b13dc79c4deb8fea8d5377c677f6f15df4f4",
+        "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+        "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+        "bc_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "queue_manifest_sha256": "7668aa8b4985e544f194fba4b36858910ecd3faae1b5961765298c6f089c3150",
+        "effective_runtime_config_sha256": "95ef2f2d226958456d1fb5339d97bbff0ac49f423c6d9769ac7b2004f07a77f3",
+        "execution_entry": "training",
+        "actor_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "baseline_only": false,
+        "runtime_code_sha256": {
+          "RL/utils/physical_load_shadow_artifact.py": "0efeba2a092c7649c5f31ba8f9f1c4c4caf7b418031a099d49cdaac6f0fb3643",
+          "RL/utils/physical_load_shadow.py": "41620625edcfa30589dd6ef4467d4dd22532a2a30918e3921b16d1d39d292e77",
+          "RL/utils/physical_load_shadow_launch.py": "c96b00697ae259341b33bedf573d01c8a85d80046b19532b1d6a71cdbd300aaa",
+          "RL/utils/physical_load_margin.py": "7457174eba00bb3d358b31749c2ed33a8f420db6daa3f265c3b34327264e9898",
+          "RL/utils/physical_load_margin_dynamic.py": "4c423023edccfd0d3923c439bbd88e458c9c8100c7407032aef04b22d799ce0f",
+          "RL/train_rl.py": "08733d2e7d5f766656b4c08a9cdbf074d3771ed5ced0b6f9f5d546016f57996b",
+          "RL/infer/run_bladed_inference.py": "1cb193e3d1a66eaf7e3e624bdf2bbbf1a2a4dda8c6ad902b1f17ac4801dff1a8",
+          "RL/envs/wind_turbine_env.py": "62b906139fe78f4c80d4b13b93ebb8b66b36686980b3b50d6729a8171aeefad0",
+          "RL/utils/operating_state.py": "7d23072c19b7348174c1ac7cffc1c4eb317a5a78323367d87809d9ef3e7e9ee3",
+          "RL/utils/safe_residual_control.py": "066e063b4c460f1512cdfbc3c530995f71b7ec19befd936ad75050ccdecae544",
+          "RL/utils/paired_pid_reference.py": "bf7d180af95e6d156a897ca6a0264ac75f83ee891f75c153429173e7935bfb61",
+          "RL/utils/queue_case_identity.py": "6adeef38f2d55382529d75f4d99e636e64252c0a4d7c1bf3777bbe1ef6064c81",
+          "RL/utils/control_contract.py": "d18e7ab97c275a37b3e8ead11fd6fea5d1c14554f7bde73367c4ebe20f833cf2",
+          "RL/utils/constants.py": "2e196686d91bd43adb51a19364e1f8e918f3fe5ddb7c7347bd3ab071eb196b8b"
+        }
+      },
+      "bladed_launch_authorized": false
+    }
+  },
+  "bladed_started": false,
+  "decision": "DEVELOPMENT_PROFILES_BUILT_REAL_LAUNCH_BLOCKED"
+}

@@ -1,0 +1,18 @@
+{
+  "evidence_kind": "operator_attestation_not_independently_verified",
+  "dll_personally_confirmed": null,
+  "protocol_personally_confirmed": null,
+  "project_wind_seed_personally_confirmed_matches_pid": null,
+  "manual_project_and_wind_selection_required_each_slot": true,
+  "manual_batch_profile_confirmed": "full",
+  "manual_batch_rounds_confirmed": 6,
+  "manual_batch_train_sim_s_confirmed": 600.0,
+  "manual_batch_slot_count_confirmed": 138,
+  "manual_batch_schedule_sha256_confirmed": "7086e879044a257653db6e382a96d1b735039834c339306126b8c9462cd527eb",
+  "protocol_version_confirmed": "bladed_udp_19_si_my_queue_v2",
+  "expected_repository_release_dll_path": "bladed_env/udptest/Release/udptest.dll",
+  "expected_repository_release_dll_sha256": "5695e3e4c9065cb1eba9995215afd6aaeecb0d202812ba0bc0eb3006b02cc0aa",
+  "loaded_dll_path_confirmed": null,
+  "loaded_dll_sha256_confirmed": null,
+  "confirmation_recorded_at_utc": null
+}

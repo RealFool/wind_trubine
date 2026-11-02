@@ -1,0 +1,493 @@
+{
+  "data_schema_version": "bladed_udp_19_si_my_v1",
+  "experiment_name": "b4_state20_physical_4wind_1round_600s_frozen_diagnostic",
+  "algorithm": "td3",
+  "training_mode": "bc_warmstart_rl",
+  "append_timestamp": true,
+  "seed": 42,
+  "device": "cuda:0",
+  "output_dir": "RL/experiments/physical_shadow_development",
+  "data": {
+    "root_dir": "RL/data/b4_centered_residual_bc_state20_v2",
+    "train_split": "train",
+    "eval_split": "val",
+    "max_bc_files": null,
+    "seed": 42
+  },
+  "env": {
+    "backend": "bladed_udp",
+    "udp_host": "0.0.0.0",
+    "udp_port": 8888,
+    "udp_timeout_s": 1.0,
+    "udp_reset_wait_s": 900.0,
+    "udp_step_wait_s": 10.0,
+    "udp_inter_frame_wait_s": 10.0,
+    "condition_load_timeout_s": 900.0,
+    "udp_pause_threshold_s": 2.0,
+    "udp_require_frame_id": true,
+    "udp_protocol_version": "bladed_udp_19_si_my_queue_v2",
+    "queue_lifecycle_enabled": true,
+    "require_condition_metadata": true,
+    "udp_recv_buffer_size": 8192,
+    "udp_strict_field_count": true,
+    "udp_timeout_penalty": -10.0,
+    "bladed_step_duration_ms": 20.0,
+    "wall_clock_step_deadline_ms": 0.0,
+    "episode_length": 512,
+    "rollout_segment_steps": 512,
+    "action_limiter_owner": "controller",
+    "include_previous_action_observation": true,
+    "action_low": [
+      0.0,
+      0.0
+    ],
+    "action_high": [
+      21586451.33303,
+      0.43
+    ],
+    "action_delta_low": [
+      -90000.0,
+      -0.000698
+    ],
+    "action_delta_high": [
+      90000.0,
+      0.000698
+    ],
+    "safe_action_low": [
+      0.0,
+      0.0
+    ],
+    "safe_action_high": [
+      21586451.33303,
+      0.43
+    ],
+    "rated_power": 15000000.0,
+    "gear_ratio": 97.0,
+    "drive_mode": "torque_speed_proxy",
+    "reward": {
+      "power_ref": 15000000.0,
+      "power_clip_max": 2.0,
+      "power_source": "reward_metric",
+      "power_reward_mode": "relative_pid_energy",
+      "energy_reference_j": 300000.0,
+      "relative_energy_clip": 2.0,
+      "blade_root_ref": 55000000.0,
+      "blade_root_soft_limit": 1.0,
+      "blade_root_load_mode": "my_peak_increment",
+      "blade_root_peak_aggregation": "max",
+      "blade_root_continuous_weight": 0.05,
+      "blade_root_continuous_mode": "pid_excess",
+      "acc_ref": 1.0,
+      "shaft_ref": 30000.0,
+      "pitch_rate_limit": 0.0003,
+      "torque_rate_limit": 15000.0,
+      "power_weight": 1.0,
+      "blade_root_weight": 1.0,
+      "acc_weight": 0.0,
+      "shaft_weight": 0.0,
+      "pitch_rate_weight": 0.0005,
+      "torque_rate_weight": 0.0005,
+      "command_excess_weight": 0.0,
+      "power_tracking_weight": 0.0,
+      "negative_power_weight": 0.5,
+      "power_floor_weight": 0.0,
+      "power_floor_reference_template": "bladed-data-new/raw/data_windspeed{condition_id}.csv",
+      "acc_metric_mode": "fore_aft",
+      "shaft_mode": "electrical_torque_proxy",
+      "power_available_mode": "wind_cubic",
+      "rated_wind_speed": 12.8,
+      "cut_in_wind_speed": 3.0,
+      "lambda_speed": 10.0,
+      "persistent_power_deficit_weight": 0.1,
+      "persistent_power_deficit_ewma_tau_s": 2.0,
+      "persistent_power_deficit_deadband_fraction": 0.01,
+      "persistent_power_deficit_clip": 1.0,
+      "rotor_speed_reference_schedule_path": "RL/data/pid_rotor_speed_reference_3_to_25.json",
+      "region_rotor_speed_weight": 0.05,
+      "rotor_speed_variation_weight": 0.01,
+      "sustained_low_rotor_speed_weight": 0.05,
+      "rotor_speed_variation_ref": 0.01,
+      "low_rotor_speed_ewma_tau_s": 2.0,
+      "rotor_speed_term_clip": 2.0,
+      "paired_pid_reference_path": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json",
+      "state_conditioning": {
+        "schema_version": "state_conditioned_reward_v1",
+        "weights": {
+          "startup_stopped": {
+            "power": 0.0,
+            "blade_root": 0.0,
+            "continuous_load": 0.0,
+            "persistent_power_deficit": 0.0,
+            "action_continuity": 0.0
+          },
+          "below_rated": {
+            "power": 1.0,
+            "blade_root": 0.5,
+            "continuous_load": 0.05,
+            "persistent_power_deficit": 0.1,
+            "action_continuity": 0.1
+          },
+          "transition": {
+            "power": 0.75,
+            "blade_root": 0.75,
+            "continuous_load": 0.05,
+            "persistent_power_deficit": 0.1,
+            "action_continuity": 0.15
+          },
+          "above_rated": {
+            "power": 0.5,
+            "blade_root": 1.0,
+            "continuous_load": 0.1,
+            "persistent_power_deficit": 0.25,
+            "action_continuity": 0.15
+          },
+          "negative_power_abnormal": {
+            "power": 0.0,
+            "blade_root": 0.0,
+            "continuous_load": 0.0,
+            "persistent_power_deficit": 0.0,
+            "action_continuity": 0.0
+          }
+        }
+      },
+      "dual_constraint": {
+        "schema_version": "dual_constraint_controller_v1",
+        "eta": {
+          "load_blade_1": 2.0,
+          "load_blade_2": 2.0,
+          "load_blade_3": 2.0,
+          "energy": 0.5
+        },
+        "lambda_max": {
+          "load_blade_1": 10.0,
+          "load_blade_2": 10.0,
+          "load_blade_3": 10.0,
+          "energy": 10.0
+        },
+        "epsilon_load_per_blade": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "epsilon_energy_percent": 0.0,
+        "initial_lambda": {
+          "load_blade_1": 0.0,
+          "load_blade_2": 0.0,
+          "load_blade_3": 0.0,
+          "energy": 0.0
+        },
+        "aggregation": "mean_complete_conditions_at_round_boundary"
+      }
+    },
+    "include_operating_state_observation": true,
+    "state_action_artifact_path": "RL/data/state_action_envelope_3_to_25_v1.json",
+    "observation_action_low": [
+      0.0,
+      0.0
+    ],
+    "observation_action_high": [
+      21586451.33303,
+      0.43
+    ]
+  },
+  "control": {
+    "baseline_action": [
+      20309163.0,
+      0.06352876875
+    ],
+    "action_representation": "residual",
+    "actor_residual_target_scale": 0.25,
+    "residual_limit": [
+      15000.0,
+      0.0003
+    ],
+    "safe_action_low": [
+      0.0,
+      0.0
+    ],
+    "safe_action_high": [
+      21586451.33303,
+      0.43
+    ],
+    "ood_threshold": 6.0,
+    "low_rotor_speed_fallback_threshold": 0.4,
+    "low_rotor_speed_recovery_threshold": 0.5,
+    "low_rotor_speed_unload_torque": 0.0,
+    "above_rated_initial_pitch_floor_wind_speed": 12.8,
+    "low_power_threshold": null,
+    "low_power_patience": 10,
+    "negative_power_patience": 50,
+    "region_aware_baseline_path": "RL/data/region_aware_joint_baseline_state20_3_to_25_v3.json",
+    "pitch_protection_mode": "dynamic_pid_envelope",
+    "low_speed_protection_mode": "pid_envelope_staged",
+    "s2_u1_calibration_path": "RL/data/s2_u1_pid_envelope_3_to_25.json",
+    "low_speed_warning_torque_scale": 0.9,
+    "low_speed_protection_torque_scale": 0.7,
+    "state_action_artifact_path": "RL/data/state_action_envelope_3_to_25_v1.json",
+    "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24"
+  },
+  "agent": {
+    "hidden_dims": [
+      256,
+      256,
+      128
+    ],
+    "actor_lr": 3e-05,
+    "critic_lr": 5e-05,
+    "gamma": 0.999,
+    "tau": 0.005,
+    "policy_noise": 0.005,
+    "noise_clip": 0.01,
+    "actor_residual_target_scale": 0.25,
+    "policy_delay": 4,
+    "td3_bc_enabled": true,
+    "td3_bc_alpha": 1.0,
+    "td3_bc_weight": 1.0,
+    "td3_bc_loss_type": "smooth_l1",
+    "td3_bc_loss_scale": 1.0,
+    "td3_bc_target_ratio": 0.5,
+    "td3_bc_max_effective_weight": 100000.0,
+    "critic_loss_type": "smooth_l1",
+    "critic_loss_delta": 1.0,
+    "critic_grad_norm": 5.0,
+    "max_target_q_abs_mean": 20.0,
+    "max_actor_q_abs_mean": 120.0
+  },
+  "train": {
+    "online_rl_enabled": false,
+    "online_eval_enabled": false,
+    "eval_every": 0,
+    "batch_size": 128,
+    "updates_per_step": 1,
+    "update_every_steps": 30,
+    "gpu_warmup_updates": 2,
+    "warmup_exploration_noise": 0.0,
+    "exploration_noise": 0.0,
+    "step_log_every": 20,
+    "condition_replay": {
+      "sampling": "condition_stratified",
+      "capacity_per_condition": 40000,
+      "min_valid_transitions_per_condition": 5000,
+      "min_per_condition_in_batch": 5
+    },
+    "replay_filter": {
+      "enabled": true,
+      "skip_invalid_transition": true,
+      "skip_safety_fallback": true,
+      "skip_negative_power_transition": true,
+      "skip_unsafe_transition": true
+    },
+    "critic_q_health": {
+      "enabled": true,
+      "window_updates": 200,
+      "max_guard_rate": 0.05,
+      "min_success_rate": 0.9,
+      "fail_after_consecutive_windows": 3,
+      "failure_mode": "abort"
+    },
+    "actor_q_health_gate": {
+      "enabled": true,
+      "physical_gate_passed": true,
+      "min_successful_critic_updates": 1000,
+      "window_updates": 200,
+      "max_guard_rate": 0.05,
+      "min_success_rate": 0.9,
+      "max_td_error_relative_increase": 0.1,
+      "max_q_gap_relative_increase": 0.1,
+      "max_target_q_abs_mean": 10.0,
+      "td_error_relative_denominator_floor": 0.05,
+      "q_gap_relative_denominator_floor": 0.02,
+      "max_td_error_absolute_increase": 0.01,
+      "max_q_gap_absolute_increase": 0.003,
+      "reopen_td_error_relative_increase": 0.15,
+      "reopen_q_gap_relative_increase": 0.15,
+      "reopen_max_td_error_absolute_increase": 0.015,
+      "reopen_max_q_gap_absolute_increase": 0.0045
+    },
+    "execution_replay_contract": {
+      "schema_version": "execution_mode_replay_contract_v1",
+      "use_execution_mode_replay": true,
+      "td3_critic_replay_modes": [
+        "actor",
+        "explicit_baseline_stage",
+        "actor_execution_rollback_baseline",
+        "low_speed_recovery_hold"
+      ],
+      "reject_post_step_outcomes": true
+    },
+    "actor_optimizer_health_gate": {
+      "schema_version": "actor_optimizer_health_gate_v1",
+      "enabled": true,
+      "recovery_consecutive_healthy_critic_updates": 200,
+      "require_fixed_offline_batch_health_check": true,
+      "fixed_offline_batch_size": 256
+    }
+  },
+  "eval": {
+    "episodes": 1
+  },
+  "offline_eval": {
+    "enabled": false,
+    "run_after_training": false
+  },
+  "bc": {
+    "enabled": true,
+    "steps": 0,
+    "checkpoint_steps": [],
+    "batch_size": 256,
+    "split": "train",
+    "cache_enabled": true,
+    "freeze_critic_during_bc": true,
+    "loss_type": "smooth_l1",
+    "log_every": 100,
+    "preview_samples": 512,
+    "preview_batch_size": 1024,
+    "resume_checkpoint": "RL/BC_checkpoint/bladed_pid_b4_state20_residual_v3.pt",
+    "precomputed_action_target_columns": [
+      "B4 residual torque target",
+      "B4 residual pitch target"
+    ],
+    "export_checkpoint_path": ""
+  },
+  "b4_residual_contract": {
+    "schema_version": "b4_centered_residual_control_v3",
+    "formula": "b4_action = clip(previous_sent_action + region_aware_b4_delta); desired_action = b4_action + actor_residual * state_conditioned_residual_limit",
+    "replay_action": "actual_sent_action_minus_same_step_b4_action_over_same_state_residual_limit",
+    "data_manifest_path": "RL/data/b4_centered_residual_bc_state20_v2/manifest.json",
+    "data_manifest_sha256": "2aeeb621f7d954e6923146d223ceae94d8b6e6befc7fc62c2a65b5df2f3acdd3",
+    "baseline_sha256": "882ff630846bf8e6ae7445090830902b413f9cf5574580a2ee46f192adc7cacc",
+    "state_action_artifact_sha256": "043eb7c7f9ce3e8f36df4a326588df5807232babe02b22aeae8754de2c7395d3",
+    "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+    "observation_schema_sha256": "8cea3ef1a80d90d475227a49dda6f15143305c3452663e917e20f6805b866021",
+    "control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+    "actor_residual_target_scale": 0.25,
+    "previous_action_observation_retained": true,
+    "state_observation_retained": true
+  },
+  "control_contract_static_path": "RL/configs/b4_residual_smoke/control_contract_static_v2.json",
+  "resolved_control_contract_path": "RL/data/resolved_control_contract_state20_600s_v3.json",
+  "control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+  "logging": {
+    "mode": "compact_streaming",
+    "quantile_sample_capacity": 2048,
+    "event_ring_capacity": 512,
+    "episode_ring_capacity": 128,
+    "queue_condition_ring_capacity": 512,
+    "queue_condition_max_record_bytes": 524288,
+    "queue_condition_summaries_max_total_bytes": 268435456,
+    "queue_event_pre_frames": 25,
+    "queue_event_post_frames": 25,
+    "queue_event_window_capacity": 16,
+    "queue_event_window_max_record_bytes": 262144,
+    "queue_event_windows_max_total_bytes": 536870912,
+    "debug_long_form_enabled": false,
+    "debug_max_rows": 0,
+    "debug_max_bytes": 0
+  },
+  "load_predictor": {
+    "backend": "physical_fir_v2",
+    "mode": "shadow",
+    "nn_active": false,
+    "bundle_path": "RL/configs/physical_shadow_state20_v1_final_checked/physical_load_shadow_bundle.json",
+    "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+    "evaluation_reference": {
+      "path": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json",
+      "file_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+      "time_window_s": [
+        0.0,
+        600.0
+      ]
+    },
+    "origin_stride_frames": 5,
+    "worker_queue_capacity": 256,
+    "condition_record_capacity": 16384,
+    "max_records": 250000,
+    "max_record_bytes": 32768,
+    "max_total_bytes": 1073741824,
+    "authorization": {
+      "mode": "shadow_development_only",
+      "policy_acceptance": false,
+      "soft_authorized": false,
+      "hard_authorized": false,
+      "counterfactual_validation": false,
+      "rl_margin_coverage_authorized": false
+    }
+  },
+  "queue": {
+    "manifest_path": "RL/configs/physical_shadow_state20_v1_final_checked/state20_physical_4wind_1round_600s_frozen_diagnostic_manifest.json",
+    "execution_mode": "independent_case_reload",
+    "condition_ids": [
+      8,
+      11,
+      12,
+      16
+    ],
+    "total_condition_rounds": 1,
+    "train_sim_s": 600.0,
+    "train_sim_tolerance_s": 0.1,
+    "condition_checkpoint_count": 1,
+    "skip_failed_condition_on_train_timeout": true,
+    "require_zero_skipped_conditions_for_updates": true,
+    "require_zero_retried_condition_attempts_for_updates": true,
+    "abort_on_retried_condition_attempt": true,
+    "reconcile_verified_physical_skip": false,
+    "case_identity_validation": {
+      "enabled": true,
+      "validation_level": "strict",
+      "paired_pid_reference_path": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json",
+      "fixed_simulation_time_offset_s": 0.0,
+      "wind_absolute_tolerance": 0.01,
+      "time_absolute_tolerance_s": 1e-06
+    },
+    "critic_start_after_rounds": 1,
+    "actor_start_after_rounds": 1,
+    "collect_exploration_noise": 0.0,
+    "critic_exploration_noise": 0.0,
+    "actor_exploration_noise": 0.0,
+    "residual_scale_diagnostic": 1.0
+  },
+  "state20_queue_contract": {
+    "schema_version": "state20_queue_training_contract_v1",
+    "profile": "4wind_1round_600s_frozen_diagnostic",
+    "condition_ids": [
+      8,
+      11,
+      12,
+      16
+    ],
+    "rounds": 1,
+    "train_sim_s": 600.0,
+    "expected_scheduled_updates": 0,
+    "paired_reference_path": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json",
+    "paired_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+    "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+    "bc_warmstart_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+    "observation_width": 20,
+    "predictor_mode": "shadow",
+    "identity_validation_level": "strict",
+    "policy_acceptance": false,
+    "predictor_backend": "physical_fir_v2"
+  },
+  "physical_shadow_launch": {
+    "authorized": false,
+    "evidence_path": null,
+    "evidence_sha256": null,
+    "decision": "BLOCKED_PENDING_OFFLINE_WINDOWS_PROVENANCE_TARGET_AND_V1_EVIDENCE",
+    "required_gates": [
+      "offline_physical_shadow",
+      "windows_loaded_release_x64_dll",
+      "queue_v2_dynamic_rounds_and_terminal_frame",
+      "engineering_and_action_provenance",
+      "target_shadow_latency_and_resource_budget",
+      "overall_v1_permission"
+    ]
+  },
+  "physical_shadow_run_role": {
+    "stage": "frozen_policy_development_diagnostic",
+    "independent_audit": false,
+    "new_independent_seed": false,
+    "policy_acceptance": false,
+    "soft_enabled": false,
+    "hard_enabled": false
+  }
+}

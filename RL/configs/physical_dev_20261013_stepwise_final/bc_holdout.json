@@ -1,0 +1,21 @@
+{
+  "schema_version": "b4_residual_bc_holdout_v1",
+  "split": "val",
+  "samples": 90003,
+  "normalized_residual_mae": [
+    0.05567878112196922,
+    0.03584585338830948
+  ],
+  "normalized_residual_rmse": [
+    0.0712849572300911,
+    0.053945064544677734
+  ],
+  "normalized_residual_abs_error_p95": [
+    0.14245416522026058,
+    0.11754565611481664
+  ],
+  "predicted_abs_p99": [
+    0.053457220345735544,
+    0.03843078546226022
+  ]
+}

@@ -1,0 +1,953 @@
+{
+  "schema_version": "s2_u1_pid_envelope_v1",
+  "metadata": {
+    "data_schema_version": "bladed_udp_19_si_my_v1",
+    "source_role": "raw_pid_calibration",
+    "source_data_root": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw",
+    "input_manifest_sha256": "98744cb2a89909e48143faac595a396d3c16127155b8875efd4bd4909d6033f8",
+    "condition_ids": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "condition_count": 23,
+    "rows_total": 690023,
+    "eligible_rows_total": 665903,
+    "operating_state_contract_version": "wind_turbine_operating_state_v1",
+    "causal_acceleration": "backward_difference_current_and_previous_sample",
+    "online_load_signal_available": false,
+    "load_role": "offline_envelope_audit_only",
+    "emergency_threshold_rad_s": 0.4,
+    "emergency_threshold_source": "engineering_prior_not_observed_in_eligible_pid_rows",
+    "formal_closed_loop_acceptance": false
+  },
+  "control_defaults": {
+    "pitch_protection_mode": "dynamic_pid_envelope",
+    "low_speed_protection_mode": "pid_envelope_staged",
+    "s2_u1_calibration_path": "RL/data/s2_u1_pid_envelope_3_to_25.json",
+    "low_speed_warning_torque_scale": 0.9,
+    "low_speed_protection_torque_scale": 0.7,
+    "low_rotor_speed_unload_torque": 0.0
+  },
+  "schedule": [
+    {
+      "condition_id": 3,
+      "wind_speed": 3.0,
+      "eligible_rows": 12067,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.53122097797,
+        "rotor_speed_release_rad_s": 0.5292769431,
+        "power_enter_w": 540610.53954,
+        "power_release_w": 482625.3282,
+        "acceleration_enter_rad_s2": 0.01815658649997655,
+        "acceleration_release_rad_s2": 0.004899500000002327,
+        "pitch_p05_rad": 0.0610865206,
+        "blade_root_abs_p995_nm": 14300393.25
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.51654066964,
+        "protection_speed_rad_s": 0.515957366766,
+        "recovery_speed_rad_s": 0.51762652896,
+        "warning_acceleration_rad_s2": -0.01918079649999983,
+        "protection_acceleration_rad_s2": -0.023444909300021206,
+        "pid_torque_p05_nm": 220349.5606
+      }
+    },
+    {
+      "condition_id": 4,
+      "wind_speed": 4.0,
+      "eligible_rows": 24865,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.53777838476,
+        "rotor_speed_release_rad_s": 0.5327138182,
+        "power_enter_w": 2430670.1200000043,
+        "power_release_w": 1864525.6279999998,
+        "acceleration_enter_rad_s2": 0.01736998199998084,
+        "acceleration_release_rad_s2": 0.004324300000006545,
+        "pitch_p05_rad": 0.04050059322,
+        "blade_root_abs_p995_nm": 20752754.72
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.41051868684,
+        "protection_speed_rad_s": 0.408840654688,
+        "recovery_speed_rad_s": 0.51086332764,
+        "warning_acceleration_rad_s2": -0.022900226000000762,
+        "protection_acceleration_rad_s2": -0.05121743119999899,
+        "pid_torque_p05_nm": 404669.36199999996
+      }
+    },
+    {
+      "condition_id": 5,
+      "wind_speed": 5.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.547975898,
+        "rotor_speed_release_rad_s": 0.5404643415,
+        "power_enter_w": 3619808.9375,
+        "power_release_w": 2983403.875,
+        "acceleration_enter_rad_s2": 0.020568050000005424,
+        "acceleration_release_rad_s2": 0.005537300000002814,
+        "pitch_p05_rad": 0.020485674000000002,
+        "blade_root_abs_p995_nm": 27953682.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.44934850925,
+        "protection_speed_rad_s": 0.4475688727,
+        "recovery_speed_rad_s": 0.467398643,
+        "warning_acceleration_rad_s2": -0.02240241250000438,
+        "protection_acceleration_rad_s2": -0.031392132499944596,
+        "pid_torque_p05_nm": 1231067.815
+      }
+    },
+    {
+      "condition_id": 6,
+      "wind_speed": 6.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.5638299435,
+        "rotor_speed_release_rad_s": 0.5435881915,
+        "power_enter_w": 4978213.25,
+        "power_release_w": 4377279.25,
+        "acceleration_enter_rad_s2": 0.024438612500016364,
+        "acceleration_release_rad_s2": 0.006076699999997986,
+        "pitch_p05_rad": 1.9184980750000003e-15,
+        "blade_root_abs_p995_nm": 34896208.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.48884385799999996,
+        "protection_speed_rad_s": 0.4867937659,
+        "recovery_speed_rad_s": 0.492862046,
+        "warning_acceleration_rad_s2": -0.02333073749995405,
+        "protection_acceleration_rad_s2": -0.02730009249998796,
+        "pid_torque_p05_nm": 1821084.0
+      }
+    },
+    {
+      "condition_id": 7,
+      "wind_speed": 7.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.67316283325,
+        "rotor_speed_release_rad_s": 0.6347643734999999,
+        "power_enter_w": 8244352.5,
+        "power_release_w": 7212022.25,
+        "acceleration_enter_rad_s2": 0.026347500000003736,
+        "acceleration_release_rad_s2": 0.006519250000001827,
+        "pitch_p05_rad": 0.0,
+        "blade_root_abs_p995_nm": 45637197.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.4934553875,
+        "protection_speed_rad_s": 0.4926201301,
+        "recovery_speed_rad_s": 0.496676654,
+        "warning_acceleration_rad_s2": -0.02504286250000569,
+        "protection_acceleration_rad_s2": -0.030980719999944888,
+        "pid_torque_p05_nm": 4581652.5
+      }
+    },
+    {
+      "condition_id": 8,
+      "wind_speed": 8.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.70646980375,
+        "rotor_speed_release_rad_s": 0.6854184864999999,
+        "power_enter_w": 9652285.0,
+        "power_release_w": 9240405.0,
+        "acceleration_enter_rad_s2": 0.03684911250003163,
+        "acceleration_release_rad_s2": 0.009250625000012478,
+        "pitch_p05_rad": -0.0,
+        "blade_root_abs_p995_nm": 51893534.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.49865074425,
+        "protection_speed_rad_s": 0.49537810065,
+        "recovery_speed_rad_s": 0.502833545,
+        "warning_acceleration_rad_s2": -0.03923996249997971,
+        "protection_acceleration_rad_s2": -0.04830568499997467,
+        "pid_torque_p05_nm": 8671517.5
+      }
+    },
+    {
+      "condition_id": 9,
+      "wind_speed": 9.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8094854655,
+        "rotor_speed_release_rad_s": 0.7798291145,
+        "power_enter_w": 14834851.5,
+        "power_release_w": 13948510.5,
+        "acceleration_enter_rad_s2": 0.04342048750003915,
+        "acceleration_release_rad_s2": 0.010505349999999105,
+        "pitch_p05_rad": -0.0,
+        "blade_root_abs_p995_nm": 60278137.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.531955853,
+        "protection_speed_rad_s": 0.53028508085,
+        "recovery_speed_rad_s": 0.541266143,
+        "warning_acceleration_rad_s2": -0.042266387499992675,
+        "protection_acceleration_rad_s2": -0.051612889999973384,
+        "pid_torque_p05_nm": 9691741.0
+      }
+    },
+    {
+      "condition_id": 10,
+      "wind_speed": 10.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8169766365,
+        "rotor_speed_release_rad_s": 0.8065855505,
+        "power_enter_w": 15102708.5,
+        "power_release_w": 15015149.5,
+        "acceleration_enter_rad_s2": 0.05641356250003012,
+        "acceleration_release_rad_s2": 0.01437217499995101,
+        "pitch_p05_rad": -5.90628571e-31,
+        "blade_root_abs_p995_nm": 63982278.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.643030241,
+        "protection_speed_rad_s": 0.63987164185,
+        "recovery_speed_rad_s": 0.649578571,
+        "warning_acceleration_rad_s2": -0.057284537500051275,
+        "protection_acceleration_rad_s2": -0.07116899250006531,
+        "pid_torque_p05_nm": 13628356.0
+      }
+    },
+    {
+      "condition_id": 11,
+      "wind_speed": 11.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8625242857500001,
+        "rotor_speed_release_rad_s": 0.837207228,
+        "power_enter_w": 15128627.25,
+        "power_release_w": 15070746.5,
+        "acceleration_enter_rad_s2": 0.06367192500000848,
+        "acceleration_release_rad_s2": 0.016406200000014182,
+        "pitch_p05_rad": 0.0,
+        "blade_root_abs_p995_nm": 64954008.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.674308628,
+        "protection_speed_rad_s": 0.67209151685,
+        "recovery_speed_rad_s": 0.686442375,
+        "warning_acceleration_rad_s2": -0.06391854999996455,
+        "protection_acceleration_rad_s2": -0.07720425249995769,
+        "pid_torque_p05_nm": 15819329.0
+      }
+    },
+    {
+      "condition_id": 12,
+      "wind_speed": 12.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8369802085,
+        "rotor_speed_release_rad_s": 0.8252469,
+        "power_enter_w": 15162644.0,
+        "power_release_w": 15097409.0,
+        "acceleration_enter_rad_s2": 0.07194952500006757,
+        "acceleration_release_rad_s2": 0.01845657500000409,
+        "pitch_p05_rad": 0.0029061471550000002,
+        "blade_root_abs_p995_nm": 65820171.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.73898963625,
+        "protection_speed_rad_s": 0.73653536455,
+        "recovery_speed_rad_s": 0.747739196,
+        "warning_acceleration_rad_s2": -0.07144136250003892,
+        "protection_acceleration_rad_s2": -0.08301063499995848,
+        "pid_torque_p05_nm": 18563679.0
+      }
+    },
+    {
+      "condition_id": 13,
+      "wind_speed": 13.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.843488127,
+        "rotor_speed_release_rad_s": 0.8232432304999999,
+        "power_enter_w": 15146955.25,
+        "power_release_w": 15094488.0,
+        "acceleration_enter_rad_s2": 0.06714091250001694,
+        "acceleration_release_rad_s2": 0.017449250000017062,
+        "pitch_p05_rad": 0.0310646277,
+        "blade_root_abs_p995_nm": 59035777.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.71962270125,
+        "protection_speed_rad_s": 0.7160436362999999,
+        "recovery_speed_rad_s": 0.729397357,
+        "warning_acceleration_rad_s2": -0.06826370000004994,
+        "protection_acceleration_rad_s2": -0.08533121250006816,
+        "pid_torque_p05_nm": 19552817.0
+      }
+    },
+    {
+      "condition_id": 14,
+      "wind_speed": 14.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8438871502499999,
+        "rotor_speed_release_rad_s": 0.8228950205,
+        "power_enter_w": 15155942.0,
+        "power_release_w": 15099157.0,
+        "acceleration_enter_rad_s2": 0.07472261250005746,
+        "acceleration_release_rad_s2": 0.020392250000007602,
+        "pitch_p05_rad": 0.05688901615,
+        "blade_root_abs_p995_nm": 55636346.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.72410072375,
+        "protection_speed_rad_s": 0.7206395564,
+        "recovery_speed_rad_s": 0.737302244,
+        "warning_acceleration_rad_s2": -0.07800683749996268,
+        "protection_acceleration_rad_s2": -0.09486109750008793,
+        "pid_torque_p05_nm": 19604281.0
+      }
+    },
+    {
+      "condition_id": 15,
+      "wind_speed": 15.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.82486544575,
+        "rotor_speed_release_rad_s": 0.8157791195,
+        "power_enter_w": 15193988.5,
+        "power_release_w": 15119203.5,
+        "acceleration_enter_rad_s2": 0.09571237499981608,
+        "acceleration_release_rad_s2": 0.02423524999999492,
+        "pitch_p05_rad": 0.101968091,
+        "blade_root_abs_p995_nm": 51569741.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.74775661525,
+        "protection_speed_rad_s": 0.7447230815,
+        "recovery_speed_rad_s": 0.752430558,
+        "warning_acceleration_rad_s2": -0.09572357499988099,
+        "protection_acceleration_rad_s2": -0.1150362349999458,
+        "pid_torque_p05_nm": 19774918.0
+      }
+    },
+    {
+      "condition_id": 16,
+      "wind_speed": 16.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8263634595,
+        "rotor_speed_release_rad_s": 0.8175316155,
+        "power_enter_w": 15175640.0,
+        "power_release_w": 15109723.5,
+        "acceleration_enter_rad_s2": 0.08626655000005032,
+        "acceleration_release_rad_s2": 0.02289712499998702,
+        "pitch_p05_rad": 0.11491682,
+        "blade_root_abs_p995_nm": 50700048.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.75261721025,
+        "protection_speed_rad_s": 0.7479453209,
+        "recovery_speed_rad_s": 0.758944631,
+        "warning_acceleration_rad_s2": -0.0878013624999452,
+        "protection_acceleration_rad_s2": -0.10605764000008742,
+        "pid_torque_p05_nm": 19732906.0
+      }
+    },
+    {
+      "condition_id": 17,
+      "wind_speed": 17.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8392112855,
+        "rotor_speed_release_rad_s": 0.8234347104999999,
+        "power_enter_w": 15208950.0,
+        "power_release_w": 15128974.0,
+        "acceleration_enter_rad_s2": 0.09951591250007619,
+        "acceleration_release_rad_s2": 0.025618074999977918,
+        "pitch_p05_rad": 0.1489832105,
+        "blade_root_abs_p995_nm": 48267033.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.7546898875000001,
+        "protection_speed_rad_s": 0.75145267225,
+        "recovery_speed_rad_s": 0.759025276,
+        "warning_acceleration_rad_s2": -0.10121988750001652,
+        "protection_acceleration_rad_s2": -0.11771884499993025,
+        "pid_torque_p05_nm": 19599510.0
+      }
+    },
+    {
+      "condition_id": 18,
+      "wind_speed": 18.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.83030679825,
+        "rotor_speed_release_rad_s": 0.8217777015000001,
+        "power_enter_w": 15186429.75,
+        "power_release_w": 15116081.5,
+        "acceleration_enter_rad_s2": 0.09910390000007521,
+        "acceleration_release_rad_s2": 0.024867050000006947,
+        "pitch_p05_rad": 0.1598588005,
+        "blade_root_abs_p995_nm": 48022964.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.726981223,
+        "protection_speed_rad_s": 0.72164305705,
+        "recovery_speed_rad_s": 0.754008234,
+        "warning_acceleration_rad_s2": -0.09610728750002011,
+        "protection_acceleration_rad_s2": -0.11703106750009835,
+        "pid_torque_p05_nm": 19628424.0
+      }
+    },
+    {
+      "condition_id": 19,
+      "wind_speed": 19.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.82936036625,
+        "rotor_speed_release_rad_s": 0.8205955625,
+        "power_enter_w": 15215867.5,
+        "power_release_w": 15137785.0,
+        "acceleration_enter_rad_s2": 0.10614618750007321,
+        "acceleration_release_rad_s2": 0.028777099999984502,
+        "pitch_p05_rad": 0.185616009,
+        "blade_root_abs_p995_nm": 48423217.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.74660465075,
+        "protection_speed_rad_s": 0.7418388190499999,
+        "recovery_speed_rad_s": 0.753741682,
+        "warning_acceleration_rad_s2": -0.11029021250009746,
+        "protection_acceleration_rad_s2": -0.13191271999976334,
+        "pid_torque_p05_nm": 19673217.0
+      }
+    },
+    {
+      "condition_id": 20,
+      "wind_speed": 20.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8359623995,
+        "rotor_speed_release_rad_s": 0.8268073499999999,
+        "power_enter_w": 15224985.5,
+        "power_release_w": 15137410.5,
+        "acceleration_enter_rad_s2": 0.10705292500009811,
+        "acceleration_release_rad_s2": 0.02857000000001582,
+        "pitch_p05_rad": 0.2056623775,
+        "blade_root_abs_p995_nm": 45902979.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.739876166,
+        "protection_speed_rad_s": 0.73626957235,
+        "recovery_speed_rad_s": 0.745550513,
+        "warning_acceleration_rad_s2": -0.10990052500007974,
+        "protection_acceleration_rad_s2": -0.1358652250001275,
+        "pid_torque_p05_nm": 19502748.0
+      }
+    },
+    {
+      "condition_id": 21,
+      "wind_speed": 21.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8475402595,
+        "rotor_speed_release_rad_s": 0.8279671665,
+        "power_enter_w": 15246312.5,
+        "power_release_w": 15152744.0,
+        "acceleration_enter_rad_s2": 0.12263058749976438,
+        "acceleration_release_rad_s2": 0.03147572499991877,
+        "pitch_p05_rad": 0.2364049335,
+        "blade_root_abs_p995_nm": 43458623.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.743117079,
+        "protection_speed_rad_s": 0.7402181025,
+        "recovery_speed_rad_s": 0.748889744,
+        "warning_acceleration_rad_s2": -0.12123063750002516,
+        "protection_acceleration_rad_s2": -0.14544009750012393,
+        "pid_torque_p05_nm": 19480822.0
+      }
+    },
+    {
+      "condition_id": 22,
+      "wind_speed": 22.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.8480425629999999,
+        "rotor_speed_release_rad_s": 0.825406522,
+        "power_enter_w": 15256033.5,
+        "power_release_w": 15158046.0,
+        "acceleration_enter_rad_s2": 0.12218203750002588,
+        "acceleration_release_rad_s2": 0.031949575000015884,
+        "pitch_p05_rad": 0.24515692900000002,
+        "blade_root_abs_p995_nm": 43242743.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.7440940145,
+        "protection_speed_rad_s": 0.74038931435,
+        "recovery_speed_rad_s": 0.750049412,
+        "warning_acceleration_rad_s2": -0.12385767500011242,
+        "protection_acceleration_rad_s2": -0.15097989250001584,
+        "pid_torque_p05_nm": 19550788.0
+      }
+    },
+    {
+      "condition_id": 23,
+      "wind_speed": 23.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.84593816125,
+        "rotor_speed_release_rad_s": 0.828690976,
+        "power_enter_w": 15265097.5,
+        "power_release_w": 15165979.5,
+        "acceleration_enter_rad_s2": 0.12804715000008504,
+        "acceleration_release_rad_s2": 0.03425329999998307,
+        "pitch_p05_rad": 0.27101796850000004,
+        "blade_root_abs_p995_nm": 45256836.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.7445428672500001,
+        "protection_speed_rad_s": 0.73822017915,
+        "recovery_speed_rad_s": 0.754448593,
+        "warning_acceleration_rad_s2": -0.13111011250009647,
+        "protection_acceleration_rad_s2": -0.15508544250011877,
+        "pid_torque_p05_nm": 19467872.0
+      }
+    },
+    {
+      "condition_id": 24,
+      "wind_speed": 24.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.85927818675,
+        "rotor_speed_release_rad_s": 0.839073628,
+        "power_enter_w": 15287558.5,
+        "power_release_w": 15182369.5,
+        "acceleration_enter_rad_s2": 0.13911870000007592,
+        "acceleration_release_rad_s2": 0.03646762500001015,
+        "pitch_p05_rad": 0.289353296,
+        "blade_root_abs_p995_nm": 40864609.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.73201075175,
+        "protection_speed_rad_s": 0.7268917081,
+        "recovery_speed_rad_s": 0.745158732,
+        "warning_acceleration_rad_s2": -0.14326425000007909,
+        "protection_acceleration_rad_s2": -0.17725554250013506,
+        "pid_torque_p05_nm": 19227598.0
+      }
+    },
+    {
+      "condition_id": 25,
+      "wind_speed": 25.0,
+      "eligible_rows": 29951,
+      "s2": {
+        "rotor_speed_enter_rad_s": 0.84665361025,
+        "rotor_speed_release_rad_s": 0.8305268285,
+        "power_enter_w": 15283104.0,
+        "power_release_w": 15176233.5,
+        "acceleration_enter_rad_s2": 0.13608264999997832,
+        "acceleration_release_rad_s2": 0.036332000000033074,
+        "pitch_p05_rad": 0.305928916,
+        "blade_root_abs_p995_nm": 38703281.0
+      },
+      "u1": {
+        "warning_speed_rad_s": 0.72134608,
+        "protection_speed_rad_s": 0.7059007737,
+        "recovery_speed_rad_s": 0.738526106,
+        "warning_acceleration_rad_s2": -0.13413876249974171,
+        "protection_acceleration_rad_s2": -0.164252182500147,
+        "pid_torque_p05_nm": 19428157.0
+      }
+    }
+  ],
+  "sources": [
+    {
+      "condition_id": 3,
+      "path": "bladed-data-new/raw/data_windspeed3.csv",
+      "filename": "data_windspeed3.csv",
+      "sha256": "758798423765c1678e641e6ebd1887378cc8d4d5a5918f8785c4b56a330c7d55",
+      "rows": 30001,
+      "eligible_rows": 12067,
+      "operating_state_counts": {
+        "startup_cut_in": 5859,
+        "normal_generation": 12067,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 12075,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 4,
+      "path": "bladed-data-new/raw/data_windspeed4.csv",
+      "filename": "data_windspeed4.csv",
+      "sha256": "1be888f0863885bd9129af0359fe886e9f317ef518166816898777a3e5bcda23",
+      "rows": 30001,
+      "eligible_rows": 24865,
+      "operating_state_counts": {
+        "startup_cut_in": 170,
+        "normal_generation": 24865,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 4966,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 5,
+      "path": "bladed-data-new/raw/data_windspeed5.csv",
+      "filename": "data_windspeed5.csv",
+      "sha256": "84f6368b03a2520ba6f75eb3c6859f351c2ef56248c7a9ae4b8c8b51402b739b",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29951,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 6,
+      "path": "bladed-data-new/raw/data_windspeed6.csv",
+      "filename": "data_windspeed6.csv",
+      "sha256": "f2c602b7732e76cc3d8e4e16a1cadb2605dded3069ea39d1d9aaf5954c8991e6",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29951,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 7,
+      "path": "bladed-data-new/raw/data_windspeed7.csv",
+      "filename": "data_windspeed7.csv",
+      "sha256": "b4c3f0945891956321c37fab0b3c11a07df288c393df8e890a00b0a050bb6796",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29951,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 8,
+      "path": "bladed-data-new/raw/data_windspeed8.csv",
+      "filename": "data_windspeed8.csv",
+      "sha256": "2e7bad3104dab0d85ca7b8175b635519b751405c0c110339681292e0ba82dbe5",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29719,
+        "transition": 232,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 9,
+      "path": "bladed-data-new/raw/data_windspeed9.csv",
+      "filename": "data_windspeed9.csv",
+      "sha256": "0c86931e99acaecb4e7701c25a9546517c7c071e41ff874bc92f080695f7418f",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29685,
+        "transition": 266,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 10,
+      "path": "bladed-data-new/raw/data_windspeed10.csv",
+      "filename": "data_windspeed10.csv",
+      "sha256": "166b5d88e9fa236fcec5e688983afd0fae15121f937976d6d015b3230a9544b6",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 25080,
+        "transition": 4871,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 11,
+      "path": "bladed-data-new/raw/data_windspeed11.csv",
+      "filename": "data_windspeed11.csv",
+      "sha256": "3e0f52f616411d755e654f8c25e3d42a11ec38172434940f7cefc9da8460abe4",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 15075,
+        "transition": 14374,
+        "above_rated_regulation": 502,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 12,
+      "path": "bladed-data-new/raw/data_windspeed12.csv",
+      "filename": "data_windspeed12.csv",
+      "sha256": "37ce1f7fc4bb2ec9f888ef96f067d5be2708b823fb08fb422c5d41fad3542843",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 10024,
+        "transition": 13829,
+        "above_rated_regulation": 6098,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 13,
+      "path": "bladed-data-new/raw/data_windspeed13.csv",
+      "filename": "data_windspeed13.csv",
+      "sha256": "a9f288bd53f397cc699e43ca40e9fec5e04bd00baea8a8758584f4aac1399ebe",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 3851,
+        "transition": 17254,
+        "above_rated_regulation": 8846,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 14,
+      "path": "bladed-data-new/raw/data_windspeed14.csv",
+      "filename": "data_windspeed14.csv",
+      "sha256": "5ea45829e36703c5ead94316bb8956329f61b781231a6f73d9f242522eb0d03d",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 1808,
+        "transition": 7723,
+        "above_rated_regulation": 20420,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 15,
+      "path": "bladed-data-new/raw/data_windspeed15.csv",
+      "filename": "data_windspeed15.csv",
+      "sha256": "cb1b6c44002de4b5a76b7c58c8036470a0fcca087e70c1df9f23c5e30730599b",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 303,
+        "transition": 4464,
+        "above_rated_regulation": 25184,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 16,
+      "path": "bladed-data-new/raw/data_windspeed16.csv",
+      "filename": "data_windspeed16.csv",
+      "sha256": "a4ab2e4ffc3ff5993f402a9c99e9f700e7627761db4a87f6d0c1dadb93941428",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 1644,
+        "above_rated_regulation": 28307,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 17,
+      "path": "bladed-data-new/raw/data_windspeed17.csv",
+      "filename": "data_windspeed17.csv",
+      "sha256": "b22f02d71c2f3eca812af946e19e5c1bd683a145c18042c5a2b7685f6a625606",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 1257,
+        "above_rated_regulation": 28694,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 18,
+      "path": "bladed-data-new/raw/data_windspeed18.csv",
+      "filename": "data_windspeed18.csv",
+      "sha256": "46c95f1bf98ac70cfdaf0b73a23f90a43687a5dcba345c01bc19d1cde75c1166",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 646,
+        "above_rated_regulation": 29305,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 19,
+      "path": "bladed-data-new/raw/data_windspeed19.csv",
+      "filename": "data_windspeed19.csv",
+      "sha256": "c6c28a087ff2a7035a044c32d6c6a6b020ddb8af7393e43c1116a10c32b112eb",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 20,
+      "path": "bladed-data-new/raw/data_windspeed20.csv",
+      "filename": "data_windspeed20.csv",
+      "sha256": "09348fce7fec079ad93a15b497c2a5c4dc5df90d467447d6ce054052f125ca2b",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 21,
+      "path": "bladed-data-new/raw/data_windspeed21.csv",
+      "filename": "data_windspeed21.csv",
+      "sha256": "4f1551f390d539f87599589135c992e78e22594368c334a659f722a8c9f91afd",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 22,
+      "path": "bladed-data-new/raw/data_windspeed22.csv",
+      "filename": "data_windspeed22.csv",
+      "sha256": "bfb0366e4719d35f839b4c40ce9842383d492fe15e656954d5af79b2aa9968a4",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 23,
+      "path": "bladed-data-new/raw/data_windspeed23.csv",
+      "filename": "data_windspeed23.csv",
+      "sha256": "0de096b8f986bc6f25e42fb417317926315d479ca1f74518af11b0ad76024752",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 24,
+      "path": "bladed-data-new/raw/data_windspeed24.csv",
+      "filename": "data_windspeed24.csv",
+      "sha256": "31428067d910847ae9c22d0d2af556f645574145af28f01468ee0277ca516cf2",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 25,
+      "path": "bladed-data-new/raw/data_windspeed25.csv",
+      "filename": "data_windspeed25.csv",
+      "sha256": "4bc9469061343ff8a44cd8547ef19715b31f7b19cdd8abc58d9cae05fc71e5ec",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    }
+  ]
+}

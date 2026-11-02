@@ -1,0 +1,117 @@
+一、RL模型所需变量
+
+（1）模型输入
+
+状态变量（9维）
+I_RotorAzimuth
+I_RotorSpeed
+I_YawError
+I_ElectricalTorque
+I_GeneratorSpeed
+I_RealPower
+I_PitchPosition1
+I_NacelleForeAftAcceleration
+I_NacelleSideSideAcceleratio
+扰动变量（1维）
+I_AverageWindSpeed
+功率 + 载荷变量（19维）
+Electrical power
+Blade root 1 Mxy
+Blade root 2 Mxy
+Blade root 3 Mxy
+Blade root 1 Mx
+Blade root 1 My
+Blade root 1 Mz
+Blade root 2 Mx
+Blade root 2 My
+Blade root 2 Mz
+Blade root 3 Mx
+Blade root 3 My
+Blade root 3 Mz
+Nacelle fore-aft acceleration
+Nacelle side-side acceleration
+Tower Mx
+Tower My
+Tower Mz
+Tower Myz
+
+---
+
+（2）模型输出
+
+O_PcsTorqueDemand
+O_PitchPositionDemand1
+
+二、目前UDP接口输入变量
+
+BLADED_CSV_HEADER = [
+    'Time',
+    'I_SpeedControlMode',
+    'I_SpeedControlSpeedSetpoint',
+    'I_SpeedControlPitchLimit',
+    'I_StartupTurbine',
+    'I_LowWindSpeed',
+    'I_NormalShutdown',
+    'I_AlgorithmReset',
+    'I_PcsVoltageDip',
+    'I_PcsVoltageDipTorqueLimit',
+    'I_GridLossShutdown',
+    'I_FastShutdown',
+    'I_PowerSetpointLimit',
+    'I_SpeedSetpointLimit',
+    'I_Watchdog',
+    'I_RotorAzimuth',
+    'I_RotorSpeed',
+    'I_AverageWindSpeed',
+    'I_YawError',
+    'I_PcsSynchronised',
+    'I_ElectricalTorque',
+    'I_GeneratorSpeed',
+    'I_RealPower',
+    'I_MinimumPitchAngle',
+    'I_AllBladesAtFeather',
+    'I_PitchPosition1',
+    'I_PitchPosition2',
+    'I_PitchPosition3',
+    'I_NacelleForeAftAcceleration',
+    'I_NacelleSideSideAcceleration',
+    'O_NormalShutdown',
+    'O_GridLossShutdown',
+    'O_FastShutdown',
+    'O_AutonomousFeather',
+    'O_SafetyTurbineShutdown',
+    'O_WaitForStartup',
+    'O_InPowerProduction',
+    'O_InLowWindSpeedMode',
+    'O_InSpeedControlMode',
+    'O_Watchdog',
+    'O_PcsSynchroniseRequest',
+    'O_PcsTorqueDemand',
+    'O_PitchPositionDemand1',
+    'O_PitchPositionDemand2',
+    'O_PitchPositionDemand3',
+    'O_PitchRateDemand1',
+    'O_PitchRateDemand2',
+    'O_PitchRateDemand3',
+    'Time from start of simulation',
+    'Electrical power',
+    'Measured shaft power',
+    'Blade root 1 Mxy',
+    'Blade root 2 Mxy',
+    'Blade root 3 Mxy',
+    'Blade root 1 Mx',
+    'Blade root 1 My',
+    'Blade root 1 Mz',
+    'Blade root 2 Mx',
+    'Blade root 2 My',
+    'Blade root 2 Mz',
+    'Blade root 3 Mx',
+    'Blade root 3 My',
+    'Blade root 3 Mz',
+    'Nacelle fore-aft acceleration',
+    'Nacelle side-side acceleration',
+    'Tower Mx',
+    'Tower My',
+    'Tower Mz',
+    'Tower Myz',
+]

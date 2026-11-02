@@ -1,0 +1,369 @@
+{
+  "manifest_format": "wind_turbine_unified_release_manifest",
+  "release_id": "WT15_STATE20_RL_20261023_R2",
+  "created_date": "2026-10-29",
+  "title": "15MW wind turbine state20 unified rounds-configurable physical-shadow training profile",
+  "release_status": "OFFLINE_DEVELOPMENT_CANDIDATE",
+  "release_ready": false,
+  "scope": {
+    "primary_route": "state20 + state/region-conditioned B4 residual + frozen BC warm-start + TD3+BC + SafeResidualController",
+    "physical_load_shadow": "physical_fir_v2 read-only shadow; no action/reward/replay effect",
+    "wind_conditions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "duration_s_per_slot": 600.0,
+    "rounds_default": 4,
+    "rounds_supported": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "rounds_maximum_reason": "18 GiB frozen physical-shadow worst-case record budget",
+    "default_slots": 92,
+    "observation_dimension": 20
+  },
+  "component_identities": {
+    "udp_data_contract": "bladed_udp_19_si_my_v1",
+    "queue_protocol": "bladed_udp_19_si_my_queue_v2",
+    "observation_contract": {
+      "name": "state20",
+      "dimension": 20,
+      "meaning": "20-dimensional observation contract; not a project release number"
+    },
+    "bc_actor": {
+      "artifact_label": "state20 BC v3",
+      "checkpoint_path": "RL/BC_checkpoint/bladed_pid_b4_state20_residual_v3.pt",
+      "checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+      "data_schema_version": "bladed_udp_19_si_my_v1",
+      "actor_control_fingerprint": "19e4efcd22a89bcd0781472b6ace1cdfd7d39f5af26c5dcd33ea1a56909474c3",
+      "control_fingerprint": "6105c880d32c9479d7d834db250d5fe59075227564086780c2fa794f1aeac942",
+      "config_path": "RL/configs/b4_residual_smoke/bc_pretrain_b4_state20_residual_600s_v3.json",
+      "config_sha256": "817f74c959c8b903a9d820ff49f1d9f27373e5a9e54892525565a571a0cabb11",
+      "template_path": "RL/configs/b4_residual_smoke/bc_pretrain_b4_state20_template_v3.json",
+      "template_sha256": "48fa32cce421af8dadf0346447e10a145e78e901be6053bc1b09a42c596f00e9"
+    },
+    "bc_dataset": {
+      "schema_version": "b4_centered_residual_bc_data_v2",
+      "manifest_path": "RL/data/b4_centered_residual_bc_state20_v2/manifest.json",
+      "manifest_sha256": "2aeeb621f7d954e6923146d223ceae94d8b6e6befc7fc62c2a65b5df2f3acdd3"
+    },
+    "b4_baseline": {
+      "artifact_label": "state20 B4 v3",
+      "path": "RL/data/region_aware_joint_baseline_state20_3_to_25_v3.json",
+      "sha256": "882ff630846bf8e6ae7445090830902b413f9cf5574580a2ee46f192adc7cacc"
+    },
+    "state_action_envelope": {
+      "artifact_label": "state/action envelope v1",
+      "path": "RL/data/state_action_envelope_3_to_25_v1.json",
+      "sha256": "043eb7c7f9ce3e8f36df4a326588df5807232babe02b22aeae8754de2c7395d3"
+    },
+    "resolved_control_contract": {
+      "fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+      "path": "RL/data/resolved_control_contract_state20_600s_v3.json",
+      "file_sha256": "37fcec492ad7d624c594a1b91d0681374bd714e3557081edee48e11cda41e6b3",
+      "static_contract_path": "RL/configs/b4_residual_smoke/control_contract_static_v2.json",
+      "static_contract_sha256": "a84f94708e89f352e96ac6a23caf01592a40208e52216706bedf2e236e05ffad"
+    },
+    "load_predictor_interface": {
+      "schema_version": "causal_load_predictor_interface_v3",
+      "path": "RL/data/load_predictor_interface_v3.json",
+      "sha256": "a0cae1fa44ebf77f301eb0f8a814530d4d4a7b1ab6ea0a7a57377dbf436cd4a8"
+    },
+    "load_predictor_dataset": {
+      "schema_version": "load_predictor_dataset_v2",
+      "manifest_path": "RL/data/load_predictor_dataset_state20_stride10_v2/manifest.json",
+      "manifest_sha256": "629c576d72fa956839a1d8e0a411c350ee90ee50f83a4d0e22b046d0c81d29cf"
+    },
+    "paired_pid_reference_600s": {
+      "path": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json",
+      "sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2"
+    },
+    "paired_pid_reference_180s": {
+      "path": "RL/data/paired_pid_power_load_reference_3_to_25_180s_v2.json",
+      "sha256": "e483c5d6cdf9eca7a3afeb89b0af105663f296bfbfc3d2a5ff6cd66d3e85ab7f"
+    },
+    "physical_load_shadow": {
+      "backend": "physical_fir_v2",
+      "bundle_schema": "physical_load_shadow_bundle_v1",
+      "runtime_schema": "physical_load_shadow_runtime_v1",
+      "bundle_path": "RL/configs/WT15_STATE20_RL_20261023_R2/physical_load_shadow_bundle.json",
+      "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+      "d0r_dynamic_model_schema": "causal_fir_load_increment_v2",
+      "d0r_dynamic_model_path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_dynamic_model.json",
+      "d0r_dynamic_model_file_sha256": "2259297992ae6000e1a7a1a72dc52892edcf068522141d3001b8167931ff850e",
+      "d0r_dynamic_model_document_sha256": "c8286005ce23afc13490906461d80b87245d6bca72a10d2f7f71b53d41baad36",
+      "nn_active": false
+    }
+  },
+  "physical_shadow_dependencies": {
+    "frozen_base_protocol": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_base_protocol.json",
+      "file_sha256": "46fb7c3ae00b0639ee73e56f283151cb4354f62711cde535bd0d1431ff2fc370",
+      "document_sha256": "0f6d9d042700ed5d68b450a22776e8f2ce9093ba811c54ee9ce5d7a25d895ca6"
+    },
+    "frozen_development_protocol": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_protocol.json",
+      "file_sha256": "56fdbc3bd286ee8ddf9f2254d4301ed955d547757f60ef803f23350a8db8303f",
+      "document_sha256": "0cbd7ccea351940bea5d13c4fb7b16c1225e3472c4bf1365112d8d07e2c2956a"
+    },
+    "frozen_physics_model": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_physics_model.json",
+      "file_sha256": "aac590c95fb526d5f76161c2b3f9905ba99b3e0c461854eb367a03b180a0b754",
+      "document_sha256": "5dd028f12c1add598508aabb8ab7c7b0ef960c46cfd8f34c6b32cda4123bf4fa"
+    },
+    "frozen_dynamic_model": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_dynamic_model.json",
+      "file_sha256": "2259297992ae6000e1a7a1a72dc52892edcf068522141d3001b8167931ff850e",
+      "document_sha256": "c8286005ce23afc13490906461d80b87245d6bca72a10d2f7f71b53d41baad36"
+    },
+    "frozen_error_scales": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_error_scales.json",
+      "file_sha256": "813f7a42595611e8147f90a80f8a8c295f36678b9a60e643b3e402e896263720",
+      "document_sha256": "a15fc08ec2199c2a481012a6685489bee004401ce98a6e9ebb93d2d9478f3d2c"
+    },
+    "frozen_joint_calibration": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_joint_calibration.json",
+      "file_sha256": "41798f5b9bb8bbfb6c4099f61428702ab742a2f4737001037740de02b4f9e81b",
+      "document_sha256": "fc5f336eb3a3b3fb675a7af1b4a3242769b2877e200b0ae84e5d8ac6db7988b2e"
+    },
+    "source_development_report": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/report.json",
+      "file_sha256": "84403878bc8bc9dd38cd68eb8709ce4422d125e63938cb8536cf3009390378ea"
+    },
+    "engineering_project": {
+      "path": "bladed_env/15MW_rl.prj",
+      "file_sha256": "29b56f05f5cc82f5e7e699cd4be8e46da460c08a66d5da88db6f60b1308f9227"
+    }
+  },
+  "profiles": {
+    "primary_23wind_round600_training": {
+      "release_id": "WT15_STATE20_RL_20261023_R2",
+      "profile_name": "23wind_round600_training",
+      "config_path": "RL/configs/WT15_STATE20_RL_20261023_R2/state20_physical_23wind_round600_training.json",
+      "config_sha256": "573bb955b89bbb0fe8fd15d556df1279bfdff0649ff79b6bc1436d88ac901f74",
+      "queue_manifest_path": "RL/configs/WT15_STATE20_RL_20261023_R2/state20_physical_23wind_round600_training_manifest.json",
+      "queue_manifest_sha256": "ae42d33481036ee447c3dcce5c99c79decdaff8a37306192b44ef04042b402d5",
+      "profile_build_report_path": "RL/configs/WT15_STATE20_RL_20261023_R2/profile_build_report.json",
+      "profile_build_report_sha256": "7ced98387b987956ab534b37b71109e3c8da8814d982bad553b110d16b0a4e58",
+      "source_queue_profile_path": "RL/experiments/artifacts/state20_queue_profiles_operator_23wind_round600_v2/state20_23wind_round600_source.json",
+      "source_queue_profile_sha256": "bf22e4a4dd4e9716638f59d5f657c44dd2f64bf48fcdb90025252fdbe284cf4f",
+      "schedule_default": {
+        "wind_conditions": 23,
+        "rounds": 4,
+        "duration_s_per_slot": 600.0,
+        "slot_count": 92,
+        "rotation_stride": 7
+      },
+      "source_configured_rounds": 4,
+      "source_configured_slots": 92,
+      "runtime_identity": {
+        "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+        "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+        "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+        "bc_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "queue_manifest_sha256": "ae42d33481036ee447c3dcce5c99c79decdaff8a37306192b44ef04042b402d5",
+        "effective_runtime_config_sha256": "06077afbd8acafddedb18d28c731a173bbe4d132f52ec0195038aaefdf810cf0",
+        "execution_entry": "training",
+        "actor_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+        "baseline_only": false,
+        "execution_target": {
+          "host_identity_sha256": "d4fd596f0861ef3b0e4ae1b2b84cb45a6160967c1c9d9849863bcf100fc91915",
+          "system": "Linux",
+          "release": "7.0.0-30-generic",
+          "machine": "x86_64",
+          "processor": "x86_64",
+          "logical_cpu_count": 24,
+          "python_version": "3.11.15",
+          "numpy_version": "1.26.4",
+          "torch_version": "2.14.0.dev20260803+cu132",
+          "cuda_runtime": "13.2",
+          "device": "cuda:0",
+          "gpu": {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 5080",
+            "total_memory_bytes": 16575954944,
+            "capability": [
+              12,
+              0
+            ]
+          },
+          "torch_cpu_threads": 1,
+          "thread_environment": {
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "MKL_NUM_THREADS": "1"
+          }
+        },
+        "runtime_code_sha256": {
+          "RL/utils/physical_load_shadow_artifact.py": "0efeba2a092c7649c5f31ba8f9f1c4c4caf7b418031a099d49cdaac6f0fb3643",
+          "RL/utils/physical_load_shadow.py": "9abc161dd550d7699643415abbe0cf73150d7cbc0f18fc9425f7549c92889b31",
+          "RL/utils/physical_load_shadow_launch.py": "42d14f19646bdaec3fa7737397760e874facefd0fac0045f81d5563fcfd7d338",
+          "RL/utils/physical_load_margin.py": "7457174eba00bb3d358b31749c2ed33a8f420db6daa3f265c3b34327264e9898",
+          "RL/utils/physical_load_margin_dynamic.py": "4c423023edccfd0d3923c439bbd88e458c9c8100c7407032aef04b22d799ce0f",
+          "RL/train_rl.py": "9c88d5507bf2a6d842b7d1dd88d2af11db6abad238b62f4408cf5cb714ba67d0",
+          "RL/infer/run_bladed_inference.py": "2ec6b17b322070a629d01e121fac7213d97153137ac43403ca9d2e3178eb7228",
+          "RL/envs/wind_turbine_env.py": "97e3e1b9641142e98d69ca52871e540f13d95252fe82985a17f84cb37b6c67d4",
+          "RL/utils/operating_state.py": "7d23072c19b7348174c1ac7cffc1c4eb317a5a78323367d87809d9ef3e7e9ee3",
+          "RL/utils/safe_residual_control.py": "2648ab75cf0878aee8226ce9aa119a227f7f06540f0229ba11ab7229e4fdbf98",
+          "RL/utils/paired_pid_reference.py": "bf7d180af95e6d156a897ca6a0264ac75f83ee891f75c153429173e7935bfb61",
+          "RL/utils/queue_case_identity.py": "7e1bcdd3cadba774d0306b15673f08f1232a15ab9d3c49c2050c1bcba4cd8601",
+          "RL/utils/control_contract.py": "d18e7ab97c275a37b3e8ead11fd6fea5d1c14554f7bde73367c4ebe20f833cf2",
+          "RL/utils/constants.py": "2e196686d91bd43adb51a19364e1f8e918f3fe5ddb7c7347bd3ab071eb196b8b",
+          "RL/agents/td3.py": "56162072ccb7c24f1cb4054ff094f61c5ed89b43afda192a057f011d183a31b2",
+          "RL/models/actor_mlp.py": "ea8f1be4e230d965f642ac711e311f0652247949634b2d91cc336d5a35b829a4",
+          "RL/models/critic_mlp.py": "96522c8f1fe3ffea08e663d78499e7af96917c63c7c5ade15f0a1fb7f828b01d",
+          "RL/utils/reward.py": "5e4a2727842e78cc8c8e33e8cdd7740ce8b1c2807da1fc9001abfb6a963d8c74",
+          "RL/utils/region_aware_baseline.py": "1785371435be4b14d3c444e387c449bb9de1ac18a860685e70eae541e099f779",
+          "RL/utils/state_action_artifact.py": "dad0cc39cf10d3ad57c7099e0f5cc5a8926e2bb12fd53691b3a43f7336aed355",
+          "RL/utils/observation.py": "913bb361e40e8222659d6a637c844dd022d1eb87546aa39f6b60a75c330f795e",
+          "RL/utils/normalize.py": "f7e270897a5d23252461d432438365c48e85896e777474e95d9321717f6481ec",
+          "RL/utils/power_fields.py": "5ff2907a970c0bf38be00b1f0f51c4f693cee1bc3060bb5aa74ccb499292eac8",
+          "RL/utils/control_execution.py": "15fa4df34c2cca0c7ebe02bffaf5d3fbaac78de1a0e1ec6a0ea424e27c46a40a",
+          "RL/utils/critic_q_health.py": "095e082765e0552df6235699f66586e5318f0a9e077b94f71549aa0269a8d0fd",
+          "RL/utils/dual_constraint.py": "23bc7e9095f412834fbd342ae3b910d1ec911afbfb0d9f440878eeaacd3c9b8a",
+          "RL/utils/condition_queue.py": "82a3511e9403d38545d49a12d7b00d40716f0ad2f56f65fc17c8a406e5d38c3d",
+          "RL/utils/queue_manifest.py": "59fc9dca0bf94dc355f7710a5ccfdd27487fcd6503ac0d225c09b1a00ab55c78",
+          "RL/replay/replay_buffer.py": "51a2cf74ad194be4d44df39de04512a2e8ea257637672ef901756031856d9c7d",
+          "RL/utils/config.py": "ef8f5fa656cebc6a9e5da24db96192a22556c5178c883b25fbdbc289456459bc",
+          "RL/utils/set_seed.py": "d5c42fea97dd899788162728af6c66ba7b66671f49382a8e30a3aa3969e1fc44",
+          "RL/utils/logger.py": "a26c5794b6c53d17d08661d4eaab28e28aecb51ed0582130b016a37ece205312",
+          "RL/utils/physical_queue_schedule.py": "8c5d87904e6a43abfbc01b46131924b98982f7f20ab810ed296daf8332cac665",
+          "RL/prepare_physical_shadow_development.py": "b599ca071dcd4d65bb4476c852efac6b7057d1ad6a4d7c677dc748ae77ae1769",
+          "RL/build_physical_load_shadow_profiles.py": "cf0b1f4c78bfdd20d18af3af0a74baa7d5ebd864a6f6d3e663ba9897edd1f2d4",
+          "RL/evaluate_b4_residual_bc.py": "547a2b7c3357333d2b2dd610274633caacb192aa605424cc5fc2b3b2e44288af",
+          "RL/data/offline_dataset.py": "df0bee698fe163c115234bbe470c1b0650660f215c5ed4b03b5b921772233e9f"
+        },
+        "release_id": "WT15_STATE20_RL_20261023_R2",
+        "operator_23wind_preparation_code_sha256": {
+          "RL/build_state20_queue_configs.py": "10a26284c05aaa3d543c4790f6a5e127987d2b47f01ff1d76a1d6618ea6040ee",
+          "RL/build_physical_load_shadow_profiles.py": "cf0b1f4c78bfdd20d18af3af0a74baa7d5ebd864a6f6d3e663ba9897edd1f2d4",
+          "RL/evaluate_physical_load_shadow.py": "2cdf9d83ac759de1af7cafccc3b36c91ad84c6c07532a9144a093801fd19377e",
+          "RL/prepare_physical_operator_run.py": "dfa3ea45a12ffea376e52a00e7ef9151deadc866469e1d6462fbe62b01b9c560",
+          "RL/finalize_physical_operator_run.py": "4cfa850c281adf0ad26bf22b4985c2bdacd74cc5a0990ce814bf5ccbc03ffab3",
+          "RL/utils/physical_load_shadow_launch.py": "42d14f19646bdaec3fa7737397760e874facefd0fac0045f81d5563fcfd7d338",
+          "RL/utils/physical_queue_schedule.py": "8c5d87904e6a43abfbc01b46131924b98982f7f20ab810ed296daf8332cac665",
+          "bladed_env/udptest/udptest/controller.cpp": "6ce92be9cd02ed5f23e9965064e0de8539910b63b9949a6f5ae470d23d1bcf0a",
+          "bladed_env/udptest/Release/udptest.dll": "5695e3e4c9065cb1eba9995215afd6aaeecb0d202812ba0bc0eb3006b02cc0aa"
+        },
+        "operator_23wind_source_profile_sha256": "bf22e4a4dd4e9716638f59d5f657c44dd2f64bf48fcdb90025252fdbe284cf4f"
+      },
+      "bladed_launch_authorized": false
+    }
+  },
+  "pinned_files": {
+    "RL/agents/td3.py": "56162072ccb7c24f1cb4054ff094f61c5ed89b43afda192a057f011d183a31b2",
+    "RL/build_physical_load_shadow_profiles.py": "cf0b1f4c78bfdd20d18af3af0a74baa7d5ebd864a6f6d3e663ba9897edd1f2d4",
+    "RL/build_state20_queue_configs.py": "10a26284c05aaa3d543c4790f6a5e127987d2b47f01ff1d76a1d6618ea6040ee",
+    "RL/build_unified_profile_release_manifest.py": "3de983200781ea6cf60be1e5b9c42f693050d29baa0ed01bbaf23d695a117188",
+    "RL/configs/WT15_STATE20_RL_20261023_R2/README.md": "1234b6e27a4ec98ec512af16aa55345460e603dcaa70d01f8b792d0007a2f6ea",
+    "RL/configs/WT15_STATE20_RL_20261023_R2/physical_load_shadow_bundle.json": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+    "RL/configs/WT15_STATE20_RL_20261023_R2/profile_build_report.json": "7ced98387b987956ab534b37b71109e3c8da8814d982bad553b110d16b0a4e58",
+    "RL/configs/WT15_STATE20_RL_20261023_R2/state20_physical_23wind_round600_training.json": "573bb955b89bbb0fe8fd15d556df1279bfdff0649ff79b6bc1436d88ac901f74",
+    "RL/configs/WT15_STATE20_RL_20261023_R2/state20_physical_23wind_round600_training_manifest.json": "ae42d33481036ee447c3dcce5c99c79decdaff8a37306192b44ef04042b402d5",
+    "RL/data/offline_dataset.py": "df0bee698fe163c115234bbe470c1b0650660f215c5ed4b03b5b921772233e9f",
+    "RL/envs/wind_turbine_env.py": "97e3e1b9641142e98d69ca52871e540f13d95252fe82985a17f84cb37b6c67d4",
+    "RL/evaluate_b4_residual_bc.py": "547a2b7c3357333d2b2dd610274633caacb192aa605424cc5fc2b3b2e44288af",
+    "RL/evaluate_physical_load_shadow.py": "2cdf9d83ac759de1af7cafccc3b36c91ad84c6c07532a9144a093801fd19377e",
+    "RL/experiments/artifacts/state20_queue_profiles_operator_23wind_round600_v2/state20_23wind_round600_source.json": "bf22e4a4dd4e9716638f59d5f657c44dd2f64bf48fcdb90025252fdbe284cf4f",
+    "RL/finalize_physical_operator_run.py": "4cfa850c281adf0ad26bf22b4985c2bdacd74cc5a0990ce814bf5ccbc03ffab3",
+    "RL/infer/run_bladed_inference.py": "2ec6b17b322070a629d01e121fac7213d97153137ac43403ca9d2e3178eb7228",
+    "RL/models/actor_mlp.py": "ea8f1be4e230d965f642ac711e311f0652247949634b2d91cc336d5a35b829a4",
+    "RL/models/critic_mlp.py": "96522c8f1fe3ffea08e663d78499e7af96917c63c7c5ade15f0a1fb7f828b01d",
+    "RL/prepare_physical_operator_run.py": "dfa3ea45a12ffea376e52a00e7ef9151deadc866469e1d6462fbe62b01b9c560",
+    "RL/prepare_physical_shadow_development.py": "b599ca071dcd4d65bb4476c852efac6b7057d1ad6a4d7c677dc748ae77ae1769",
+    "RL/replay/replay_buffer.py": "51a2cf74ad194be4d44df39de04512a2e8ea257637672ef901756031856d9c7d",
+    "RL/train_rl.py": "9c88d5507bf2a6d842b7d1dd88d2af11db6abad238b62f4408cf5cb714ba67d0",
+    "RL/utils/condition_queue.py": "82a3511e9403d38545d49a12d7b00d40716f0ad2f56f65fc17c8a406e5d38c3d",
+    "RL/utils/config.py": "ef8f5fa656cebc6a9e5da24db96192a22556c5178c883b25fbdbc289456459bc",
+    "RL/utils/constants.py": "2e196686d91bd43adb51a19364e1f8e918f3fe5ddb7c7347bd3ab071eb196b8b",
+    "RL/utils/control_contract.py": "d18e7ab97c275a37b3e8ead11fd6fea5d1c14554f7bde73367c4ebe20f833cf2",
+    "RL/utils/control_execution.py": "15fa4df34c2cca0c7ebe02bffaf5d3fbaac78de1a0e1ec6a0ea424e27c46a40a",
+    "RL/utils/critic_q_health.py": "095e082765e0552df6235699f66586e5318f0a9e077b94f71549aa0269a8d0fd",
+    "RL/utils/dual_constraint.py": "23bc7e9095f412834fbd342ae3b910d1ec911afbfb0d9f440878eeaacd3c9b8a",
+    "RL/utils/logger.py": "a26c5794b6c53d17d08661d4eaab28e28aecb51ed0582130b016a37ece205312",
+    "RL/utils/normalize.py": "f7e270897a5d23252461d432438365c48e85896e777474e95d9321717f6481ec",
+    "RL/utils/observation.py": "913bb361e40e8222659d6a637c844dd022d1eb87546aa39f6b60a75c330f795e",
+    "RL/utils/operating_state.py": "7d23072c19b7348174c1ac7cffc1c4eb317a5a78323367d87809d9ef3e7e9ee3",
+    "RL/utils/paired_pid_reference.py": "bf7d180af95e6d156a897ca6a0264ac75f83ee891f75c153429173e7935bfb61",
+    "RL/utils/physical_load_margin.py": "7457174eba00bb3d358b31749c2ed33a8f420db6daa3f265c3b34327264e9898",
+    "RL/utils/physical_load_margin_dynamic.py": "4c423023edccfd0d3923c439bbd88e458c9c8100c7407032aef04b22d799ce0f",
+    "RL/utils/physical_load_shadow.py": "9abc161dd550d7699643415abbe0cf73150d7cbc0f18fc9425f7549c92889b31",
+    "RL/utils/physical_load_shadow_artifact.py": "0efeba2a092c7649c5f31ba8f9f1c4c4caf7b418031a099d49cdaac6f0fb3643",
+    "RL/utils/physical_load_shadow_launch.py": "42d14f19646bdaec3fa7737397760e874facefd0fac0045f81d5563fcfd7d338",
+    "RL/utils/physical_queue_schedule.py": "8c5d87904e6a43abfbc01b46131924b98982f7f20ab810ed296daf8332cac665",
+    "RL/utils/power_fields.py": "5ff2907a970c0bf38be00b1f0f51c4f693cee1bc3060bb5aa74ccb499292eac8",
+    "RL/utils/queue_case_identity.py": "7e1bcdd3cadba774d0306b15673f08f1232a15ab9d3c49c2050c1bcba4cd8601",
+    "RL/utils/queue_manifest.py": "59fc9dca0bf94dc355f7710a5ccfdd27487fcd6503ac0d225c09b1a00ab55c78",
+    "RL/utils/region_aware_baseline.py": "1785371435be4b14d3c444e387c449bb9de1ac18a860685e70eae541e099f779",
+    "RL/utils/reward.py": "5e4a2727842e78cc8c8e33e8cdd7740ce8b1c2807da1fc9001abfb6a963d8c74",
+    "RL/utils/safe_residual_control.py": "2648ab75cf0878aee8226ce9aa119a227f7f06540f0229ba11ab7229e4fdbf98",
+    "RL/utils/set_seed.py": "d5c42fea97dd899788162728af6c66ba7b66671f49382a8e30a3aa3969e1fc44",
+    "RL/utils/state_action_artifact.py": "dad0cc39cf10d3ad57c7099e0f5cc5a8926e2bb12fd53691b3a43f7336aed355",
+    "bladed_env/udptest/Release/udptest.dll": "5695e3e4c9065cb1eba9995215afd6aaeecb0d202812ba0bc0eb3006b02cc0aa",
+    "bladed_env/udptest/udptest/controller.cpp": "6ce92be9cd02ed5f23e9965064e0de8539910b63b9949a6f5ae470d23d1bcf0a"
+  },
+  "historical_archive": {
+    "release_id": "WT15_STATE20_RL_20261022_R1",
+    "status": "immutable_historical_archive_not_an_active_route",
+    "release_manifest": {
+      "path": "RL/configs/WT15_STATE20_RL_20261022_R1/release_manifest.json",
+      "sha256": "f4ef9134e012f915ce5182ec8b997d5b44578f7e2c48f031da884414404c9baf"
+    },
+    "profile": {
+      "config_path": "RL/configs/WT15_STATE20_RL_20261022_R1/state20_physical_23wind_6round_600s_training.json",
+      "config_sha256": "10aca531065a39d28958271305f41c390b1c5304233263c7dd74ce92625f23c1",
+      "queue_manifest_path": "RL/configs/WT15_STATE20_RL_20261022_R1/state20_physical_23wind_6round_600s_training_manifest.json",
+      "queue_manifest_sha256": "f2b580aa9c3d1830a7ce3ef5def11af050789eddea57d97c5171ee111d4d7f9e",
+      "profile_build_report_path": "RL/configs/WT15_STATE20_RL_20261022_R1/profile_build_report.json",
+      "profile_build_report_sha256": "f6954b299fb73b38d3f411629bd2b8b10282498f2fc565cc79ff18fa8f0deae1",
+      "rounds": 6,
+      "slots": 138
+    },
+    "receipt_reuse_allowed": false
+  },
+  "archive_sha256": "f4ef9134e012f915ce5182ec8b997d5b44578f7e2c48f031da884414404c9baf",
+  "authorization": {
+    "physical_profile_launch_authorized": false,
+    "real_bladed_started_for_this_release": false,
+    "policy_acceptance": false,
+    "independent_audit": false,
+    "soft_authorized": false,
+    "hard_authorized": false,
+    "counterfactual_validation": false,
+    "rl_margin_coverage_authorized": false
+  },
+  "versioning_policy": {
+    "single_active_project_release_id": "WT15_STATE20_RL_20261023_R2",
+    "rounds_are_schedule_configuration_not_parallel_code_profiles": true,
+    "old_r1_is_immutable_archive": true,
+    "component_schema_and_artifact_labels_are_preserved": true,
+    "state20_means_observation_contract_dimension_not_release_number": true
+  }
+}

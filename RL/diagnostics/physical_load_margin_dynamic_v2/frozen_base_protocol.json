@@ -1,0 +1,147 @@
+{
+  "schema_version": "physical_load_margin_demo_protocol_v1",
+  "purpose": "PID offline feasibility only; no online control or protection authorization",
+  "input_policy": "existing STATE_VARIABLES, DISTURBANCE_VARIABLES, REWARD_VARIABLES and two recorded ACTION_VARIABLES only; Time is audit metadata",
+  "source_role": "bladed-data-new/raw recorded PID trajectories",
+  "recorded_action_provenance": "legacy PID teacher contract interprets raw O_* as demand; raw headers alone do not prove this; current UDP DLL uses O_* measurement aliases, so demand-response and ZOH conclusions remain conditional until legacy provenance is verified",
+  "reference_window_s": [
+    0.0,
+    600.0
+  ],
+  "step_duration_s": 0.02,
+  "horizons_s": [
+    0.1,
+    0.2,
+    0.5
+  ],
+  "online_scope_horizons_s": [
+    0.1,
+    0.2
+  ],
+  "warmup_s": 1.0,
+  "origin_stride_frames": 5,
+  "fit_stride_frames": 5,
+  "split": {
+    "train": [
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24
+    ],
+    "validation": [
+      5,
+      13,
+      21
+    ],
+    "calibration": [
+      8,
+      15,
+      23
+    ],
+    "audit": [
+      11,
+      17,
+      19,
+      25
+    ]
+  },
+  "split_policy": "entire CSV held out; no same-case time fragments shared across splits; one trajectory per wind is not multiple independent seeds",
+  "model": {
+    "name": "anchored_quasi_steady_greybox",
+    "surface": "q_relative * polynomial(inflow_angle, actual_pitch) + q_axial * 1P/2P azimuth harmonics + apparent inertial acceleration terms",
+    "coefficient_fit": "ridge least squares per existing control region and blade, using current training rows only",
+    "azimuth_convention": "raw rotor azimuth + blade_index * 2pi/3; harmonic coefficients are fitted, not a verified BEM coordinate transformation",
+    "moment_scale_nm": 10000000.0,
+    "ridge_fraction": 0.001,
+    "derivative_filter_tau_s": 0.1,
+    "residual_decay_candidates_s": [
+      0.1,
+      0.3,
+      1.0
+    ],
+    "selection_rule": "lowest validation mean absolute future-peak error divided by each case's frozen PID peak; deterministic first candidate on tie",
+    "baseline_trend_decay_s": 0.3,
+    "domain_padding_fraction": 0.2,
+    "candidate_plan": "current recorded demand clipped to existing engineering bounds, then held constant; future recorded demands are evaluation-only",
+    "future_disturbance_assumption": "hold current wind, yaw and nacelle accelerations; never read future observations",
+    "residual_rate": "causal measured My derivative minus surface derivative from current pitch/rotor/azimuth motion while holding current disturbances",
+    "aerodynamic_torque_assumption": "hold current inferred aerodynamic torque Tg + J * causal rotor acceleration over the short horizon"
+  },
+  "static_parameters": {
+    "source_project": "bladed_env/15MW_rl.prj",
+    "air_density_kg_m3": 1.225,
+    "rotor_diameter_m": 241.94,
+    "effective_radius_fraction": 0.67,
+    "rotor_inertia_kg_m2": 318628138.0,
+    "pitch_natural_frequency_rad_s": 6.28318530717959,
+    "pitch_damping_ratio": 0.8,
+    "generator_time_constant_s": 0.1,
+    "generator_actual_torque_max_nm": 21000000.0,
+    "request_torque_max_nm": 21586451.33303,
+    "request_pitch_bounds_rad": [
+      0.0,
+      0.43
+    ],
+    "parameter_qualification": "example engineering project, not verified identity of all historical PID cases; 0.67 effective radius is an explicit lumped approximation, not a measured variable"
+  },
+  "evaluation": {
+    "approximate_zoh_max_normalized_action_linf": 0.05,
+    "action_mismatch_formula": "max_future max(2*abs(delta_torque)/request_torque_max, 2*abs(delta_pitch)/0.43)",
+    "near_peak_ratios": [
+      0.9,
+      0.95
+    ],
+    "primary_near_peak_ratio": 0.95,
+    "event_merge_gap_s": 0.5,
+    "empirical_error_quantile": 0.95,
+    "minimum_calibration_origins_per_region_horizon": 100,
+    "minimum_audit_origins_per_region_horizon": 100,
+    "coverage_gate_unit": "simultaneous three-blade empirical coverage per region/horizon on approximate-ZOH PID origins; per-blade coverage is additionally reported; overlapping origins are not independent samples",
+    "margin_semantics": "positive-part empirical one-sided residual quantile in Nm; not a deterministic or distribution-free error bound",
+    "event_semantics": "PID near-peak episodes; timely means warning before onset within selected H; predictions generated after onset are late, not early successes",
+    "strict_exceedance_semantics": "own complete PID-window max_abs is never strictly exceeded by that same trajectory; strict exceedance recall is not estimable",
+    "candidate_sensitivity": {
+      "audit_times_s": [
+        60.0,
+        120.0,
+        180.0,
+        240.0,
+        300.0,
+        360.0,
+        420.0,
+        480.0,
+        540.0
+      ],
+      "torque_delta_nm": 20000.0,
+      "pitch_delta_rad": 0.00035,
+      "qualification": "model sensitivity only, no unexecuted-action physical labels"
+    }
+  },
+  "feasibility_gate": {
+    "minimum_known_origin_fraction": 0.9,
+    "maximum_mae_ratio_to_best_non_nn_baseline": 1.0,
+    "minimum_empirical_upper_coverage_per_supported_group": 0.95,
+    "minimum_near_peak_events_per_online_horizon": 20,
+    "minimum_timely_event_recall": 0.8,
+    "maximum_false_positive_fraction": 0.1,
+    "gate_scope": "independent audit 0.1/0.2s; matched-plan point metrics, all PID episode diagnostics; missing groups/counts are inconclusive, not passes",
+    "on_failure": "REVIEW_DO_NOT_INTEGRATE; do not tune on audit or silently change thresholds",
+    "on_success": "PASS_OFFLINE_FEASIBILITY only; RL counterfactual validation and production gates still required"
+  },
+  "authorization": {
+    "mode": "offline_demo",
+    "policy_acceptance": false,
+    "soft_authorized": false,
+    "hard_authorized": false,
+    "counterfactual_validation": false
+  }
+}

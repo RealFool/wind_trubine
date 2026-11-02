@@ -1,0 +1,174 @@
+{
+  "v1_greybox": {
+    "schema_version": "joint_load_margin_development_calibration_v2",
+    "point_method": "v1_greybox",
+    "dynamic_model_sha256": "c8286005ce23afc13490906461d80b87245d6bca72a10d2f7f71b53d41baad36",
+    "scale_model_sha256": "753b43e3ef4ec7ec96da1d3406ea170c72452a9791f30481b786d4f85857d937",
+    "primary_horizons_s": [
+      0.1,
+      0.2
+    ],
+    "groups": {
+      "below_rated": {
+        "origin_count": 6004,
+        "case_origin_counts": {
+          "8": 5943,
+          "15": 61
+        },
+        "supported": true,
+        "legacy_per_blade95_nm": [
+          [
+            972464.0062482655,
+            978566.3551348224,
+            962813.2468544841
+          ],
+          [
+            1821207.379958965,
+            1861466.9662886485,
+            1845916.9265082255
+          ]
+        ],
+        "joint_constant95_nm": 2485722.926531002,
+        "joint_conditional95": 11.42796019801193
+      },
+      "transition": {
+        "origin_count": 889,
+        "case_origin_counts": {
+          "15": 889
+        },
+        "supported": true,
+        "legacy_per_blade95_nm": [
+          [
+            2347755.560594842,
+            2226765.275916986,
+            2259676.1975080296
+          ],
+          [
+            4037779.657176748,
+            4133997.9375409633,
+            4135560.369961653
+          ]
+        ],
+        "joint_constant95_nm": 5364055.649192251,
+        "joint_conditional95": 11.12165035151361
+      },
+      "above_rated": {
+        "origin_count": 11022,
+        "case_origin_counts": {
+          "15": 5036,
+          "23": 5986
+        },
+        "supported": true,
+        "legacy_per_blade95_nm": [
+          [
+            2575954.906007141,
+            2585702.58235964,
+            2602658.476432197
+          ],
+          [
+            4331241.099461615,
+            4475959.517578647,
+            4441106.934111204
+          ]
+        ],
+        "joint_constant95_nm": 5967977.649811706,
+        "joint_conditional95": 11.321947524676792
+      }
+    },
+    "qualification": "empirical correlated-origin quantile; not deterministic, distribution-free, or independent-seed confidence; missing groups are unknown",
+    "authorization": {
+      "mode": "offline_development",
+      "policy_acceptance": false,
+      "soft_authorized": false,
+      "hard_authorized": false,
+      "counterfactual_validation": false,
+      "fresh_independent_audit": false
+    }
+  },
+  "dynamic_fir": {
+    "schema_version": "joint_load_margin_development_calibration_v2",
+    "point_method": "dynamic_fir",
+    "dynamic_model_sha256": "c8286005ce23afc13490906461d80b87245d6bca72a10d2f7f71b53d41baad36",
+    "scale_model_sha256": "dad2daf7ebe69b927e0cb24de82a3f73809b603133635270c6f42272223268d3",
+    "primary_horizons_s": [
+      0.1,
+      0.2
+    ],
+    "groups": {
+      "below_rated": {
+        "origin_count": 6004,
+        "case_origin_counts": {
+          "8": 5943,
+          "15": 61
+        },
+        "supported": true,
+        "legacy_per_blade95_nm": [
+          [
+            558529.4703336731,
+            555522.1372273862,
+            566640.9710764661
+          ],
+          [
+            1376908.3675400913,
+            1403607.9499543607,
+            1378242.8454098701
+          ]
+        ],
+        "joint_constant95_nm": 1893264.2266347855,
+        "joint_conditional95": 11.416659705542727
+      },
+      "transition": {
+        "origin_count": 889,
+        "case_origin_counts": {
+          "15": 889
+        },
+        "supported": true,
+        "legacy_per_blade95_nm": [
+          [
+            1334430.425527744,
+            1281616.8464145847,
+            1323808.1487532668
+          ],
+          [
+            3014948.1076590493,
+            2935173.1326073557,
+            2993273.05671335
+          ]
+        ],
+        "joint_constant95_nm": 4230736.380748022,
+        "joint_conditional95": 12.648441018404084
+      },
+      "above_rated": {
+        "origin_count": 11022,
+        "case_origin_counts": {
+          "15": 5036,
+          "23": 5986
+        },
+        "supported": true,
+        "legacy_per_blade95_nm": [
+          [
+            1510095.1077391282,
+            1522661.1552610043,
+            1549152.4409449399
+          ],
+          [
+            3402527.7292930335,
+            3478121.6386330314,
+            3453018.4496543556
+          ]
+        ],
+        "joint_constant95_nm": 4662623.897540636,
+        "joint_conditional95": 12.553701707620249
+      }
+    },
+    "qualification": "empirical correlated-origin quantile; not deterministic, distribution-free, or independent-seed confidence; missing groups are unknown",
+    "authorization": {
+      "mode": "offline_development",
+      "policy_acceptance": false,
+      "soft_authorized": false,
+      "hard_authorized": false,
+      "counterfactual_validation": false,
+      "fresh_independent_audit": false
+    }
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "reward": {
+    "blade_root_peak_reference": [
+      {
+        "wind_speed": 3.0,
+        "peak_abs_nm": [
+          16129913.0,
+          14791685.0,
+          14841566.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 4.0,
+        "peak_abs_nm": [
+          21746156.0,
+          21314724.0,
+          21256136.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 5.0,
+        "peak_abs_nm": [
+          29422174.0,
+          28405244.0,
+          29381750.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 6.0,
+        "peak_abs_nm": [
+          38480712.0,
+          36929008.0,
+          35899372.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 7.0,
+        "peak_abs_nm": [
+          47593344.0,
+          46975820.0,
+          47051608.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 8.0,
+        "peak_abs_nm": [
+          54304188.0,
+          53565464.0,
+          53053560.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 9.0,
+        "peak_abs_nm": [
+          61487496.0,
+          62074892.0,
+          61820624.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 10.0,
+        "peak_abs_nm": [
+          66586572.0,
+          67832472.0,
+          64568884.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 11.0,
+        "peak_abs_nm": [
+          66842312.0,
+          66381448.0,
+          67074616.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 12.0,
+        "peak_abs_nm": [
+          68770520.0,
+          69306056.0,
+          68040968.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 13.0,
+        "peak_abs_nm": [
+          61639300.0,
+          60078124.0,
+          61577204.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 14.0,
+        "peak_abs_nm": [
+          57772864.0,
+          58979484.0,
+          59491064.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 15.0,
+        "peak_abs_nm": [
+          55475340.0,
+          54762252.0,
+          54747508.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 16.0,
+        "peak_abs_nm": [
+          52882336.0,
+          53908376.0,
+          53473408.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 17.0,
+        "peak_abs_nm": [
+          48021548.0,
+          52332688.0,
+          52879996.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 18.0,
+        "peak_abs_nm": [
+          50501864.0,
+          53120372.0,
+          51498068.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 19.0,
+        "peak_abs_nm": [
+          46842500.0,
+          53183700.0,
+          52962880.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 20.0,
+        "peak_abs_nm": [
+          50367168.0,
+          47646912.0,
+          49664120.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 21.0,
+        "peak_abs_nm": [
+          49427540.0,
+          46493012.0,
+          47466224.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 22.0,
+        "peak_abs_nm": [
+          48733688.0,
+          48657864.0,
+          44056728.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 23.0,
+        "peak_abs_nm": [
+          48576568.0,
+          48771516.0,
+          61302560.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 24.0,
+        "peak_abs_nm": [
+          42597664.0,
+          44285948.0,
+          43065796.0
+        ],
+        "window_count": 1
+      },
+      {
+        "wind_speed": 25.0,
+        "peak_abs_nm": [
+          43160408.0,
+          43786732.0,
+          40129680.0
+        ],
+        "window_count": 1
+      }
+    ]
+  },
+  "metadata": {
+    "data_schema_version": "bladed_udp_19_si_my_v1",
+    "source_data_root": "bladed-data-new",
+    "splits": [
+      "raw"
+    ],
+    "wind_bin_width": 0.5,
+    "peak_quantile": 1.0,
+    "min_windows": 1,
+    "aggregation": "per_window_abs_peak_then_per_condition_quantile",
+    "wind_condition_source": "data_windspeed<value> filename when available, otherwise median observed wind",
+    "blade_root_fields": [
+      "Blade root 1 My (Nm)",
+      "Blade root 2 My (Nm)",
+      "Blade root 3 My (Nm)"
+    ],
+    "target_train_sim_s": 600.0,
+    "window_duration_mode": "non_overlapping_contiguous_sim_time_windows",
+    "simulation_time_field": "Time",
+    "files_seen": 23,
+    "files_used": 23,
+    "rows_used": 690023,
+    "fixed_duration_window_count": 23,
+    "fixed_duration_source_windows": [
+      {
+        "split": "raw",
+        "source_file": "data_windspeed10.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 10.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed11.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 11.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed12.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 12.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed13.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 13.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed14.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 14.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed15.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 15.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed16.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 16.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed17.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 17.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed18.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 18.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed19.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 19.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed20.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 20.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed21.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 21.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed22.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 22.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed23.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 23.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed24.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 24.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed25.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 25.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed3.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 3.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed4.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 4.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed5.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 5.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed6.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 6.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed7.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 7.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed8.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 8.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      },
+      {
+        "split": "raw",
+        "source_file": "data_windspeed9.csv",
+        "window_index": 0,
+        "nominal_wind_speed": 9.0,
+        "start_sim_time_s": 0.0,
+        "end_sim_time_s": 600.0,
+        "duration_s": 600.0,
+        "rows_used": 30001
+      }
+    ]
+  }
+}

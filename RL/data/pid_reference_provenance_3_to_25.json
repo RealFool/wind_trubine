@@ -1,0 +1,803 @@
+{
+  "schema_version": "pid_reference_provenance_v1",
+  "source_role": "raw_pid_reference_provenance",
+  "source_manifest": {
+    "data_root": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw",
+    "expected_condition_ids": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "file_count": 23,
+    "manifest_sha256": "98744cb2a89909e48143faac595a396d3c16127155b8875efd4bd4909d6033f8",
+    "files": [
+      {
+        "condition_id": 3,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed3.csv",
+        "filename": "data_windspeed3.csv",
+        "sha256": "758798423765c1678e641e6ebd1887378cc8d4d5a5918f8785c4b56a330c7d55",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 14411,
+          "mismatch_rows": 15590,
+          "max_abs_difference": 9134551.688,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 9459949.0,
+            "measurement_value": 325397.312
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 29771,
+          "mismatch_rows": 230,
+          "max_abs_difference": 0.008915013600000002,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.00069799996,
+            "measurement_value": 2.87119019e-06
+          }
+        }
+      },
+      {
+        "condition_id": 4,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed4.csv",
+        "filename": "data_windspeed4.csv",
+        "sha256": "1be888f0863885bd9129af0359fe886e9f317ef518166816898777a3e5bcda23",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 3809,
+          "mismatch_rows": 26192,
+          "max_abs_difference": 8759747.25,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 9459949.0,
+            "measurement_value": 700201.75
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 17493,
+          "mismatch_rows": 12508,
+          "max_abs_difference": 0.008915013600000002,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.00069799996,
+            "measurement_value": 2.87119019e-06
+          }
+        }
+      },
+      {
+        "condition_id": 5,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed5.csv",
+        "filename": "data_windspeed5.csv",
+        "sha256": "84f6368b03a2520ba6f75eb3c6859f351c2ef56248c7a9ae4b8c8b51402b739b",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 5337366.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 9459949.0,
+            "measurement_value": 4122583.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 3,
+          "mismatch_rows": 29998,
+          "max_abs_difference": 0.0087591577,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.00069799996,
+            "measurement_value": 2.87119019e-06
+          }
+        }
+      },
+      {
+        "condition_id": 6,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed6.csv",
+        "filename": "data_windspeed6.csv",
+        "sha256": "f2c602b7732e76cc3d8e4e16a1cadb2605dded3069ea39d1d9aaf5954c8991e6",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 1647693.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 9459949.0,
+            "measurement_value": 7812256.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 693,
+          "mismatch_rows": 29308,
+          "max_abs_difference": 0.008915410400000002,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.00069799996,
+            "measurement_value": 2.46524905e-06
+          }
+        }
+      },
+      {
+        "condition_id": 7,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed7.csv",
+        "filename": "data_windspeed7.csv",
+        "sha256": "b4c3f0945891956321c37fab0b3c11a07df288c393df8e890a00b0a050bb6796",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 1381696.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 9459949.0,
+            "measurement_value": 8078253.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 10168,
+          "mismatch_rows": 19833,
+          "max_abs_difference": 0.0003268495000000003,
+          "first_mismatch": {
+            "csv_row_number": 878,
+            "demand_value": 5.50095592e-06,
+            "measurement_value": 1.94286915e-08
+          }
+        }
+      },
+      {
+        "condition_id": 8,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed8.csv",
+        "filename": "data_windspeed8.csv",
+        "sha256": "2e7bad3104dab0d85ca7b8175b635519b751405c0c110339681292e0ba82dbe5",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 686474.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 9845873.0,
+            "measurement_value": 9159399.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 26286,
+          "mismatch_rows": 3715,
+          "max_abs_difference": 0.008915410400000002,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.00069799996,
+            "measurement_value": 2.46524905e-06
+          }
+        }
+      },
+      {
+        "condition_id": 9,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed9.csv",
+        "filename": "data_windspeed9.csv",
+        "sha256": "0c86931e99acaecb4e7701c25a9546517c7c071e41ff874bc92f080695f7418f",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 1,
+          "mismatch_rows": 30000,
+          "max_abs_difference": 92946.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 27074,
+          "mismatch_rows": 2927,
+          "max_abs_difference": 0.0026838724000000005,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.0139704412,
+            "measurement_value": 0.0146659762
+          }
+        }
+      },
+      {
+        "condition_id": 10,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed10.csv",
+        "filename": "data_windspeed10.csv",
+        "sha256": "166b5d88e9fa236fcec5e688983afd0fae15121f937976d6d015b3230a9544b6",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 3,
+          "mismatch_rows": 29998,
+          "max_abs_difference": 1197758.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 17179046.0,
+            "measurement_value": 15981288.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 19894,
+          "mismatch_rows": 10107,
+          "max_abs_difference": 0.00391467917,
+          "first_mismatch": {
+            "csv_row_number": 1383,
+            "demand_value": 0.000111327914,
+            "measurement_value": 3.93196359e-07
+          }
+        }
+      },
+      {
+        "condition_id": 11,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed11.csv",
+        "filename": "data_windspeed11.csv",
+        "sha256": "3e0f52f616411d755e654f8c25e3d42a11ec38172434940f7cefc9da8460abe4",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 1364430.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 19569554.0,
+            "measurement_value": 18205124.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 8501,
+          "mismatch_rows": 21500,
+          "max_abs_difference": 0.004952732500000001,
+          "first_mismatch": {
+            "csv_row_number": 7351,
+            "demand_value": 0.000119733006,
+            "measurement_value": 4.22882096e-07
+          }
+        }
+      },
+      {
+        "condition_id": 12,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed12.csv",
+        "filename": "data_windspeed12.csv",
+        "sha256": "37ce1f7fc4bb2ec9f888ef96f067d5be2708b823fb08fb422c5d41fad3542843",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 1,
+          "mismatch_rows": 30000,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.0047699623,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.0487633869,
+            "measurement_value": 0.049458921
+          }
+        }
+      },
+      {
+        "condition_id": 13,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed13.csv",
+        "filename": "data_windspeed13.csv",
+        "sha256": "a9f288bd53f397cc699e43ca40e9fec5e04bd00baea8a8758584f4aac1399ebe",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.0044032633000000015,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.0807575136,
+            "measurement_value": 0.0814530477
+          }
+        }
+      },
+      {
+        "condition_id": 14,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed14.csv",
+        "filename": "data_windspeed14.csv",
+        "sha256": "5ea45829e36703c5ead94316bb8956329f61b781231a6f73d9f242522eb0d03d",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.005864866099999991,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.180531248,
+            "measurement_value": 0.18122679
+          }
+        }
+      },
+      {
+        "condition_id": 15,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed15.csv",
+        "filename": "data_windspeed15.csv",
+        "sha256": "cb1b6c44002de4b5a76b7c58c8036470a0fcca087e70c1df9f23c5e30730599b",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.004664703999999992,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.164300099,
+            "measurement_value": 0.164995641
+          }
+        }
+      },
+      {
+        "condition_id": 16,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed16.csv",
+        "filename": "data_windspeed16.csv",
+        "sha256": "a4ab2e4ffc3ff5993f402a9c99e9f700e7627761db4a87f6d0c1dadb93941428",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 1,
+          "mismatch_rows": 30000,
+          "max_abs_difference": 576176.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.004448325000000003,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.165982291,
+            "measurement_value": 0.166677833
+          }
+        }
+      },
+      {
+        "condition_id": 17,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed17.csv",
+        "filename": "data_windspeed17.csv",
+        "sha256": "b22f02d71c2f3eca812af946e19e5c1bd683a145c18042c5a2b7685f6a625606",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 453666.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 3,
+          "mismatch_rows": 29998,
+          "max_abs_difference": 0.004443451999999987,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.157363787,
+            "measurement_value": 0.158059329
+          }
+        }
+      },
+      {
+        "condition_id": 18,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed18.csv",
+        "filename": "data_windspeed18.csv",
+        "sha256": "46c95f1bf98ac70cfdaf0b73a23f90a43687a5dcba345c01bc19d1cde75c1166",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 3,
+          "mismatch_rows": 29998,
+          "max_abs_difference": 0.005626007999999988,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.286773562,
+            "measurement_value": 0.287469089
+          }
+        }
+      },
+      {
+        "condition_id": 19,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed19.csv",
+        "filename": "data_windspeed19.csv",
+        "sha256": "c6c28a087ff2a7035a044c32d6c6a6b020ddb8af7393e43c1116a10c32b112eb",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.004274518000000005,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.222177684,
+            "measurement_value": 0.222873226
+          }
+        }
+      },
+      {
+        "condition_id": 20,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed20.csv",
+        "filename": "data_windspeed20.csv",
+        "sha256": "09348fce7fec079ad93a15b497c2a5c4dc5df90d467447d6ce054052f125ca2b",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.004450366000000011,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.268770576,
+            "measurement_value": 0.269466102
+          }
+        }
+      },
+      {
+        "condition_id": 21,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed21.csv",
+        "filename": "data_windspeed21.csv",
+        "sha256": "4f1551f390d539f87599589135c992e78e22594368c334a659f722a8c9f91afd",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 1,
+          "mismatch_rows": 30000,
+          "max_abs_difference": 586698.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.005192160000000001,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.249717563,
+            "measurement_value": 0.25041309
+          }
+        }
+      },
+      {
+        "condition_id": 22,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed22.csv",
+        "filename": "data_windspeed22.csv",
+        "sha256": "bfb0366e4719d35f839b4c40ce9842383d492fe15e656954d5af79b2aa9968a4",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 586452.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.005046039999999974,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.28480503,
+            "measurement_value": 0.285500556
+          }
+        }
+      },
+      {
+        "condition_id": 23,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed23.csv",
+        "filename": "data_windspeed23.csv",
+        "sha256": "0de096b8f986bc6f25e42fb417317926315d479ca1f74518af11b0ad76024752",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 1,
+          "mismatch_rows": 30000,
+          "max_abs_difference": 586454.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 3,
+          "mismatch_rows": 29998,
+          "max_abs_difference": 0.004929393000000004,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.320228785,
+            "measurement_value": 0.320924312
+          }
+        }
+      },
+      {
+        "condition_id": 24,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed24.csv",
+        "filename": "data_windspeed24.csv",
+        "sha256": "31428067d910847ae9c22d0d2af556f645574145af28f01468ee0277ca516cf2",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 1,
+          "mismatch_rows": 30000,
+          "max_abs_difference": 586456.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.004659891999999999,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.363638908,
+            "measurement_value": 0.364334434
+          }
+        }
+      },
+      {
+        "condition_id": 25,
+        "path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw/data_windspeed25.csv",
+        "filename": "data_windspeed25.csv",
+        "sha256": "4bc9469061343ff8a44cd8547ef19715b31f7b19cdd8abc58d9cae05fc71e5ec",
+        "rows_compared": 30001,
+        "torque": {
+          "demand_field": "O_PcsTorqueDemand",
+          "measurement_field": "I_ElectricalTorque",
+          "exact_match_rows": 0,
+          "mismatch_rows": 30001,
+          "max_abs_difference": 586454.0,
+          "first_mismatch": {
+            "csv_row_number": 2,
+            "demand_value": 20381224.0,
+            "measurement_value": 20400000.0
+          }
+        },
+        "pitch": {
+          "demand_field": "O_PitchPositionDemand1",
+          "measurement_field": "I_PitchPosition1",
+          "exact_match_rows": 2,
+          "mismatch_rows": 29999,
+          "max_abs_difference": 0.004192799000000025,
+          "first_mismatch": {
+            "csv_row_number": 4,
+            "demand_value": 0.364624798,
+            "measurement_value": 0.365320325
+          }
+        }
+      }
+    ]
+  },
+  "signal_contract": {
+    "torque_unit": "Nm",
+    "pitch_unit": "rad",
+    "python_reply_timing": "received_after_current_frame_is_sent",
+    "external_action_effect": "applied_after_current_frame_is_sent"
+  },
+  "raw_comparison": {
+    "rows_compared": 690023,
+    "torque": {
+      "demand_field": "O_PcsTorqueDemand",
+      "measurement_field": "I_ElectricalTorque",
+      "exact_match_rows": 18237,
+      "mismatch_rows": 671786,
+      "max_abs_difference": 9134551.688
+    },
+    "pitch": {
+      "demand_field": "O_PitchPositionDemand1",
+      "measurement_field": "I_PitchPosition1",
+      "exact_match_rows": 139914,
+      "mismatch_rows": 550109,
+      "max_abs_difference": 0.008915410400000002
+    },
+    "all_rows_exact_measurement_aliases": false
+  },
+  "dll_static_evidence": {
+    "controller_source": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed_env/udptest/udptest/controller.cpp",
+    "controller_source_sha256": "6ce92be9cd02ed5f23e9965064e0de8539910b63b9949a6f5ae470d23d1bcf0a",
+    "api_header": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed_env/BladedAPI/4.8/ExternalControllerApi.h",
+    "api_header_sha256": "043e44956c9d94dc1a71471e684b5f9bc02e7ea66f69278569605f8191d2f3ab",
+    "udp_assignment_sources": {
+      "O_PcsTorqueDemand": "I_ElectricalTorque",
+      "O_PitchPositionDemand1": "I_PitchPosition1"
+    },
+    "measurement_alias_assignments": true,
+    "demanded_getters_declared": {
+      "torque": true,
+      "pitch": true
+    },
+    "demanded_getters_used_as_udp_sources": {
+      "torque": false,
+      "pitch": false
+    },
+    "frame_sent_before_reply_received": true,
+    "reply_received_before_action_applied": true
+  },
+  "decision": {
+    "status": "conclusive_recorded_pid_demand",
+    "native_pid_demand_available": false,
+    "recorded_pid_demand_trace_available": true,
+    "udp_action_contract": "recorded_pid_demand",
+    "baseline_reference_path": "region_aware_surrogate_required",
+    "current_o_fields_are_safe_as_recorded_pid_demand": true,
+    "current_o_fields_are_safe_as_native_pid_command": false
+  }
+}

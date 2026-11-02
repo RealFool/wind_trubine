@@ -1,0 +1,31 @@
+{
+  "schema_version": "compact_logger_resource_benchmark_v1",
+  "mode": "synthetic_no_udp",
+  "benchmark_command": "python -m RL.benchmark_compact_logger --rounds 4 --conditions-per-round 23 --steps-per-condition 30000",
+  "rounds": 4,
+  "conditions_per_round": 23,
+  "slot_count": 92,
+  "steps_per_condition": 30000,
+  "step_rows_emitted": 2760000,
+  "event_pre_frames": 25,
+  "event_post_frames": 25,
+  "event_capacity_per_condition": 16,
+  "total_artifact_bytes": 145995480,
+  "total_artifact_bytes_budget": 1073741824,
+  "python_heap_peak_bytes": 4684007,
+  "python_heap_peak_budget_bytes": 268435456,
+  "condition_rows_seen": 92,
+  "condition_rows_retained": 92,
+  "condition_rows_dropped_in_summary_ring": 0,
+  "event_windows_written": 1472,
+  "event_windows_dropped": 2828632,
+  "event_bytes_written": 145250481,
+  "pass": true,
+  "evidence_files": [
+    "compact_metrics_summary.json",
+    "compact_execution_events.jsonl",
+    "compact_queue_condition_summaries.jsonl",
+    "compact_queue_condition_event_windows.jsonl"
+  ],
+  "note": "Heap peak is Python tracemalloc, not process RSS. This benchmark exercises synthetic metrics only; it does not model UDP, checkpoint memory, or physical event distributions."
+}

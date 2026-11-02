@@ -1,0 +1,208 @@
+{
+  "schema_version": "s2_u1_pid_replay_v1",
+  "calibration_schema_version": "s2_u1_pid_envelope_v1",
+  "input_manifest_sha256": "98744cb2a89909e48143faac595a396d3c16127155b8875efd4bd4909d6033f8",
+  "condition_count": 23,
+  "eligible_rows_total": 665903,
+  "conditions": [
+    {
+      "condition_id": 3,
+      "eligible_rows": 12067,
+      "s2_enter_rows": 183,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 4,
+      "eligible_rows": 24865,
+      "s2_enter_rows": 357,
+      "u1_warning_rows": 3,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 5,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 441,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 6,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 329,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 7,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 380,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 8,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 373,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 9,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 423,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 10,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 437,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 11,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 437,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 12,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 439,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 13,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 446,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 14,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 421,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 15,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 431,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 16,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 443,
+      "u1_warning_rows": 4,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 17,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 436,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 18,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 435,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 19,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 435,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 20,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 429,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 21,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 444,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 22,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 434,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 23,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 441,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 24,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 438,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    },
+    {
+      "condition_id": 25,
+      "eligible_rows": 29951,
+      "s2_enter_rows": 443,
+      "u1_warning_rows": 0,
+      "u1_protection_rows": 0,
+      "u1_emergency_rows": 0
+    }
+  ],
+  "checks": {
+    "all_conditions_present": true,
+    "all_thresholds_ordered": true,
+    "all_metrics_finite": true,
+    "emergency_activation_count": 0,
+    "emergency_unobserved_in_pid": true
+  },
+  "validation_status": "passed_offline",
+  "formal_closed_loop_acceptance": false,
+  "limitations": [
+    "observational PID replay cannot estimate counterfactual response to modified pitch or torque",
+    "no eligible PID row reaches the engineering-prior emergency threshold",
+    "blade-root loads are not available in the current controller observation contract"
+  ],
+  "calibration_sha256": "fa2d339af4ce19455d579ff9665865d6977dbbbcc878b27dc3e8e17fb5308c3b"
+}

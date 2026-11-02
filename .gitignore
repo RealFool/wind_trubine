@@ -1,0 +1,58 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---- Editor / OS ----
+.vscode/*
+!.vscode/settings.json
+.continue/
+.DS_Store
+Thumbs.db
+
+# ---- Large data / experiment outputs (kept outside git; use SHA/manifests) ----
+bladed-data/
+bladed-data-new/
+bladed_result/
+RL/experiments/
+
+# ---- Large derived datasets / caches ----
+RL/data/b4_centered_residual_bc_state20_v2/train/
+RL/data/b4_centered_residual_bc_state20_v2/val/
+RL/data/b4_centered_residual_bc_state20_v2/.rl_cache/
+RL/data/load_predictor_dataset_state20_stride10_v1/*.npz
+RL/data/load_predictor_dataset_state20_stride10_v2/*.npz
+RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json
+RL/data/paired_pid_power_load_reference_3_to_25_180s_v2.json
+
+# ---- Large diagnostics outputs (keep frozen JSON models) ----
+RL/diagnostics/state20_compact_logger_resource_benchmark_v2/
+RL/diagnostics/physical_load_margin_demo_v1/
+RL/diagnostics/physical_load_margin_demo_v1_reviewed/
+RL/diagnostics/physical_load_margin_dynamic_v2_visualizations/
+RL/diagnostics/physical_load_margin_dynamic_v2/validation_samples.csv
+
+# ---- Checkpoints: keep frozen BC v3, exclude historical inference outputs ----
+RL/BC_checkpoint/inference/
+
+# ---- Windows build outputs ----
+bladed_env/udptest/.vs/
+bladed_env/udptest/**/Release/
+bladed_env/udptest/**/x64/
+bladed_env/udptest/**/Debug/
+*.ipch
+*.pdb
+*.obj
+*.ilk
+*.exp
+bladed_env/udptest/**/*.dll
+bladed_env/udptest/**/*.lib
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+*.swp

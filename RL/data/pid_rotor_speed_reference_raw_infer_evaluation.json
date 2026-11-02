@@ -1,0 +1,42 @@
+{
+  "schema_version": "pid_rotor_speed_reference_holdout_v1",
+  "validation_scope": "independent_raw_infer_rotor_speed_band_diagnostic",
+  "schedule_path": "RL/data/pid_rotor_speed_reference_3_to_25.json",
+  "schedule_sha256": "f59f558584c72c21ccda473ebe383f33c0681b9556b7d852b3711677884c76d7",
+  "holdout_root": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw_infer",
+  "calibration_holdout_sha256_overlap_count": 0,
+  "condition_count": 3,
+  "conditions": [
+    {
+      "condition_id": 16,
+      "path": "bladed-data-new/raw_infer/data_windspeed16.csv",
+      "sha256": "38ba8a30b969f215f30e458030fc84fc8b03beb4a48630a8bc5fc44eb6048e23",
+      "eligible_rows": 29951,
+      "within_deadband_fraction": 0.968582017294915,
+      "normalized_band_excess_p95": 0.0
+    },
+    {
+      "condition_id": 24,
+      "path": "bladed-data-new/raw_infer/data_windspeed24.csv",
+      "sha256": "db4300457313a4fe7d0dda94bd5290c85207e223e72f7e3c403b73b5dd3e899a",
+      "eligible_rows": 29951,
+      "within_deadband_fraction": 0.949651096791426,
+      "normalized_band_excess_p95": 0.002100095351762524
+    },
+    {
+      "condition_id": 8,
+      "path": "bladed-data-new/raw_infer/data_windspeed8.csv",
+      "sha256": "f13eea3d5e7dc365b64a59a51e62fb05c9b97fc6569a0fd027c76121398556f5",
+      "eligible_rows": 29951,
+      "within_deadband_fraction": 0.8234449601014991,
+      "normalized_band_excess_p95": 0.5216263943658461
+    }
+  ],
+  "aggregate": {
+    "eligible_rows": 89853,
+    "minimum_condition_within_deadband_fraction": 0.8234449601014991,
+    "maximum_condition_normalized_band_excess_p95": 0.5216263943658461
+  },
+  "formal_acceptance": false,
+  "limitation": "Recorded PID holdout is diagnostic and does not replace closed-loop Bladed validation."
+}

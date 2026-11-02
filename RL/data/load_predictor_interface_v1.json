@@ -1,0 +1,40 @@
+{
+  "schema_version": "causal_load_predictor_interface_v1",
+  "mode_default": "shadow",
+  "history_frames": 50,
+  "step_duration_s": 0.02,
+  "horizons_s": [
+    0.1,
+    0.2,
+    0.5
+  ],
+  "online_candidate_plan_kinds": [
+    "zoh_candidate"
+  ],
+  "realized_plan_online_authorized": false,
+  "soft_guard_horizons_s": [
+    0.1,
+    0.2
+  ],
+  "hard_candidate_default_enabled": false,
+  "required_inputs": [
+    "causal_physical_state",
+    "blade_root_my",
+    "blade_root_my_rate",
+    "sin_azimuth",
+    "cos_azimuth",
+    "sent_action_torque",
+    "sent_action_pitch",
+    "projected_candidate_action_torque",
+    "projected_candidate_action_pitch",
+    "state_encoding",
+    "pid_peak_headroom"
+  ],
+  "required_outputs": [
+    "future_electrical_torque",
+    "future_pitch",
+    "future_blade_root_my_peak_ratio"
+  ],
+  "causal": true,
+  "future_feature_lookahead_steps": 0
+}

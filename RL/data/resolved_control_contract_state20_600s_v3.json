@@ -1,0 +1,85 @@
+{
+  "resolved_control_contract_schema_version": "resolved_b4_residual_control_contract_v1",
+  "control_contract_schema_version": "b4_residual_control_contract_v2",
+  "static_control_contract_fingerprint": "9f599e755de6b49db54e0ade27649b3c617a8ce3e4b5939f048849c34d0d4e54",
+  "action": {
+    "variables": [
+      "O_PcsTorqueDemand",
+      "O_PitchPositionDemand1"
+    ],
+    "engineering_demand_low_nm": 0.0,
+    "engineering_demand_high_nm": 21586451.33303,
+    "normal_generation_pitch_low_rad": 0.0,
+    "normal_generation_pitch_high_rad": 0.43,
+    "wire_dtype": "float64"
+  },
+  "previous_action_normalization": {
+    "action_low": [
+      0.0,
+      0.0
+    ],
+    "action_high": [
+      21586451.33303,
+      0.43
+    ]
+  },
+  "artifact_paths": {
+    "state_artifact_sha256": "RL/data/state_action_envelope_3_to_25_v1.json",
+    "paired_pid_reference_sha256": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json",
+    "region_aware_baseline_sha256": "RL/data/region_aware_joint_baseline_state20_3_to_25_v3.json",
+    "observation_schema_sha256": "RL/data/state_aware_control_observation_schema_v1.json",
+    "predictor_interface_schema_sha256": "RL/data/load_predictor_interface_v3.json"
+  },
+  "artifact_sha256": {
+    "state_artifact_sha256": "043eb7c7f9ce3e8f36df4a326588df5807232babe02b22aeae8754de2c7395d3",
+    "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+    "region_aware_baseline_sha256": "882ff630846bf8e6ae7445090830902b413f9cf5574580a2ee46f192adc7cacc",
+    "observation_schema_sha256": "8cea3ef1a80d90d475227a49dda6f15143305c3452663e917e20f6805b866021",
+    "predictor_interface_schema_sha256": "a0cae1fa44ebf77f301eb0f8a814530d4d4a7b1ab6ea0a7a57377dbf436cd4a8"
+  },
+  "observation_schema": {
+    "schema_version": "state_aware_control_observation_v1",
+    "feature_names": [
+      "I_RotorAzimuth",
+      "I_RotorSpeed",
+      "I_YawError",
+      "I_ElectricalTorque",
+      "I_GeneratorSpeed",
+      "I_RealPower",
+      "I_PitchPosition1",
+      "I_NacelleForeAftAcceleration",
+      "I_NacelleSideSideAcceleration",
+      "I_AverageWindSpeed",
+      "previous_action_torque_norm",
+      "previous_action_pitch_norm",
+      "optimization_state_startup_stopped",
+      "optimization_state_below_rated",
+      "optimization_state_transition",
+      "optimization_state_above_rated",
+      "optimization_state_negative_power_abnormal",
+      "control_region_below_rated",
+      "control_region_transition",
+      "control_region_above_rated"
+    ],
+    "base_observation_width": 10,
+    "previous_action_width": 2,
+    "state_regime_width": 8,
+    "width": 20,
+    "state_encoding_order": [
+      "startup_stopped",
+      "below_rated",
+      "transition",
+      "above_rated",
+      "negative_power_abnormal"
+    ],
+    "region_encoding_order": [
+      "below_rated",
+      "transition",
+      "above_rated"
+    ],
+    "causal": true,
+    "future_feature_lookahead_steps": 0
+  },
+  "predictor_interface_schema_version": "causal_load_predictor_interface_v3",
+  "control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24"
+}

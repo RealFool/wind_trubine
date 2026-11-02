@@ -1,0 +1,89 @@
+{
+  "schema_version": "physical_load_margin_dynamic_development_protocol_v2",
+  "purpose": "D0-R development verification of non-NN causal dynamic increments and conditional joint empirical margins; not a fresh independent audit",
+  "base_protocol_path": "RL/configs/physical_load_margin_demo_v1.json",
+  "base_protocol_sha256": "0f6d9d042700ed5d68b450a22776e8f2ce9093ba811c54ee9ce5d7a25d895ca6",
+  "input_policy": "exact same existing state/disturbance/reward/action whitelist; only causal histories and internal derived quantities, no extra raw columns or UDP/Actor changes",
+  "data_policy": {
+    "allowed_roles": ["train", "validation", "calibration"],
+    "blocked_old_audit_ids": [11, 17, 19, 25],
+    "read_old_audit": false,
+    "fit_roles": ["train"],
+    "selection_roles": ["validation"],
+    "margin_calibration_roles": ["calibration"],
+    "post_selection_coverage_role": "validation_reused_development_diagnostic",
+    "qualification": "all v1 data roles have previous exposure; validation selects v2, so its metrics and coverage are development evidence, not independent acceptance; no newly untouched seeds are available"
+  },
+  "dynamic_model": {
+    "name": "causal_direct_fir_residual_increment",
+    "qualification": "finite-horizon direct linear regression, not a recursive ARX/modal solver; no stability or causal alternative-action guarantee is claimed",
+    "history_lag_candidates_frames": [[1, 2, 5, 10], [1, 2, 5, 10, 20, 40]],
+    "ridge_fraction_candidates": [0.0001, 0.001, 0.01],
+    "target": "measured signed My at each strict future frame minus current-My-anchored physical rollout; future observations used as training targets only",
+    "features": "current static residual/load and own/common residual history differences, own measured-load differences, causal wind changes and nacelle acceleration histories, current pitch/rotor/yaw/azimuth and causal motion derivatives",
+    "future_steps": "all 20ms frames through 0.50s; peak=max_abs of signed rollout for 0.10/0.20/0.50s",
+    "candidate_policy": "recorded PID ZOH only; no alternative-action prediction API in v2",
+    "training_plan_eligibility": "same v1 approximate-ZOH threshold, complete future through 0.50s; mismatch labels never enter features",
+    "fit_stride_frames": 5,
+    "domain_padding_fraction": 0.2,
+    "normalized_feature_domain_floor": 0.02
+  },
+  "selection": {
+    "primary_horizons_s": [0.1, 0.2],
+    "score": "equal case/horizon average of normalized peak MAE plus 0.25 * p95 positive normalized underestimate",
+    "tail_weight": 0.25,
+    "minimum_known_origin_fraction": 0.9,
+    "minimum_common_comparison_fraction": 0.9,
+    "tie_rule": "first frozen candidate in protocol order",
+    "compare_methods": ["v1_greybox", "physical_only", "persistence", "causal_trend", "dynamic_fir"],
+    "qualification": "validation reused to select history/ridge; all candidate scores saved, no audit-driven tuning"
+  },
+  "conditional_scale": {
+    "fit_role": "train",
+    "target": "log(max(abs(actual future peak - predicted future peak), 100000 Nm)) on training origins",
+    "features": "current wind/actual pitch/rotor plus abs current and lagged My increments/rates, current My scale and nacelle acceleration amplitudes; no PID peak reference in inputs",
+    "ridge_fraction": 0.01,
+    "error_floor_nm": 100000.0,
+    "maximum_scale_nm": 20000000.0,
+    "history_lags_frames": [1, 5, 10, 20],
+    "qualification": "train residuals determine error scale only; separate calibration cases determine empirical quantile; neither yields a certified bound"
+  },
+  "joint_margin": {
+    "scope_horizons_s": [0.1, 0.2],
+    "quantile": 0.95,
+    "grouping": "existing causal control region at origin",
+    "minimum_calibration_origins": 100,
+    "methods": ["legacy_per_blade95_nm", "joint_constant95_nm", "joint_conditional95"],
+    "joint_score": "max over all three blades and both primary horizons of positive underestimation divided by causal error scale",
+    "coverage_unit": "simultaneous three blades x both windows at each eligible origin, not per-blade or whole-trajectory coverage",
+    "qualification": "empirical correlated-origin quantile; not deterministic, distribution-free, or independent-seed confidence; missing groups are unknown"
+  },
+  "evaluation": {
+    "primary_near_peak_ratio": 0.95,
+    "minimum_joint_evaluation_origins_per_region": 100,
+    "tight_pid_plan_tolerance": {"torque_nm": 20000.0, "pitch_rad": 0.00035},
+    "tight_plan_role": "evaluation-only sensitivity to v1 loose ZOH matching, not alternative-action truth",
+    "save_validation_origin_table": true,
+    "save_calibration_origin_table": false,
+    "strict_pid_exceedance_recall": "not estimable: each trajectory defines its own complete-window maximum"
+  },
+  "development_gate": {
+    "minimum_peak_mae_reduction_vs_v1_each_primary_horizon": 0.1,
+    "minimum_p95_underestimate_reduction_vs_v1_each_primary_horizon": 0.1,
+    "maximum_case_mae_ratio_to_v1": 1.05,
+    "minimum_joint_empirical_coverage_each_region": 0.95,
+    "minimum_margin_known_fraction": 0.9,
+    "maximum_near_peak_upper_false_positive_fraction": 0.1,
+    "on_point_failure": "REVIEW_DYNAMIC_MODEL",
+    "on_point_success": "PROMISING_ON_REUSED_VALIDATION_ONLY",
+    "integration_decision_always": "BLOCKED_NO_FRESH_INDEPENDENT_AUDIT"
+  },
+  "authorization": {
+    "mode": "offline_development",
+    "policy_acceptance": false,
+    "soft_authorized": false,
+    "hard_authorized": false,
+    "counterfactual_validation": false,
+    "fresh_independent_audit": false
+  }
+}

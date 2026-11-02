@@ -1,0 +1,493 @@
+{
+  "schema_version": "b4_centered_residual_bc_data_v2",
+  "action_contract": "region_aware_b4_plus_bounded_residual",
+  "baseline_path": "RL/data/region_aware_joint_baseline_state20_3_to_25_v3.json",
+  "baseline_sha256": "882ff630846bf8e6ae7445090830902b413f9cf5574580a2ee46f192adc7cacc",
+  "state_action_artifact_sha256": "043eb7c7f9ce3e8f36df4a326588df5807232babe02b22aeae8754de2c7395d3",
+  "observation_schema": {
+    "schema_version": "state_aware_control_observation_v1",
+    "feature_names": [
+      "I_RotorAzimuth",
+      "I_RotorSpeed",
+      "I_YawError",
+      "I_ElectricalTorque",
+      "I_GeneratorSpeed",
+      "I_RealPower",
+      "I_PitchPosition1",
+      "I_NacelleForeAftAcceleration",
+      "I_NacelleSideSideAcceleration",
+      "I_AverageWindSpeed",
+      "previous_action_torque_norm",
+      "previous_action_pitch_norm",
+      "optimization_state_startup_stopped",
+      "optimization_state_below_rated",
+      "optimization_state_transition",
+      "optimization_state_above_rated",
+      "optimization_state_negative_power_abnormal",
+      "control_region_below_rated",
+      "control_region_transition",
+      "control_region_above_rated"
+    ],
+    "base_observation_width": 10,
+    "previous_action_width": 2,
+    "state_regime_width": 8,
+    "width": 20,
+    "state_encoding_order": [
+      "startup_stopped",
+      "below_rated",
+      "transition",
+      "above_rated",
+      "negative_power_abnormal"
+    ],
+    "region_encoding_order": [
+      "below_rated",
+      "transition",
+      "above_rated"
+    ],
+    "causal": true,
+    "future_feature_lookahead_steps": 0
+  },
+  "action_low": [
+    0.0,
+    0.0
+  ],
+  "action_high": [
+    21586451.33303,
+    0.43
+  ],
+  "raw_recorded_action_columns": [
+    "raw_recorded_pid_demand",
+    "raw_recorded_pid_pitch_demand"
+  ],
+  "effective_action_columns": [
+    "effective_pid_demand",
+    "effective_pid_pitch_demand"
+  ],
+  "residual_limit": [
+    15000.0,
+    0.0003
+  ],
+  "residual_target_scale": 0.25,
+  "target_columns": [
+    "B4 residual torque target",
+    "B4 residual pitch target"
+  ],
+  "include_previous_action_observation": true,
+  "train_source_role": "raw_pid_calibration",
+  "validation_source_role": "raw_infer_holdout",
+  "train_rows": 690023,
+  "val_rows": 90003,
+  "train_files": [
+    {
+      "condition_id": 3,
+      "source_path": "bladed-data-new/raw/data_windspeed3.csv",
+      "source_sha256": "758798423765c1678e641e6ebd1887378cc8d4d5a5918f8785c4b56a330c7d55",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed3.csv",
+      "output_sha256": "ba2e8e8c82d5051727768f5b86a9372bd58ef5fc314c699fa267911561ee5032",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 17934,
+        "below_rated": 12067
+      },
+      "torque_clip_fraction": 0.0,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 4,
+      "source_path": "bladed-data-new/raw/data_windspeed4.csv",
+      "source_sha256": "1be888f0863885bd9129af0359fe886e9f317ef518166816898777a3e5bcda23",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed4.csv",
+      "output_sha256": "59687ce9e4bb64cf4e103e9a0bd56101bf7043fcd7e55e643249cf8ea3371674",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 5136,
+        "below_rated": 24865
+      },
+      "torque_clip_fraction": 0.006333122229259025,
+      "pitch_clip_fraction": 0.001333288890370321
+    },
+    {
+      "condition_id": 5,
+      "source_path": "bladed-data-new/raw/data_windspeed5.csv",
+      "source_sha256": "84f6368b03a2520ba6f75eb3c6859f351c2ef56248c7a9ae4b8c8b51402b739b",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed5.csv",
+      "output_sha256": "cf02203b0e57ac65d80aa2e47a617de29eb3fdac8660cdf5e904a9b20e6ad8d3",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 29951
+      },
+      "torque_clip_fraction": 0.0018999366687777073,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 6,
+      "source_path": "bladed-data-new/raw/data_windspeed6.csv",
+      "source_sha256": "f2c602b7732e76cc3d8e4e16a1cadb2605dded3069ea39d1d9aaf5954c8991e6",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed6.csv",
+      "output_sha256": "d9ee05ed824334ab8980f626df46968580ee2ecf8d4e37d0ad17ffdcc17a5e7d",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 29951
+      },
+      "torque_clip_fraction": 0.0,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 7,
+      "source_path": "bladed-data-new/raw/data_windspeed7.csv",
+      "source_sha256": "b4c3f0945891956321c37fab0b3c11a07df288c393df8e890a00b0a050bb6796",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed7.csv",
+      "output_sha256": "8ab7f0b5914563f126f34a5ea3217c20dd0bb6cefa674e1c5085a0be7fabe139",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 29951
+      },
+      "torque_clip_fraction": 0.001166627779074031,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 8,
+      "source_path": "bladed-data-new/raw/data_windspeed8.csv",
+      "source_sha256": "2e7bad3104dab0d85ca7b8175b635519b751405c0c110339681292e0ba82dbe5",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed8.csv",
+      "output_sha256": "f560b735ef8051079608148ddf24df69352b0459045a251018a9041d58101d3d",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 29719,
+        "transition": 232
+      },
+      "torque_clip_fraction": 0.0052664911169627675,
+      "pitch_clip_fraction": 0.0002666577780740642
+    },
+    {
+      "condition_id": 9,
+      "source_path": "bladed-data-new/raw/data_windspeed9.csv",
+      "source_sha256": "0c86931e99acaecb4e7701c25a9546517c7c071e41ff874bc92f080695f7418f",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed9.csv",
+      "output_sha256": "603a7af53c0bf2695fe779ca6968caf4e0d62b41a3ad4d0e855044bc00bcf358",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 29685,
+        "transition": 266
+      },
+      "torque_clip_fraction": 0.004166527782407253,
+      "pitch_clip_fraction": 6.666444451851606e-05
+    },
+    {
+      "condition_id": 10,
+      "source_path": "bladed-data-new/raw/data_windspeed10.csv",
+      "source_sha256": "166b5d88e9fa236fcec5e688983afd0fae15121f937976d6d015b3230a9544b6",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed10.csv",
+      "output_sha256": "d5c1ac9f9ae69f0aa0cd326a671c51339583e6fdd61c631013cf21ec3536f549",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 25080,
+        "transition": 4871
+      },
+      "torque_clip_fraction": 0.016099463351221626,
+      "pitch_clip_fraction": 0.004866504449851671
+    },
+    {
+      "condition_id": 11,
+      "source_path": "bladed-data-new/raw/data_windspeed11.csv",
+      "source_sha256": "3e0f52f616411d755e654f8c25e3d42a11ec38172434940f7cefc9da8460abe4",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed11.csv",
+      "output_sha256": "da92a99b09ca40aef621323566e3196e7286d848a7fdb062a460f1e69a50cfee",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 9,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 15075,
+        "transition": 14374,
+        "above_rated": 502
+      },
+      "torque_clip_fraction": 0.018099396686777108,
+      "pitch_clip_fraction": 0.0074664177860737976
+    },
+    {
+      "condition_id": 12,
+      "source_path": "bladed-data-new/raw/data_windspeed12.csv",
+      "source_sha256": "37ce1f7fc4bb2ec9f888ef96f067d5be2708b823fb08fb422c5d41fad3542843",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed12.csv",
+      "output_sha256": "44b1e8cc4bc4432acc7ca6b47c0ee66ec315ead11def3e6c55f8ff128df52595",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 79,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 10024,
+        "transition": 13829,
+        "above_rated": 6098
+      },
+      "torque_clip_fraction": 0.009033032232258926,
+      "pitch_clip_fraction": 0.017799406686443784
+    },
+    {
+      "condition_id": 13,
+      "source_path": "bladed-data-new/raw/data_windspeed13.csv",
+      "source_sha256": "a9f288bd53f397cc699e43ca40e9fec5e04bd00baea8a8758584f4aac1399ebe",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed13.csv",
+      "output_sha256": "337bce88237ae90d9d512a2ac98888f1d82710fe74e2e56214dbf1d539ed0184",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 385,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "transition": 17254,
+        "below_rated": 3851,
+        "above_rated": 8846
+      },
+      "torque_clip_fraction": 0.0031998933368887704,
+      "pitch_clip_fraction": 0.0021665944468517717
+    },
+    {
+      "condition_id": 14,
+      "source_path": "bladed-data-new/raw/data_windspeed14.csv",
+      "source_sha256": "5ea45829e36703c5ead94316bb8956329f61b781231a6f73d9f242522eb0d03d",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed14.csv",
+      "output_sha256": "a1b8b7f0583133afe56b6416566c8d7d3c73c9c5ba9e6367f16af4f6b7dc287b",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 1106,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 20420,
+        "transition": 7723,
+        "below_rated": 1808
+      },
+      "torque_clip_fraction": 0.0022332588913702876,
+      "pitch_clip_fraction": 0.005299823339222026
+    },
+    {
+      "condition_id": 15,
+      "source_path": "bladed-data-new/raw/data_windspeed15.csv",
+      "source_sha256": "cb1b6c44002de4b5a76b7c58c8036470a0fcca087e70c1df9f23c5e30730599b",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed15.csv",
+      "output_sha256": "770f1b6d0adcdd022448f865abcd669ba051df5eae2b94e189d9749d7925bfb2",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 76,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 25184,
+        "transition": 4464,
+        "below_rated": 303
+      },
+      "torque_clip_fraction": 0.00033332222259258026,
+      "pitch_clip_fraction": 0.001433285557148095
+    },
+    {
+      "condition_id": 16,
+      "source_path": "bladed-data-new/raw/data_windspeed16.csv",
+      "source_sha256": "a4ab2e4ffc3ff5993f402a9c99e9f700e7627761db4a87f6d0c1dadb93941428",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed16.csv",
+      "output_sha256": "c6b026ff7245c9c7f213473f0d53f6a94d56ec189a570a9103074cbc0f26919c",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 28307,
+        "transition": 1644
+      },
+      "torque_clip_fraction": 0.0,
+      "pitch_clip_fraction": 0.00016666111129629013
+    },
+    {
+      "condition_id": 17,
+      "source_path": "bladed-data-new/raw/data_windspeed17.csv",
+      "source_sha256": "b22f02d71c2f3eca812af946e19e5c1bd683a145c18042c5a2b7685f6a625606",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed17.csv",
+      "output_sha256": "b38cc510efb13a06edb459f0b33e8346a4236aa8ecf86dbb0472ddfa349b9c3b",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 28694,
+        "transition": 1257
+      },
+      "torque_clip_fraction": 0.00016666111129629013,
+      "pitch_clip_fraction": 0.00033332222259258026
+    },
+    {
+      "condition_id": 18,
+      "source_path": "bladed-data-new/raw/data_windspeed18.csv",
+      "source_sha256": "46c95f1bf98ac70cfdaf0b73a23f90a43687a5dcba345c01bc19d1cde75c1166",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed18.csv",
+      "output_sha256": "f38119609f69860af1c795bb2b3a01040055ad7262d3285624a1711c5302214c",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 374,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29305,
+        "transition": 646
+      },
+      "torque_clip_fraction": 0.0,
+      "pitch_clip_fraction": 0.0006666444451851605
+    },
+    {
+      "condition_id": 19,
+      "source_path": "bladed-data-new/raw/data_windspeed19.csv",
+      "source_sha256": "c6c28a087ff2a7035a044c32d6c6a6b020ddb8af7393e43c1116a10c32b112eb",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed19.csv",
+      "output_sha256": "fdabfa95d2da05314e70f40d4e943291995572ddd201a583f2cf5b8ea7ff80bc",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 176,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 9.999666677777408e-05,
+      "pitch_clip_fraction": 9.999666677777408e-05
+    },
+    {
+      "condition_id": 20,
+      "source_path": "bladed-data-new/raw/data_windspeed20.csv",
+      "source_sha256": "09348fce7fec079ad93a15b497c2a5c4dc5df90d467447d6ce054052f125ca2b",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed20.csv",
+      "output_sha256": "c9b6903b119551d86da01b3c5a0dc43e44839677c257e723fd599b979870b6fb",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 756,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.0002666577780740642,
+      "pitch_clip_fraction": 0.00033332222259258026
+    },
+    {
+      "condition_id": 21,
+      "source_path": "bladed-data-new/raw/data_windspeed21.csv",
+      "source_sha256": "4f1551f390d539f87599589135c992e78e22594368c334a659f722a8c9f91afd",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed21.csv",
+      "output_sha256": "630f3f6c47b288e79568f5519826e85f790d8dbe5b9bd2f96cc4faf4c1116e36",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 426,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.0004999833338888704,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 22,
+      "source_path": "bladed-data-new/raw/data_windspeed22.csv",
+      "source_sha256": "bfb0366e4719d35f839b4c40ce9842383d492fe15e656954d5af79b2aa9968a4",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed22.csv",
+      "output_sha256": "5f587b98cf838a2b4fca5b59860ac8a4ae9862ea6457ec763c3a13dcef851959",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 339,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.0002666577780740642,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 23,
+      "source_path": "bladed-data-new/raw/data_windspeed23.csv",
+      "source_sha256": "0de096b8f986bc6f25e42fb417317926315d479ca1f74518af11b0ad76024752",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed23.csv",
+      "output_sha256": "452a227ec14df0f1cec6b9241a243e264af77c6e14ef07b9925769eec8fe8569",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 198,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.0008333055564814507,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 24,
+      "source_path": "bladed-data-new/raw/data_windspeed24.csv",
+      "source_sha256": "31428067d910847ae9c22d0d2af556f645574145af28f01468ee0277ca516cf2",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed24.csv",
+      "output_sha256": "cfd287ab19ef48945a4220bb807d0ecb04b06a957464b1139d871cef27ee5710",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 705,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.0018999366687777073,
+      "pitch_clip_fraction": 6.666444451851606e-05
+    },
+    {
+      "condition_id": 25,
+      "source_path": "bladed-data-new/raw/data_windspeed25.csv",
+      "source_sha256": "4bc9469061343ff8a44cd8547ef19715b31f7b19cdd8abc58d9cae05fc71e5ec",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/train/data_windspeed25.csv",
+      "output_sha256": "55438897bcd56bbe71b520977acadcedf50fb0d3b6fa9d087156615ae9355be3",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 1223,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.001333288890370321,
+      "pitch_clip_fraction": 0.0007666411119629346
+    }
+  ],
+  "val_files": [
+    {
+      "condition_id": 8,
+      "source_path": "bladed-data-new/raw_infer/data_windspeed8.csv",
+      "source_sha256": "1f01afd50234065a64c17201adf005c399a0807013e95b426ef16c8b80d1889b",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/val/data_windspeed8.csv",
+      "output_sha256": "7dc2597d8b2f2709c2eae46e14064e9c0199428861966681374f1c05f3696ee0",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 0,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "below_rated": 29951
+      },
+      "torque_clip_fraction": 0.008999700009999667,
+      "pitch_clip_fraction": 0.0
+    },
+    {
+      "condition_id": 16,
+      "source_path": "bladed-data-new/raw_infer/data_windspeed16.csv",
+      "source_sha256": "d95be14133e859a2e0d0cca1ec677f826786c183c19238c9b032f42b5ca9c282",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/val/data_windspeed16.csv",
+      "output_sha256": "44bfbcf295dc97257bb45159b4355e73fb7a81c6fd324d78cc1804a78daaf2d5",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 27,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 27782,
+        "transition": 2169
+      },
+      "torque_clip_fraction": 0.00033332222259258026,
+      "pitch_clip_fraction": 0.001299956668111063
+    },
+    {
+      "condition_id": 24,
+      "source_path": "bladed-data-new/raw_infer/data_windspeed24.csv",
+      "source_sha256": "940106ef3c0c25d844d158c653d23a1f68c25a39e88d667f1ec4d04880610e91",
+      "output_path": "RL/data/b4_centered_residual_bc_state20_v2/val/data_windspeed24.csv",
+      "output_sha256": "3af7351cc8f0eb18c668e0f29153f867d74fce7e081e4f59282f06ac183e1d3e",
+      "rows": 30001,
+      "raw_recorded_demand_above_engineering_cap_count": 828,
+      "optimization_state_counts": {
+        "startup_stopped": 50,
+        "above_rated": 29951
+      },
+      "torque_clip_fraction": 0.0008666377787407086,
+      "pitch_clip_fraction": 0.00023332555581480617
+    }
+  ],
+  "train_torque_clip_fraction": 0.0031825026122317664,
+  "train_pitch_clip_fraction": 0.0018752998088469514
+}

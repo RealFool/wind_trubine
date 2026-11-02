@@ -1,0 +1,77 @@
+{
+  "schema_version": "physical_load_shadow_bundle_v1",
+  "runtime_schema_version": "physical_load_shadow_runtime_v1",
+  "purpose": "frozen PID model applied to sent RL ZOH for development transfer diagnostics only",
+  "external_fields": [
+    "Time",
+    "I_RotorAzimuth",
+    "I_RotorSpeed",
+    "I_YawError",
+    "I_ElectricalTorque",
+    "I_GeneratorSpeed",
+    "I_RealPower",
+    "I_PitchPosition1",
+    "I_NacelleForeAftAcceleration",
+    "I_NacelleSideSideAcceleration",
+    "I_AverageWindSpeed",
+    "Electrical power",
+    "Blade root 1 My (Nm)",
+    "Blade root 2 My (Nm)",
+    "Blade root 3 My (Nm)",
+    "O_PcsTorqueDemand",
+    "O_PitchPositionDemand1"
+  ],
+  "primary_horizons_s": [
+    0.1,
+    0.2
+  ],
+  "action_semantics": "final_successfully_sent_demand_zoh_development_v1",
+  "label_semantics": "strict_future_my_with_executed_intervals_origin_through_endpoint_minus_dt_v1",
+  "artifacts": {
+    "base_protocol": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_base_protocol.json",
+      "file_sha256": "46fb7c3ae00b0639ee73e56f283151cb4354f62711cde535bd0d1431ff2fc370",
+      "document_sha256": "0f6d9d042700ed5d68b450a22776e8f2ce9093ba811c54ee9ce5d7a25d895ca6"
+    },
+    "development_protocol": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_protocol.json",
+      "file_sha256": "56fdbc3bd286ee8ddf9f2254d4301ed955d547757f60ef803f23350a8db8303f",
+      "document_sha256": "0cbd7ccea351940bea5d13c4fb7b16c1225e3472c4bf1365112d8d07e2c2956a"
+    },
+    "physics_model": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_physics_model.json",
+      "file_sha256": "aac590c95fb526d5f76161c2b3f9905ba99b3e0c461854eb367a03b180a0b754",
+      "document_sha256": "5dd028f12c1add598508aabb8ab7c7b0ef960c46cfd8f34c6b32cda4123bf4fa"
+    },
+    "dynamic_model": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_dynamic_model.json",
+      "file_sha256": "2259297992ae6000e1a7a1a72dc52892edcf068522141d3001b8167931ff850e",
+      "document_sha256": "c8286005ce23afc13490906461d80b87245d6bca72a10d2f7f71b53d41baad36"
+    },
+    "error_scales": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_error_scales.json",
+      "file_sha256": "813f7a42595611e8147f90a80f8a8c295f36678b9a60e643b3e402e896263720",
+      "document_sha256": "a15fc08ec2199c2a481012a6685489bee004401ce98a6e9ebb93d2d9478f3d2c"
+    },
+    "joint_calibration": {
+      "path": "RL/diagnostics/physical_load_margin_dynamic_v2/frozen_joint_calibration.json",
+      "file_sha256": "41798f5b9bb8bbfb6c4099f61428702ab742a2f4737001037740de02b4f9e81b",
+      "document_sha256": "fc5f336eb3a3bfb675a7af1b4a3242769b2877e200b0ae84e5d8ac6db7988b2e"
+    }
+  },
+  "engineering_project": {
+    "path": "bladed_env/15MW_rl.prj",
+    "file_sha256": "29b56f05f5cc82f5e7e699cd4be8e46da460c08a66d5da88db6f60b1308f9227"
+  },
+  "source_development_report_sha256": "84403878bc8bc9dd38cd68eb8709ce4422d125e63938cb8536cf3009390378ea",
+  "legacy_action_provenance_verified": false,
+  "rl_action_response_validated": false,
+  "authorization": {
+    "mode": "shadow_development_only",
+    "policy_acceptance": false,
+    "soft_authorized": false,
+    "hard_authorized": false,
+    "counterfactual_validation": false,
+    "rl_margin_coverage_authorized": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "state_aware_control_observation_v1",
+  "feature_names": [
+    "I_RotorAzimuth",
+    "I_RotorSpeed",
+    "I_YawError",
+    "I_ElectricalTorque",
+    "I_GeneratorSpeed",
+    "I_RealPower",
+    "I_PitchPosition1",
+    "I_NacelleForeAftAcceleration",
+    "I_NacelleSideSideAcceleration",
+    "I_AverageWindSpeed",
+    "previous_action_torque_norm",
+    "previous_action_pitch_norm",
+    "optimization_state_startup_stopped",
+    "optimization_state_below_rated",
+    "optimization_state_transition",
+    "optimization_state_above_rated",
+    "optimization_state_negative_power_abnormal",
+    "control_region_below_rated",
+    "control_region_transition",
+    "control_region_above_rated"
+  ],
+  "base_observation_width": 10,
+  "previous_action_width": 2,
+  "state_regime_width": 8,
+  "width": 20,
+  "state_encoding_order": [
+    "startup_stopped",
+    "below_rated",
+    "transition",
+    "above_rated",
+    "negative_power_abnormal"
+  ],
+  "region_encoding_order": [
+    "below_rated",
+    "transition",
+    "above_rated"
+  ],
+  "causal": true,
+  "future_feature_lookahead_steps": 0
+}

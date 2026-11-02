@@ -1,0 +1,36 @@
+{
+  "control_contract_schema_version": "b4_residual_control_contract_v2",
+  "action": {
+    "variables": [
+      "O_PcsTorqueDemand",
+      "O_PitchPositionDemand1"
+    ],
+    "engineering_demand_low_nm": 0.0,
+    "engineering_demand_high_nm": 21586451.33303,
+    "normal_generation_pitch_low_rad": 0.0,
+    "normal_generation_pitch_high_rad": 0.43,
+    "wire_dtype": "float64"
+  },
+  "previous_action_normalization": {
+    "action_low": [
+      0.0,
+      0.0
+    ],
+    "action_high": [
+      21586451.33303,
+      0.43
+    ]
+  },
+  "artifact_hash_fields": [
+    "state_artifact_sha256",
+    "paired_pid_reference_sha256",
+    "region_aware_baseline_sha256",
+    "observation_schema_sha256",
+    "predictor_interface_schema_sha256"
+  ],
+  "checkpoint_compatibility": {
+    "require_resolved_control_contract_fingerprint": true,
+    "allow_inference_torque_high_override": false,
+    "reject_legacy_action_high_nm": 21000000.0
+  }
+}

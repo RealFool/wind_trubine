@@ -1,0 +1,15 @@
+{
+  "device": "cuda:0",
+  "availability": {
+    "memory_available_bytes": 14714277888,
+    "memory_minimum_bytes": 4294967296,
+    "disk_available_bytes": 494053093376,
+    "disk_minimum_bytes": 4294967296,
+    "gpu": {
+      "available_bytes": 14510129152,
+      "total_bytes": 16575954944,
+      "minimum_available_bytes": 2147483648
+    },
+    "qualification": "availability_floor_only_not_peak_RSS_or_online_latency_validation"
+  }
+}

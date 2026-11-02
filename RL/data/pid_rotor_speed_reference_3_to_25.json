@@ -1,0 +1,660 @@
+{
+  "schema_version": "pid_rotor_speed_reference_schedule_v1",
+  "metadata": {
+    "data_schema_version": "bladed_udp_19_si_my_v1",
+    "source_role": "raw_pid_calibration",
+    "source_data_root": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw",
+    "source_file_pattern": "data_windspeed{condition_id}.csv",
+    "input_manifest_sha256": "98744cb2a89909e48143faac595a396d3c16127155b8875efd4bd4909d6033f8",
+    "input_manifest_format": "condition_id:filename:file_sha256\\n sorted by condition_id",
+    "condition_ids": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "condition_count": 23,
+    "rows_total": 690023,
+    "eligible_rows_total": 665903,
+    "operating_state_contract_version": "wind_turbine_operating_state_v1",
+    "eligible_operating_states": [
+      "above_rated_regulation",
+      "normal_generation",
+      "transition"
+    ],
+    "target_statistic": "median",
+    "deadband_statistic": "quantile_0.950000_absolute_deviation_from_median",
+    "minimum_deadband_rad_s": 0.01,
+    "validation_data_policy": "raw_infer_and_new_seed_are_excluded_from_calibration"
+  },
+  "continuity": {
+    "interpolation": "piecewise_linear_continuous",
+    "max_adjacent_target_jump_rad_s": 0.07395815799999994,
+    "max_adjacent_deadband_jump_rad_s": 0.06880727449999996,
+    "target_jump_limit_rad_s": 0.2,
+    "deadband_jump_limit_rad_s": 0.1,
+    "target_jump_passed": true,
+    "deadband_jump_passed": true
+  },
+  "schedule": [
+    {
+      "condition_id": 3,
+      "wind_speed": 3.0,
+      "target_rotor_speed": 0.523960352,
+      "deadband": 0.01,
+      "eligible_rows": 12067,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.5186333593,
+      "rotor_speed_p95": 0.5292769431
+    },
+    {
+      "condition_id": 4,
+      "wind_speed": 4.0,
+      "target_rotor_speed": 0.523839355,
+      "deadband": 0.011848342600000025,
+      "eligible_rows": 24865,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.513930094,
+      "rotor_speed_p95": 0.5327138182
+    },
+    {
+      "condition_id": 5,
+      "wind_speed": 5.0,
+      "target_rotor_speed": 0.524015903,
+      "deadband": 0.025571331000000003,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.498528495,
+      "rotor_speed_p95": 0.5404643415
+    },
+    {
+      "condition_id": 6,
+      "wind_speed": 6.0,
+      "target_rotor_speed": 0.522258341,
+      "deadband": 0.028783589,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.499920174,
+      "rotor_speed_p95": 0.5435881915
+    },
+    {
+      "condition_id": 7,
+      "wind_speed": 7.0,
+      "target_rotor_speed": 0.53717351,
+      "deadband": 0.09759086349999996,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.5003107785,
+      "rotor_speed_p95": 0.6347643734999999
+    },
+    {
+      "condition_id": 8,
+      "wind_speed": 8.0,
+      "target_rotor_speed": 0.598827124,
+      "deadband": 0.09542593400000005,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.5150195955,
+      "rotor_speed_p95": 0.6854184864999999
+    },
+    {
+      "condition_id": 9,
+      "wind_speed": 9.0,
+      "target_rotor_speed": 0.672785282,
+      "deadband": 0.125713825,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.5512152015,
+      "rotor_speed_p95": 0.7798291145
+    },
+    {
+      "condition_id": 10,
+      "wind_speed": 10.0,
+      "target_rotor_speed": 0.734698713,
+      "deadband": 0.08057910200000001,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.6557204725,
+      "rotor_speed_p95": 0.8065855505
+    },
+    {
+      "condition_id": 11,
+      "wind_speed": 11.0,
+      "target_rotor_speed": 0.77879566,
+      "deadband": 0.08167311599999999,
+      "eligible_rows": 29951,
+      "dominant_control_region": "below_rated",
+      "rotor_speed_p05": 0.6993093189999999,
+      "rotor_speed_p95": 0.837207228
+    },
+    {
+      "condition_id": 12,
+      "wind_speed": 12.0,
+      "target_rotor_speed": 0.785221577,
+      "deadband": 0.04191461200000002,
+      "eligible_rows": 29951,
+      "dominant_control_region": "transition",
+      "rotor_speed_p05": 0.75182423,
+      "rotor_speed_p95": 0.8252469
+    },
+    {
+      "condition_id": 13,
+      "wind_speed": 13.0,
+      "target_rotor_speed": 0.78581804,
+      "deadband": 0.045584291499999985,
+      "eligible_rows": 29951,
+      "dominant_control_region": "transition",
+      "rotor_speed_p05": 0.7460297345,
+      "rotor_speed_p95": 0.8232432304999999
+    },
+    {
+      "condition_id": 14,
+      "wind_speed": 14.0,
+      "target_rotor_speed": 0.78705579,
+      "deadband": 0.045570551999999986,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.7524376214999999,
+      "rotor_speed_p95": 0.8228950205
+    },
+    {
+      "condition_id": 15,
+      "wind_speed": 15.0,
+      "target_rotor_speed": 0.791766226,
+      "deadband": 0.033821285000000034,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.758472681,
+      "rotor_speed_p95": 0.8157791195
+    },
+    {
+      "condition_id": 16,
+      "wind_speed": 16.0,
+      "target_rotor_speed": 0.791527152,
+      "deadband": 0.03018987199999995,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.765113324,
+      "rotor_speed_p95": 0.8175316155
+    },
+    {
+      "condition_id": 17,
+      "wind_speed": 17.0,
+      "target_rotor_speed": 0.790258586,
+      "deadband": 0.03414136150000002,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.763181597,
+      "rotor_speed_p95": 0.8234347104999999
+    },
+    {
+      "condition_id": 18,
+      "wind_speed": 18.0,
+      "target_rotor_speed": 0.791593552,
+      "deadband": 0.03430107149999995,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.761398673,
+      "rotor_speed_p95": 0.8217777015000001
+    },
+    {
+      "condition_id": 19,
+      "wind_speed": 19.0,
+      "target_rotor_speed": 0.792069972,
+      "deadband": 0.034922033999999935,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.7587059735,
+      "rotor_speed_p95": 0.8205955625
+    },
+    {
+      "condition_id": 20,
+      "wind_speed": 20.0,
+      "target_rotor_speed": 0.793668568,
+      "deadband": 0.04075664249999994,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.7547085285,
+      "rotor_speed_p95": 0.8268073499999999
+    },
+    {
+      "condition_id": 21,
+      "wind_speed": 21.0,
+      "target_rotor_speed": 0.791269064,
+      "deadband": 0.04227420699999995,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.7559597495,
+      "rotor_speed_p95": 0.8279671665
+    },
+    {
+      "condition_id": 22,
+      "wind_speed": 22.0,
+      "target_rotor_speed": 0.790837407,
+      "deadband": 0.03976029149999999,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.757802844,
+      "rotor_speed_p95": 0.825406522
+    },
+    {
+      "condition_id": 23,
+      "wind_speed": 23.0,
+      "target_rotor_speed": 0.790786088,
+      "deadband": 0.04026278849999998,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.761124611,
+      "rotor_speed_p95": 0.828690976
+    },
+    {
+      "condition_id": 24,
+      "wind_speed": 24.0,
+      "target_rotor_speed": 0.788570106,
+      "deadband": 0.05254492200000005,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.7534906265,
+      "rotor_speed_p95": 0.839073628
+    },
+    {
+      "condition_id": 25,
+      "wind_speed": 25.0,
+      "target_rotor_speed": 0.791939974,
+      "deadband": 0.047518461999999984,
+      "eligible_rows": 29951,
+      "dominant_control_region": "above_rated",
+      "rotor_speed_p05": 0.7504460515,
+      "rotor_speed_p95": 0.8305268285
+    }
+  ],
+  "sources": [
+    {
+      "condition_id": 3,
+      "path": "bladed-data-new/raw/data_windspeed3.csv",
+      "filename": "data_windspeed3.csv",
+      "sha256": "758798423765c1678e641e6ebd1887378cc8d4d5a5918f8785c4b56a330c7d55",
+      "rows": 30001,
+      "eligible_rows": 12067,
+      "operating_state_counts": {
+        "startup_cut_in": 5859,
+        "normal_generation": 12067,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 12075,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 4,
+      "path": "bladed-data-new/raw/data_windspeed4.csv",
+      "filename": "data_windspeed4.csv",
+      "sha256": "1be888f0863885bd9129af0359fe886e9f317ef518166816898777a3e5bcda23",
+      "rows": 30001,
+      "eligible_rows": 24865,
+      "operating_state_counts": {
+        "startup_cut_in": 170,
+        "normal_generation": 24865,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 4966,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 5,
+      "path": "bladed-data-new/raw/data_windspeed5.csv",
+      "filename": "data_windspeed5.csv",
+      "sha256": "84f6368b03a2520ba6f75eb3c6859f351c2ef56248c7a9ae4b8c8b51402b739b",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29951,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 6,
+      "path": "bladed-data-new/raw/data_windspeed6.csv",
+      "filename": "data_windspeed6.csv",
+      "sha256": "f2c602b7732e76cc3d8e4e16a1cadb2605dded3069ea39d1d9aaf5954c8991e6",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29951,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 7,
+      "path": "bladed-data-new/raw/data_windspeed7.csv",
+      "filename": "data_windspeed7.csv",
+      "sha256": "b4c3f0945891956321c37fab0b3c11a07df288c393df8e890a00b0a050bb6796",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29951,
+        "transition": 0,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 8,
+      "path": "bladed-data-new/raw/data_windspeed8.csv",
+      "filename": "data_windspeed8.csv",
+      "sha256": "2e7bad3104dab0d85ca7b8175b635519b751405c0c110339681292e0ba82dbe5",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29719,
+        "transition": 232,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 9,
+      "path": "bladed-data-new/raw/data_windspeed9.csv",
+      "filename": "data_windspeed9.csv",
+      "sha256": "0c86931e99acaecb4e7701c25a9546517c7c071e41ff874bc92f080695f7418f",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 29685,
+        "transition": 266,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 10,
+      "path": "bladed-data-new/raw/data_windspeed10.csv",
+      "filename": "data_windspeed10.csv",
+      "sha256": "166b5d88e9fa236fcec5e688983afd0fae15121f937976d6d015b3230a9544b6",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 25080,
+        "transition": 4871,
+        "above_rated_regulation": 0,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 11,
+      "path": "bladed-data-new/raw/data_windspeed11.csv",
+      "filename": "data_windspeed11.csv",
+      "sha256": "3e0f52f616411d755e654f8c25e3d42a11ec38172434940f7cefc9da8460abe4",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 15075,
+        "transition": 14374,
+        "above_rated_regulation": 502,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 12,
+      "path": "bladed-data-new/raw/data_windspeed12.csv",
+      "filename": "data_windspeed12.csv",
+      "sha256": "37ce1f7fc4bb2ec9f888ef96f067d5be2708b823fb08fb422c5d41fad3542843",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 10024,
+        "transition": 13829,
+        "above_rated_regulation": 6098,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 13,
+      "path": "bladed-data-new/raw/data_windspeed13.csv",
+      "filename": "data_windspeed13.csv",
+      "sha256": "a9f288bd53f397cc699e43ca40e9fec5e04bd00baea8a8758584f4aac1399ebe",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 3851,
+        "transition": 17254,
+        "above_rated_regulation": 8846,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 14,
+      "path": "bladed-data-new/raw/data_windspeed14.csv",
+      "filename": "data_windspeed14.csv",
+      "sha256": "5ea45829e36703c5ead94316bb8956329f61b781231a6f73d9f242522eb0d03d",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 1808,
+        "transition": 7723,
+        "above_rated_regulation": 20420,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 15,
+      "path": "bladed-data-new/raw/data_windspeed15.csv",
+      "filename": "data_windspeed15.csv",
+      "sha256": "cb1b6c44002de4b5a76b7c58c8036470a0fcca087e70c1df9f23c5e30730599b",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 303,
+        "transition": 4464,
+        "above_rated_regulation": 25184,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 16,
+      "path": "bladed-data-new/raw/data_windspeed16.csv",
+      "filename": "data_windspeed16.csv",
+      "sha256": "a4ab2e4ffc3ff5993f402a9c99e9f700e7627761db4a87f6d0c1dadb93941428",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 1644,
+        "above_rated_regulation": 28307,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 17,
+      "path": "bladed-data-new/raw/data_windspeed17.csv",
+      "filename": "data_windspeed17.csv",
+      "sha256": "b22f02d71c2f3eca812af946e19e5c1bd683a145c18042c5a2b7685f6a625606",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 1257,
+        "above_rated_regulation": 28694,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 18,
+      "path": "bladed-data-new/raw/data_windspeed18.csv",
+      "filename": "data_windspeed18.csv",
+      "sha256": "46c95f1bf98ac70cfdaf0b73a23f90a43687a5dcba345c01bc19d1cde75c1166",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 646,
+        "above_rated_regulation": 29305,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 19,
+      "path": "bladed-data-new/raw/data_windspeed19.csv",
+      "filename": "data_windspeed19.csv",
+      "sha256": "c6c28a087ff2a7035a044c32d6c6a6b020ddb8af7393e43c1116a10c32b112eb",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 20,
+      "path": "bladed-data-new/raw/data_windspeed20.csv",
+      "filename": "data_windspeed20.csv",
+      "sha256": "09348fce7fec079ad93a15b497c2a5c4dc5df90d467447d6ce054052f125ca2b",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 21,
+      "path": "bladed-data-new/raw/data_windspeed21.csv",
+      "filename": "data_windspeed21.csv",
+      "sha256": "4f1551f390d539f87599589135c992e78e22594368c334a659f722a8c9f91afd",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 22,
+      "path": "bladed-data-new/raw/data_windspeed22.csv",
+      "filename": "data_windspeed22.csv",
+      "sha256": "bfb0366e4719d35f839b4c40ce9842383d492fe15e656954d5af79b2aa9968a4",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 23,
+      "path": "bladed-data-new/raw/data_windspeed23.csv",
+      "filename": "data_windspeed23.csv",
+      "sha256": "0de096b8f986bc6f25e42fb417317926315d479ca1f74518af11b0ad76024752",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 24,
+      "path": "bladed-data-new/raw/data_windspeed24.csv",
+      "filename": "data_windspeed24.csv",
+      "sha256": "31428067d910847ae9c22d0d2af556f645574145af28f01468ee0277ca516cf2",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    },
+    {
+      "condition_id": 25,
+      "path": "bladed-data-new/raw/data_windspeed25.csv",
+      "filename": "data_windspeed25.csv",
+      "sha256": "4bc9469061343ff8a44cd8547ef19715b31f7b19cdd8abc58d9cae05fc71e5ec",
+      "rows": 30001,
+      "eligible_rows": 29951,
+      "operating_state_counts": {
+        "startup_cut_in": 50,
+        "normal_generation": 0,
+        "transition": 0,
+        "above_rated_regulation": 29951,
+        "shutdown_stopped": 0,
+        "negative_power_abnormal": 0
+      }
+    }
+  ]
+}

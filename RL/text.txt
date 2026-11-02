@@ -1,0 +1,14 @@
+python RL/train_rl.py \
+  --config RL/configs/bc_pretrain_bladed_pid_residual_v2_linux_gpu.json
+
+python RL/train_rl.py \
+  --config RL/configs/bc_online_eval_bladed_pid_residual_v2_linux_gpu.json
+
+python RL/train_rl.py \
+  --config RL/configs/bc_warmstart_rl_bladed_pid_residual_v2_linux_gpu.json
+
+# 推理
+python3 RL/infer/run_bladed_inference.py \
+  --checkpoint RL/experiments/<experiment_name>/checkpoints/episode_2000.pt \
+  --config RL/configs/bc_warmstart_rl_bladed_pid_residual_v2_linux_gpu.json \
+  --episodes 1

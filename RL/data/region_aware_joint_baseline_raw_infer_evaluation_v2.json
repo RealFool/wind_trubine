@@ -1,0 +1,276 @@
+{
+  "schema_version": "region_aware_baseline_holdout_evaluation_v1",
+  "validation_scope": "teacher_forced_one_step_action_holdout",
+  "validation_status": "diagnostic_only",
+  "physical_gate_status": "not_evaluated_requires_closed_loop_bladed",
+  "limitations": [
+    "Holdout state and previous realized action are supplied from the recorded PID trace.",
+    "This report does not measure closed-loop energy, rotor speed, safety projection, floor, or unload."
+  ],
+  "baseline_path": "/home/zhongyuanai/\u684c\u9762/lyq/Wind_trubine/code/wind_trubine/RL/data/region_aware_joint_baseline_3_to_25_v2.json",
+  "baseline_sha256": "8e91230445db45cf6285f40a644bdbab253c464dbc214b7650cdcf0c3e2b2cfb",
+  "data_root": "/home/zhongyuanai/\u684c\u9762/lyq/Wind_trubine/code/wind_trubine/bladed-data-new/raw_infer",
+  "step_duration_s": 0.02,
+  "action_names": [
+    "O_PcsTorqueDemand",
+    "O_PitchPositionDemand1"
+  ],
+  "action_units": [
+    "N m",
+    "rad"
+  ],
+  "deployment_action_delta_limit": [
+    15000.0,
+    0.0003
+  ],
+  "condition_ids": [
+    8,
+    16,
+    24
+  ],
+  "aggregate": {
+    "sample_count": 90000,
+    "action_mae": [
+      3675.7389388888887,
+      5.630621445345361e-05
+    ],
+    "action_rmse": [
+      5025.887777234817,
+      8.50041919284706e-05
+    ],
+    "action_abs_error_p95": [
+      9766.050000000003,
+      0.0001841342578506475
+    ],
+    "predicted_action_mean": [
+      17249089.355183333,
+      0.1694522437104648
+    ],
+    "target_action_mean": [
+      17249176.46937778,
+      0.1694578511511883
+    ],
+    "predicted_delta_abs_p50": [
+      1314.0,
+      2.4497379596713498e-05
+    ],
+    "predicted_delta_abs_p95": [
+      8276.0,
+      0.00018419570282554321
+    ],
+    "predicted_delta_abs_p99": [
+      11928.01999999999,
+      0.0002999901603701549
+    ],
+    "target_delta_abs_p50": [
+      3072.0,
+      3.1528565000000846e-05
+    ],
+    "target_delta_abs_p95": [
+      10598.0,
+      0.00016230544999999995
+    ],
+    "target_delta_abs_p99": [
+      14734.01999999999,
+      0.00021922615000001663
+    ],
+    "predicted_delta_limit_fraction": [
+      0.0016888888888888889,
+      0.016033333333333333
+    ],
+    "target_delta_over_limit_fraction": [
+      0.00908888888888889,
+      0.0007
+    ],
+    "predicted_positive_pitch_fraction": 0.8164,
+    "target_positive_pitch_fraction": 0.7052666666666667
+  },
+  "conditions": [
+    {
+      "sample_count": 30000,
+      "action_mae": [
+        3525.0758166666665,
+        2.5834363647983534e-06
+      ],
+      "action_rmse": [
+        5075.968138901353,
+        8.038178046119728e-06
+      ],
+      "action_abs_error_p95": [
+        8662.0,
+        1.583717983884266e-05
+      ],
+      "predicted_action_mean": [
+        11026642.87755,
+        0.0011733292710976936
+      ],
+      "target_action_mean": [
+        11026695.152733333,
+        0.0011727711275546942
+      ],
+      "predicted_delta_abs_p50": [
+        586.0,
+        0.0
+      ],
+      "predicted_delta_abs_p95": [
+        2164.0499999999993,
+        2.8400901319375075e-06
+      ],
+      "predicted_delta_abs_p99": [
+        2762.0099999999984,
+        4.353852987151182e-06
+      ],
+      "target_delta_abs_p50": [
+        2959.5,
+        0.0
+      ],
+      "target_delta_abs_p95": [
+        8907.0,
+        1.7261138000000224e-05
+      ],
+      "target_delta_abs_p99": [
+        12814.164999999974,
+        4.6418386000001075e-05
+      ],
+      "predicted_delta_limit_fraction": [
+        0.0,
+        0.0
+      ],
+      "target_delta_over_limit_fraction": [
+        0.0034333333333333334,
+        0.0
+      ],
+      "predicted_positive_pitch_fraction": 0.4492,
+      "target_positive_pitch_fraction": 0.1158,
+      "condition_id": 8,
+      "filename": "data_windspeed8.csv",
+      "sha256": "f13eea3d5e7dc365b64a59a51e62fb05c9b97fc6569a0fd027c76121398556f5",
+      "start_time_s": 0.0,
+      "end_time_s": 600.0
+    },
+    {
+      "sample_count": 30000,
+      "action_mae": [
+        3247.198733333333,
+        8.07167355310929e-05
+      ],
+      "action_rmse": [
+        4268.281743356062,
+        0.00010144528008963477
+      ],
+      "action_abs_error_p95": [
+        8584.0,
+        0.00019769721581001926
+      ],
+      "predicted_action_mean": [
+        20356362.393333334,
+        0.1737799449339509
+      ],
+      "target_action_mean": [
+        20356473.297933333,
+        0.17378638690797757
+      ],
+      "predicted_delta_abs_p50": [
+        2045.0,
+        4.3906299659723924e-05
+      ],
+      "predicted_delta_abs_p95": [
+        7278.0,
+        0.0001643595988983268
+      ],
+      "predicted_delta_abs_p99": [
+        9616.019999999997,
+        0.00028798795224071734
+      ],
+      "target_delta_abs_p50": [
+        2730.0,
+        6.030500000001049e-05
+      ],
+      "target_delta_abs_p95": [
+        8822.099999999999,
+        0.0001727506999999989
+      ],
+      "target_delta_abs_p99": [
+        11680.0,
+        0.000223905290000024
+      ],
+      "predicted_delta_limit_fraction": [
+        6.666666666666667e-05,
+        0.008566666666666667
+      ],
+      "target_delta_over_limit_fraction": [
+        0.0008333333333333334,
+        0.0
+      ],
+      "predicted_positive_pitch_fraction": 1.0,
+      "target_positive_pitch_fraction": 1.0,
+      "condition_id": 16,
+      "filename": "data_windspeed16.csv",
+      "sha256": "38ba8a30b969f215f30e458030fc84fc8b03beb4a48630a8bc5fc44eb6048e23",
+      "start_time_s": 0.0,
+      "end_time_s": 600.0
+    },
+    {
+      "sample_count": 30000,
+      "action_mae": [
+        4254.942266666667,
+        8.561847146447051e-05
+      ],
+      "action_rmse": [
+        5638.702178716896,
+        0.00010640197731936652
+      ],
+      "action_abs_error_p95": [
+        11460.099999999999,
+        0.00020766418084566248
+      ],
+      "predicted_action_mean": [
+        20364262.794666667,
+        0.3334034569263458
+      ],
+      "target_action_mean": [
+        20364360.957466666,
+        0.33341439541803164
+      ],
+      "predicted_delta_abs_p50": [
+        3248.0,
+        7.28815967254437e-05
+      ],
+      "predicted_delta_abs_p95": [
+        10570.099999999999,
+        0.00026736375075681875
+      ],
+      "predicted_delta_abs_p99": [
+        13900.039999999994,
+        0.000299990438498845
+      ],
+      "target_delta_abs_p50": [
+        3786.0,
+        6.392599999999193e-05
+      ],
+      "target_delta_abs_p95": [
+        12976.099999999999,
+        0.0001800075000000095
+      ],
+      "target_delta_abs_p99": [
+        16930.079999999987,
+        0.0002401206800000112
+      ],
+      "predicted_delta_limit_fraction": [
+        0.005,
+        0.03953333333333333
+      ],
+      "target_delta_over_limit_fraction": [
+        0.023,
+        0.0021
+      ],
+      "predicted_positive_pitch_fraction": 1.0,
+      "target_positive_pitch_fraction": 1.0,
+      "condition_id": 24,
+      "filename": "data_windspeed24.csv",
+      "sha256": "db4300457313a4fe7d0dda94bd5290c85207e223e72f7e3c403b73b5dd3e899a",
+      "start_time_s": 0.0,
+      "end_time_s": 600.0
+    }
+  ]
+}

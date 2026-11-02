@@ -1,0 +1,43 @@
+{
+  "schema_version": "causal_load_predictor_interface_v3",
+  "mode_default": "shadow",
+  "history_frames": 50,
+  "step_duration_s": 0.02,
+  "horizons_s": [0.1, 0.2, 0.5],
+  "online_candidate_plan_kinds": ["zoh_candidate"],
+  "realized_plan_online_authorized": false,
+  "soft_guard_horizons_s": [0.1, 0.2],
+  "hard_candidate_default_enabled": false,
+  "max_plan_mismatch": 0.05,
+  "plan_mismatch_normalization": "normalized_action_space_linf",
+  "candidate_plan_encoding": "real_action_sequence_gru_normalized_by_engineering_bounds_v1",
+  "candidate_plan_padding": "zero_after_selected_horizon_v1",
+  "horizon_conditioning": "discrete_horizon_index_embedding_v1",
+  "plan_kind_conditioning": "realized_0_zoh_candidate_1_embedding_v1",
+  "model_input_contract": "candidate_plan_conditioned_tcn: history[50,31]+action_plan[max_horizon,2]+horizon_index+plan_kind_index",
+  "response_label_semantics": "measured_actual_torque_and_pitch_at_t_plus_horizon_v1",
+  "peak_label_semantics": "max_abs_blade_root_my_over_strict_future_frames_t_plus_dt_through_t_plus_horizon_v1",
+  "required_inputs": [
+    "causal_physical_state",
+    "blade_root_my",
+    "blade_root_my_rate",
+    "sin_azimuth",
+    "cos_azimuth",
+    "sent_action_torque",
+    "sent_action_pitch",
+    "projected_candidate_action_torque",
+    "projected_candidate_action_pitch",
+    "state_encoding",
+    "pid_peak_headroom",
+    "candidate_action_plan",
+    "horizon_index",
+    "plan_kind_index"
+  ],
+  "required_outputs": [
+    "future_electrical_torque",
+    "future_pitch",
+    "future_blade_root_my_peak_ratio"
+  ],
+  "causal": true,
+  "future_feature_lookahead_steps": 0
+}

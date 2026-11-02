@@ -1,0 +1,128 @@
+{
+  "schema_version": "physical_shadow_round4_frozen_actor_operator_development_receipt_v1",
+  "route": "operator_confirmed_round4_frozen_actor_4wind1round600_shadow_inference_v1",
+  "created_at_utc": "2026-10-15T08:45:26+00:00",
+  "run_id": "physical_round4_frozen_events_20261015_003",
+  "config_path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/RL/configs/physical_round4_frozen_events_20261015_003/inference.json",
+  "experiment_dir": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/RL/experiments/physical_round4_frozen_events_20261015_003",
+  "runtime_identity": {
+    "bundle_sha256": "38a21e7c0c81258e789704193063818c50dca903e615878a88a6a92a89722a17",
+    "shadow_settings_sha256": "1297d696fa7bd1dfbab40a38cc6ec772dddf23a957997ae813356d5d5174af88",
+    "resolved_control_contract_fingerprint": "578179ea2f324e7522014a930c5df8497dec6d5d819c2703358548891295ba24",
+    "paired_pid_reference_sha256": "de8cc59fd93c3af4f5be00c0184bd176a807095c1b421d3c23ae7c2c74cc82d2",
+    "bc_checkpoint_sha256": "ffeb465028cbdba644fe97744efaf9b0ebe6d84de2838296892e8d44e509db80",
+    "queue_manifest_sha256": "4f1cad95f75863125880762cf9157da5bb7093d45be410a33740bbcb9bfbf00c",
+    "effective_runtime_config_sha256": "5fe1a26558ecf60bcc7e818871d9d5ec86c4663bab1e2b0205826c71fadc6699",
+    "execution_entry": "inference",
+    "actor_checkpoint_sha256": "9e62627b373e70149e57552039d086aff410cfe21b4f226396300257e4312ac5",
+    "baseline_only": false,
+    "execution_target": {
+      "host_identity_sha256": "d4fd596f0861ef3b0e4ae1b2b84cb45a6160967c1c9d9849863bcf100fc91915",
+      "system": "Linux",
+      "release": "7.0.0-30-generic",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "logical_cpu_count": 24,
+      "python_version": "3.11.15",
+      "numpy_version": "1.26.4",
+      "torch_version": "2.14.0.dev20260803+cu132",
+      "cuda_runtime": "13.2",
+      "device": "cuda:0",
+      "gpu": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5080",
+        "total_memory_bytes": 16575954944,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      "torch_cpu_threads": 1,
+      "thread_environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    "runtime_code_sha256": {
+      "RL/utils/physical_load_shadow_artifact.py": "0efeba2a092c7649c5f31ba8f9f1c4c4caf7b418031a099d49cdaac6f0fb3643",
+      "RL/utils/physical_load_shadow.py": "9abc161dd550d7699643415abbe0cf73150d7cbc0f18fc9425f7549c92889b31",
+      "RL/utils/physical_load_shadow_launch.py": "cb42f09a85668ca54f540fbec0f004dbb26b8294a5d1734aaeec25b7911e920c",
+      "RL/utils/physical_load_margin.py": "7457174eba00bb3d358b31749c2ed33a8f420db6daa3f265c3b34327264e9898",
+      "RL/utils/physical_load_margin_dynamic.py": "4c423023edccfd0d3923c439bbd88e458c9c8100c7407032aef04b22d799ce0f",
+      "RL/train_rl.py": "609547cc470a250e17a443caae7f1a31842c1ecf9da7f305b5caadda58c61e9c",
+      "RL/infer/run_bladed_inference.py": "b4d8c624b9df7980242a7b9968acc5ed98be935a9ca80c6dde8b34b68f8e9dba",
+      "RL/envs/wind_turbine_env.py": "a8770bb1bf31d5936f46556ee766ba6010f333bbc30a46ee9e015975ac9a49ee",
+      "RL/utils/operating_state.py": "7d23072c19b7348174c1ac7cffc1c4eb317a5a78323367d87809d9ef3e7e9ee3",
+      "RL/utils/safe_residual_control.py": "066e063b4c460f1512cdfbc3c530995f71b7ec19befd936ad75050ccdecae544",
+      "RL/utils/paired_pid_reference.py": "bf7d180af95e6d156a897ca6a0264ac75f83ee891f75c153429173e7935bfb61",
+      "RL/utils/queue_case_identity.py": "7e1bcdd3cadba774d0306b15673f08f1232a15ab9d3c49c2050c1bcba4cd8601",
+      "RL/utils/control_contract.py": "d18e7ab97c275a37b3e8ead11fd6fea5d1c14554f7bde73367c4ebe20f833cf2",
+      "RL/utils/constants.py": "2e196686d91bd43adb51a19364e1f8e918f3fe5ddb7c7347bd3ab071eb196b8b",
+      "RL/agents/td3.py": "56162072ccb7c24f1cb4054ff094f61c5ed89b43afda192a057f011d183a31b2",
+      "RL/models/actor_mlp.py": "ea8f1be4e230d965f642ac711e311f0652247949634b2d91cc336d5a35b829a4",
+      "RL/models/critic_mlp.py": "96522c8f1fe3ffea08e663d78499e7af96917c63c7c5ade15f0a1fb7f828b01d",
+      "RL/utils/reward.py": "72d4fc3595aeda0743ceb40172aea5c71d025076ebbbe3b9d21dadd422384ce2",
+      "RL/utils/region_aware_baseline.py": "1785371435be4b14d3c444e387c449bb9de1ac18a860685e70eae541e099f779",
+      "RL/utils/state_action_artifact.py": "dad0cc39cf10d3ad57c7099e0f5cc5a8926e2bb12fd53691b3a43f7336aed355",
+      "RL/utils/observation.py": "913bb361e40e8222659d6a637c844dd022d1eb87546aa39f6b60a75c330f795e",
+      "RL/utils/normalize.py": "f7e270897a5d23252461d432438365c48e85896e777474e95d9321717f6481ec",
+      "RL/utils/power_fields.py": "5ff2907a970c0bf38be00b1f0f51c4f693cee1bc3060bb5aa74ccb499292eac8",
+      "RL/utils/control_execution.py": "15fa4df34c2cca0c7ebe02bffaf5d3fbaac78de1a0e1ec6a0ea424e27c46a40a",
+      "RL/utils/critic_q_health.py": "095e082765e0552df6235699f66586e5318f0a9e077b94f71549aa0269a8d0fd",
+      "RL/utils/dual_constraint.py": "23bc7e9095f412834fbd342ae3b910d1ec911afbfb0d9f440878eeaacd3c9b8a",
+      "RL/utils/condition_queue.py": "82a3511e9403d38545d49a12d7b00d40716f0ad2f56f65fc17c8a406e5d38c3d",
+      "RL/utils/queue_manifest.py": "59fc9dca0bf94dc355f7710a5ccfdd27487fcd6503ac0d225c09b1a00ab55c78",
+      "RL/replay/replay_buffer.py": "51a2cf74ad194be4d44df39de04512a2e8ea257637672ef901756031856d9c7d",
+      "RL/utils/config.py": "ef8f5fa656cebc6a9e5da24db96192a22556c5178c883b25fbdbc289456459bc",
+      "RL/utils/set_seed.py": "d5c42fea97dd899788162728af6c66ba7b66671f49382a8e30a3aa3969e1fc44",
+      "RL/utils/logger.py": "eaa1d41bd60d686b7dd402c7092b939eba3f0c6a1113bef609dbfde66efd4d89",
+      "RL/prepare_physical_shadow_development.py": "7fd3c131d5b17fdb92ec559ec0f776da1c48caf576797ebc9c2fe67b56873870",
+      "RL/build_physical_load_shadow_profiles.py": "210bb2833594e59221239aa56d81f549b22f2d713e522eda36462e015683ca81",
+      "RL/evaluate_b4_residual_bc.py": "547a2b7c3357333d2b2dd610274633caacb192aa605424cc5fc2b3b2e44288af",
+      "RL/data/offline_dataset.py": "df0bee698fe163c115234bbe470c1b0650660f215c5ed4b03b5b921772233e9f"
+    }
+  },
+  "source_run": {
+    "run_id": "physical_4x4x600_20261013T100824Z_20940_retry_075710_2626",
+    "config_path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/RL/configs/physical_4x4x600_20261013T100824Z_20940_retry_075710_2626/train.json",
+    "operator_receipt_path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/RL/configs/physical_4x4x600_20261013T100824Z_20940_retry_075710_2626/operator_development_receipt.json",
+    "experiment_dir": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/RL/experiments/physical_4x4x600_20261013T100824Z_20940_retry_075710_2626",
+    "config_sha256": "4f2d6b45ced538120d8f8943a3576ae1caa47f1375223d486f88bdb884aa0492",
+    "operator_receipt_sha256": "23b7660fc0ed00e6277994b064314b54ca810eaf7eb79451a0e6509bd57c785f",
+    "training_summary_sha256": "b467a69ff7ac89464fda10b45a7fc45507c9bc251a9a4195a276b6f653477c5c",
+    "round_4_summary_sha256": "6da6cbe18228613666120f7d141c8de995d716aa956eeb1c0161738dc510c23b",
+    "round_4_checkpoint_path": "/home/zhongyuanai/桌面/lyq/Wind_trubine/code/wind_trubine/RL/experiments/physical_4x4x600_20261013T100824Z_20940_retry_075710_2626/checkpoints/queue_round_4.pt",
+    "round_4_checkpoint_sha256": "9e62627b373e70149e57552039d086aff410cfe21b4f226396300257e4312ac5"
+  },
+  "operator_attestation": {
+    "dll_personally_confirmed": true,
+    "protocol_personally_confirmed": true,
+    "evidence_kind": "operator_attestation_not_independently_verified",
+    "manual_project_and_wind_selection_required_each_slot": true,
+    "project_wind_seed_personally_confirmed_matches_pid": true
+  },
+  "independently_verified": false,
+  "policy_acceptance": false,
+  "optimizer_updates": false,
+  "actor_frozen": true,
+  "event_window_validation": {
+    "full_existing_state_enabled": true,
+    "pre_frames": 50,
+    "post_frames": 25,
+    "max_record_bytes": 524288,
+    "max_total_bytes": 536870912
+  },
+  "authorization": {
+    "physical_shadow": {
+      "mode": "shadow_development_only",
+      "policy_acceptance": false,
+      "soft_authorized": false,
+      "hard_authorized": false,
+      "counterfactual_validation": false,
+      "rl_margin_coverage_authorized": false
+    },
+    "policy_acceptance": false,
+    "counterfactual_validation": false
+  }
+}
