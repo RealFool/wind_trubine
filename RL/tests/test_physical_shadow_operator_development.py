@@ -47,6 +47,10 @@ def execute_documented_preparation(run_id):
     return config_dir
 
 
+@unittest.skipIf(
+    os.environ.get('WT15_M6_TRANSITION') == '1',
+    'M6 transition: pinned R2 runtime identity is intentionally invalidated; removed by M6B',
+)
 class OperatorDevelopmentTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
+import os
 import unittest
 from unittest.mock import patch
 from uuid import uuid4
@@ -37,6 +38,10 @@ TEMPLATE_PATH = ROOT / OPERATOR_23WIND_TEMPLATE
 REPORT_PATH = ROOT / OPERATOR_23WIND_PROFILE_BUILD_REPORT
 
 
+@unittest.skipIf(
+    os.environ.get('WT15_M6_TRANSITION') == '1',
+    'M6 transition: pinned R2 runtime identity is intentionally invalidated; removed by M6B',
+)
 class UnifiedPhysicalOperatorTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

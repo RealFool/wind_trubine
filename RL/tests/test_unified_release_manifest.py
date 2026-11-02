@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 import unittest
 
 from RL.utils.physical_load_shadow_artifact import file_sha256, strict_json
@@ -19,6 +20,10 @@ RELEASE_MANIFEST = RELEASE_DIR / 'release_manifest.json'
 PROFILE_REPORT = ROOT / OPERATOR_23WIND_PROFILE_BUILD_REPORT
 
 
+@unittest.skipIf(
+    os.environ.get('WT15_M6_TRANSITION') == '1',
+    'M6 transition: pinned R2 runtime identity is intentionally invalidated; removed by M6B',
+)
 class TestUnifiedReleaseManifest(unittest.TestCase):
     def setUp(self) -> None:
         if not RELEASE_MANIFEST.is_file():

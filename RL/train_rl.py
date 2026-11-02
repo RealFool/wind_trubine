@@ -3968,6 +3968,7 @@ def main() -> None:
 
     print(f'[Startup] loading config={args.config}', flush=True)
     config = load_config(args.config)
+    config['_source_config_path'] = str(normalize_user_path(args.config).expanduser().resolve())
 
     # Allow overriding external artifact paths without editing config files.
     data_root_override = (args.data_root or os.environ.get('RL_DATA_ROOT', '')).strip()
@@ -4158,6 +4159,18 @@ def _run_initialized_training(config: dict, device: torch.device, env: WindTurbi
     output_dir = Path(config.get('output_dir', 'RL/experiments')) / resolved_experiment_name
     logger = ExperimentLogger(output_dir, config.get('logging'))
     resources.callback(_flush_training_logger_on_exit, logger)
+    try:
+        from RL.run_meta import write_run_meta
+        meta_path = write_run_meta(
+            logger.output_dir,
+            config,
+            config_path=config.get('_source_config_path'),
+            device=str(device),
+            mode='legacy',
+        )
+        print(f'[Startup] run_meta: {meta_path}', flush=True)
+    except Exception as exc:
+        print(f'[Startup] run_meta failed: {type(exc).__name__}: {exc}', file=sys.stderr, flush=True)
     config_to_save = dict(config)
     config_to_save['resolved_experiment_name'] = resolved_experiment_name
     logger.save_config(config_to_save)
