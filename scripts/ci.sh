@@ -25,5 +25,6 @@ conda run -n "$CONDA_ENV" python -m RL.build_slot_checklist \
     --output /tmp/wt15_ci_checklist.md >/dev/null
 conda run -n "$CONDA_ENV" python -m RL.report_post_run --help >/dev/null
 conda run -n "$CONDA_ENV" python -m RL.run_meta --help >/dev/null
+conda run -n "$CONDA_ENV" python -m RL.turbine_profile --help >/dev/null
 
 echo "[ci] PASS"

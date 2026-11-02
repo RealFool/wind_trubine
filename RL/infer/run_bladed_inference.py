@@ -41,6 +41,7 @@ from RL.utils.queue_case_identity import (
     QueueStrictCaseIdentityValidator,
     build_queue_case_identity_validator,
 )
+from RL.utils.run_management import resolve_run_management
 from RL.utils.safe_residual_control import SafeResidualController, safe_action_metrics
 
 
@@ -757,8 +758,15 @@ def run_inference(
         config['physical_shadow_execution_scope'] = {'entry': 'inference', 'episodes': episodes,
             'max_steps': max_steps, 'baseline_only': bool(baseline_only),
             'output_dir': str(output_dir.expanduser().resolve())}
-        launch_identity = validate_physical_launch(config, project_root=PROJECT_ROOT,
-            checkpoint_path=checkpoint_path, baseline_only=baseline_only)
+        run_management = resolve_run_management(config)
+        if run_management['skip_launch_validation']:
+            launch_identity = {
+                'actor_checkpoint_sha256': _sha256_file(checkpoint_path),
+                'operator_development_authorized': False,
+            }
+        else:
+            launch_identity = validate_physical_launch(config, project_root=PROJECT_ROOT,
+                checkpoint_path=checkpoint_path, baseline_only=baseline_only)
         preflight_physical_config(config, project_root=PROJECT_ROOT)
         if not isinstance(launch_identity, dict):
             raise ValueError('Physical inference requires its validated execution identity')

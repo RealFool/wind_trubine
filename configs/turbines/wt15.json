@@ -1,0 +1,33 @@
+{
+  "schema_version": "turbine_profile_v1",
+  "turbine_id": "wt15",
+  "display_name": "WT15 15 MW",
+  "rated_power_w": 15000000.0,
+  "gear_ratio": 97.0,
+  "cut_in_wind_mps": 3.0,
+  "rated_wind_mps": 12.8,
+  "max_wind_mps": 25.0,
+  "action_low": [0.0, 0.0],
+  "action_high": [21586451.33303, 0.43],
+  "safe_action_low": [0.0, 0.0],
+  "safe_action_high": [21586451.33303, 0.43],
+  "action_delta_low": [-90000.0, -0.000698],
+  "action_delta_high": [90000.0, 0.000698],
+  "residual_limit": [15000.0, 0.0003],
+  "actor_residual_target_scale": 0.25,
+  "power_ref_w": 15000000.0,
+  "blade_root_ref_nm": 55000000.0,
+  "pitch_rate_limit_rad": 0.0003,
+  "torque_rate_limit_nm": 15000.0,
+  "data_schema_version": "bladed_udp_19_si_my_v1",
+  "assets": {
+    "b4_baseline": "RL/data/region_aware_joint_baseline_state20_3_to_25_v3.json",
+    "state_action_envelope": "RL/data/state_action_envelope_3_to_25_v1.json",
+    "s2_u1_calibration": "RL/data/s2_u1_pid_envelope_3_to_25.json",
+    "bc_checkpoint": "RL/BC_checkpoint/bladed_pid_b4_state20_residual_v3.pt",
+    "shadow_bundle": "RL/configs/WT15_STATE20_RL_20261023_R2/physical_load_shadow_bundle.json",
+    "paired_reference": "RL/data/paired_pid_power_load_reference_3_to_25_600s_v2.json"
+  },
+  "bladed_project": "bladed_env/15MW_rl.prj",
+  "wind_data_glob": "bladed-data-new/raw/data_windspeed*.csv"
+}

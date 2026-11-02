@@ -163,6 +163,7 @@ def write_run_meta(
         'created_at_utc': utc_now(),
         'started_at_utc': started_at_utc or utc_now(),
         'mode': mode,
+        'run_management': config.get('_run_management'),
         'experiment_name': config.get('experiment_name'),
         'output_dir': str(output_dir),
         'config_path': str(config_path_obj) if config_path_obj else None,

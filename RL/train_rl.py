@@ -84,6 +84,8 @@ from RL.utils.queue_case_identity import (
 )
 from RL.utils.queue_manifest import expand_queue_manifest
 from RL.utils.safe_residual_control import SafeResidualController, safe_action_metrics
+from RL.turbine_profile import load_turbine_profile_for_config
+from RL.utils.run_management import apply_run_management, should_skip_launch_validation
 from RL.utils.set_seed import set_seed
 
 
@@ -1328,7 +1330,8 @@ def run_queue_training(
     if physical_load_shadow is not None and not physical_backend_selected(config):
         raise ValueError('Physical worker/config backend mismatch; dual NN/physical paths are forbidden')
     if physical_backend_selected(config):
-        validate_physical_launch(config, project_root=PROJECT_ROOT)
+        if not should_skip_launch_validation(config):
+            validate_physical_launch(config, project_root=PROJECT_ROOT)
         if physical_load_shadow is None:
             raise ValueError('Physical backend selected without its read-only worker; NN fallback is forbidden')
         validate_physical_training_binding(config, env, controller, agent, physical_load_shadow,
@@ -4019,6 +4022,11 @@ def main() -> None:
     if isinstance(output_dir, str) and output_dir.strip():
         config['output_dir'] = str(normalize_user_path(output_dir))
 
+    run_management = apply_run_management(config, project_root=PROJECT_ROOT)
+    turbine_profile = load_turbine_profile_for_config(config, project_root=PROJECT_ROOT)
+    if turbine_profile is not None:
+        turbine_profile.assert_config_matches(config, project_root=PROJECT_ROOT)
+
     configured_control_contract = resolve_configured_control_contract(
         config,
         project_root=PROJECT_ROOT,
@@ -4036,9 +4044,11 @@ def main() -> None:
     if physical_backend_selected(config):
         config['device'] = str(device)
         # Check the FINAL effective config, before UDP, exports or output files.
-        if config.get('physical_shadow_launch', {}).get('route') in OPERATOR_TRAINING_ROUTES:
+        if (config.get('physical_shadow_launch', {}).get('route') in OPERATOR_TRAINING_ROUTES
+                and not run_management['skip_fresh_experiment']):
             require_fresh_operator_experiment(config)
-        validate_physical_launch(config, project_root=PROJECT_ROOT)
+        if not run_management['skip_launch_validation']:
+            validate_physical_launch(config, project_root=PROJECT_ROOT)
         preflight_physical_config(config, project_root=PROJECT_ROOT)
     print(f'[Startup] config loaded algorithm={config["algorithm"]} mode={config.get("training_mode")} device={device}', flush=True)
 
@@ -4166,7 +4176,7 @@ def _run_initialized_training(config: dict, device: torch.device, env: WindTurbi
             config,
             config_path=config.get('_source_config_path'),
             device=str(device),
-            mode='legacy',
+            mode=config.get('_run_management', {}).get('run_layout', 'legacy'),
         )
         print(f'[Startup] run_meta: {meta_path}', flush=True)
     except Exception as exc:
