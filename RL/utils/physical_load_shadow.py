@@ -33,6 +33,55 @@ RECORD_SCHEMA = 'physical_load_shadow_development_record_v1'
 OUTCOME_OK = 'complete'
 
 
+def shadow_health(
+    stats: Mapping[str, int],
+    *,
+    faulted: bool,
+    finalized: bool,
+    worker_alive: bool,
+) -> dict[str, Any]:
+    """Explicit health view for a bounded shadow worker.
+
+    The shadow is allowed to degrade without changing control.  This function
+    makes that degradation visible instead of silently losing diagnostics.
+    """
+    submitted = int(stats.get('submitted_frames', 0))
+    invalid = int(stats.get('invalid_submissions', 0))
+    dropped = int(stats.get('queue_full_dropped', 0))
+    faults = int(stats.get('worker_faults', 0))
+    total = submitted + invalid
+    success_rate = (submitted / total) if total else None
+    reasons: list[str] = []
+    if faulted:
+        status = 'FAULTED'
+        reasons.append('worker_faulted')
+    elif worker_alive or not finalized:
+        status = 'NOT_FINAL'
+        reasons.append('worker_not_finalized')
+    elif invalid or dropped or faults:
+        status = 'DEGRADED'
+    else:
+        status = 'OK'
+    if invalid:
+        reasons.append(f'invalid_submissions={invalid}')
+    if dropped:
+        reasons.append(f'queue_full_dropped={dropped}')
+    if faults:
+        reasons.append(f'worker_faults={faults}')
+    return {
+        'status': status,
+        'reasons': reasons,
+        'submitted_frames': submitted,
+        'invalid_submissions': invalid,
+        'queue_full_dropped': dropped,
+        'worker_faults': faults,
+        'records_written': int(stats.get('records_written', 0)),
+        'finished_conditions': int(stats.get('finished_conditions', 0)),
+        'strict_complete_conditions': int(stats.get('strict_complete_conditions', 0)),
+        'submission_success_rate': success_rate,
+    }
+
+
 @dataclass(frozen=True)
 class SentPhysicalFrame:
     condition_id: int
@@ -657,16 +706,19 @@ class PhysicalLoadShadow:
         return self.summary()
 
     def summary(self) -> dict[str, Any]:
+        worker_alive = self._thread.is_alive()
+        finalized = self._closed and not worker_alive
         return {'backend': BACKEND, 'authorization': dict(RUNTIME_AUTHORIZATION),
             'run_id': self.core.run_id, 'evaluation_reference_file_sha256': self.evaluation_reference_file_sha256,
                 'bundle_sha256': self.artifacts.bundle_file_sha256,
                 'dynamic_model_file_sha256': self.artifacts.dynamic_file_sha256,
-                'records_path': str(self.path), 'worker_alive': self._thread.is_alive(),
-                'finalized': self._closed and not self._thread.is_alive(),
-                'records_file_sha256': self._records_hasher.hexdigest()
-                    if self._closed and not self._thread.is_alive() else None,
-                'summary_status': 'NOT_FINAL_WORKER_STILL_ALIVE' if self._thread.is_alive() else 'FINALIZED',
+                'records_path': str(self.path), 'worker_alive': worker_alive,
+                'finalized': finalized,
+                'records_file_sha256': self._records_hasher.hexdigest() if finalized else None,
+                'summary_status': 'NOT_FINAL_WORKER_STILL_ALIVE' if worker_alive else 'FINALIZED',
                 'faulted': self._disabled, 'last_error_type': self._error_type,
+                'health': shadow_health(self._stats, faulted=self._disabled,
+                                        finalized=finalized, worker_alive=worker_alive),
                 'counters': {key: int(value) for key, value in self._stats.copy().items()},
                 'core_counters': {key: int(value) for key, value in self.core.stats.copy().items()},
                 'condition_receipts': list(self._condition_receipts),

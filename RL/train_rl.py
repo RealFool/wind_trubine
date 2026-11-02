@@ -58,6 +58,7 @@ from RL.utils.critic_q_health import (
     ActorOptimizerHealthGateConfig,
     CriticQHealthConfig,
     CriticQHealthMonitor,
+    resolve_actor_gate_mode,
 )
 from RL.utils.evaluate import evaluate_policy
 from RL.utils.logger import ExperimentLogger
@@ -1347,16 +1348,24 @@ def run_queue_training(
     critic_q_health_monitor = CriticQHealthMonitor(
         CriticQHealthConfig.from_train_config(train_cfg)
     )
+    actor_gate_mode = resolve_actor_gate_mode(train_cfg)
     optimizer_health_config = ActorOptimizerHealthGateConfig.from_train_config(train_cfg)
     actor_optimizer_health_gate = (
-        None
-        if optimizer_health_config is None
-        else ActorOptimizerHealthGate(optimizer_health_config)
+        ActorOptimizerHealthGate(optimizer_health_config)
+        if actor_gate_mode['mode'] == 'optimizer' and optimizer_health_config is not None
+        else None
     )
     actor_q_health_gate = (
-        None
-        if actor_optimizer_health_gate is not None
-        else ActorQHealthGate(ActorQHealthGateConfig.from_train_config(train_cfg))
+        ActorQHealthGate(ActorQHealthGateConfig.from_train_config(train_cfg))
+        if actor_gate_mode['mode'] == 'trend'
+        else None
+    )
+    print(
+        f"[Queue] actor_gate={actor_gate_mode['mode']} "
+        f"trend_configured={actor_gate_mode['trend_configured']} "
+        f"optimizer_configured={actor_gate_mode['optimizer_configured']}"
+        + (f" note={actor_gate_mode['note']}" if actor_gate_mode['note'] else ''),
+        flush=True,
     )
     queue_cfg = config.get('queue', {})
     if not isinstance(queue_cfg, dict):

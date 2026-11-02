@@ -505,3 +505,50 @@ class ActorOptimizerHealthGate:
     @property
     def allows_actor_update(self) -> bool:
         return self._gate_open
+
+def resolve_actor_gate_mode(train_config: dict[str, Any]) -> dict[str, Any]:
+    """Resolve which actor health gate is actually instantiated.
+
+    The legacy queue path historically preferred the optimizer gate whenever it
+    was configured and silently skipped the trend gate.  This helper makes that
+    precedence explicit and validates explicit overrides.
+    """
+    trend = train_config.get('actor_q_health_gate', {})
+    optimizer = train_config.get('actor_optimizer_health_gate', {})
+    if trend is None:
+        trend = {}
+    if optimizer is None:
+        optimizer = {}
+    if not isinstance(trend, dict):
+        raise ValueError('train.actor_q_health_gate must be an object')
+    if not isinstance(optimizer, dict):
+        raise ValueError('train.actor_optimizer_health_gate must be an object')
+    trend_enabled = bool(trend.get('enabled', False))
+    optimizer_enabled = bool(optimizer.get('enabled', False))
+    requested = str(train_config.get('actor_gate_mode', 'auto')).strip().lower()
+    if requested not in {'auto', 'trend', 'optimizer', 'none'}:
+        raise ValueError('train.actor_gate_mode must be auto, trend, optimizer or none')
+    note = ''
+    if requested == 'auto':
+        mode = 'optimizer' if optimizer_enabled else 'trend' if trend_enabled else 'none'
+        if optimizer_enabled and trend_enabled:
+            note = 'optimizer gate takes precedence; trend gate configured but not instantiated'
+    elif requested == 'optimizer':
+        if not optimizer_enabled:
+            raise ValueError('train.actor_gate_mode=optimizer requires actor_optimizer_health_gate.enabled=true')
+        mode = 'optimizer'
+    elif requested == 'trend':
+        if not trend_enabled:
+            raise ValueError('train.actor_gate_mode=trend requires actor_q_health_gate.enabled=true')
+        mode = 'trend'
+    else:
+        mode = 'none'
+        if trend_enabled or optimizer_enabled:
+            note = 'configured actor health gates disabled by actor_gate_mode=none'
+    return {
+        'mode': mode,
+        'requested': requested,
+        'trend_configured': trend_enabled,
+        'optimizer_configured': optimizer_enabled,
+        'note': note,
+    }
